@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO ═══ -->
+<title>Unstoppable Experience — Take Action LA · Health Matters Clinic</title>
+<meta name="description" content="Free mental health events in Inglewood, CA this May. Walk/run, wellness meetup, and live virtual session. Presented by Health Matters Clinic as part of the LA County Take Action Mental Health Awareness Month campaign.">
+<meta name="keywords" content="Take Action LA, mental health events Los Angeles, Unstoppable Experience, Health Matters Clinic, Inglewood wellness, May 2026 mental health, LA County DMH">
+<link rel="canonical" href="https://www.healthmatters.clinic/initiatives/takeactionla">
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Unstoppable Experience — Take Action LA · Health Matters Clinic">
+<meta property="og:description" content="Move. Heal. Transform. Three free mental health events this May in Los Angeles. Register by May 2nd for a free Unstoppable tee.">
+<meta property="og:url" content="https://www.healthmatters.clinic/initiatives/takeactionla">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.healthmatters.clinic/assets/unstoppable-og.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#1A2FE8;--orange:#FF6E28;--black:#080808;--chalk:#F0EDE8;--white:#fff;--green:#12c06b}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden;cursor:none}
+a{text-decoration:none;color:inherit}
+img{display:block}
+
+/* ── CURSOR ── */
+.cursor{position:fixed;width:10px;height:10px;background:var(--white);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:difference}
+.cursor.big{width:40px;height:40px}
+
+/* ── POPUP ── */
+.popup{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(130px);z-index:500;background:var(--white);color:var(--black);border-radius:16px;padding:18px 52px 18px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 24px 64px rgba(0,0,0,.55);max-width:520px;width:calc(100% - 40px);transition:transform .6s cubic-bezier(.34,1.56,.64,1)}
+.popup.show{transform:translateX(-50%) translateY(0)}
+.popup-icon{width:48px;height:48px;border-radius:12px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:9px;letter-spacing:.08em;color:var(--white);text-transform:uppercase;text-align:center;line-height:1.2}
+.popup-text{flex:1}
+.popup-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:3px}
+.popup-sub{font-size:12px;color:rgba(0,0,0,.55);line-height:1.45}
+.popup-sub strong{color:var(--black)}
+.popup-cta{background:var(--blue);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:10px 18px;border-radius:100px;white-space:nowrap;flex-shrink:0;border:none;cursor:pointer}
+.popup-x{position:absolute;top:10px;right:12px;font-size:16px;color:rgba(0,0,0,.3);background:none;border:none;cursor:pointer}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:104px;left:24px;z-index:490;background:rgba(16,16,16,.96);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:12px;transform:translateX(-130%);transition:transform .5s cubic-bezier(.34,1.56,.64,1);max-width:290px}
+.toast.show{transform:translateX(0)}
+.toast-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;animation:pulse 2s infinite}
+.toast-body{font-size:13px;line-height:1.4;color:rgba(255,255,255,.8)}
+.toast-body strong{color:var(--white);font-weight:600}
+.toast-ago{font-size:11px;color:rgba(255,255,255,.28);margin-top:2px}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(18,192,107,.4)}50%{box-shadow:0 0 0 5px rgba(18,192,107,0)}}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px}
+nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,8,8,.92),transparent);pointer-events:none}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8);position:relative;z-index:1}
+.nav-r{display:flex;align-items:center;gap:28px;position:relative;z-index:1}
+.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);transition:color .2s}
+.nav-link:hover{color:var(--white)}
+.nav-cta{background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;border-radius:100px;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--blue);color:var(--white)}
+
+/* ── HERO ── */
+.hero{position:relative;height:100vh;min-height:720px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero-photo{position:absolute;inset:0;z-index:0}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(8,8,8,.2) 0%,rgba(8,8,8,.05) 28%,rgba(8,8,8,.5) 58%,rgba(8,8,8,.95) 86%,var(--black) 100%)}
+.hero-wmark{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;overflow:hidden;pointer-events:none;opacity:.1}
+.hero-wmark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(80px,14vw,180px);line-height:.86;text-transform:uppercase;white-space:nowrap;color:var(--white);display:block}
+.hero-content{position:relative;z-index:3;padding:0 48px 72px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:8px 16px 8px 8px;margin-bottom:22px;animation:fadeUp .8s ease both}
+.badge-dot{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--orange));flex-shrink:0}
+.badge-text{font-size:11px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.6);text-transform:uppercase}
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.25em;color:var(--orange);text-transform:uppercase;margin-bottom:10px;animation:fadeUp .8s ease .1s both}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(64px,12vw,148px);line-height:.84;text-transform:uppercase;letter-spacing:-.02em;animation:fadeUp .8s ease .2s both}
+.hero-title .tb{color:var(--blue)}
+.hero-sub{margin-top:22px;font-size:clamp(14px,1.6vw,17px);line-height:1.65;color:rgba(255,255,255,.48);max-width:480px;animation:fadeUp .8s ease .3s both}
+.hero-actions{margin-top:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;animation:fadeUp .8s ease .4s both}
+.btn-primary{background:var(--blue);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:15px 34px;border-radius:100px;display:inline-block;transition:background .2s,transform .2s}
+.btn-primary:hover{background:#0d1fc0;transform:translateY(-1px)}
+.btn-ghost{color:rgba(255,255,255,.55);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:color .2s}
+.btn-ghost:hover{color:var(--white)}
+.ghost-ring{width:32px;height:32px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;transition:border-color .2s}
+.btn-ghost:hover .ghost-ring{border-color:rgba(255,255,255,.55)}
+
+/* ── T-SHIRT BAR ── */
+.tbar{background:var(--orange);padding:13px 48px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.tbar-text{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--white)}
+.tbar-text span{color:rgba(255,255,255,.65);font-weight:600}
+.cdown{display:flex;gap:8px;align-items:center}
+.cdu{background:rgba(0,0,0,.2);border-radius:6px;padding:4px 10px;text-align:center}
+.cdn{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;display:block;color:var(--white)}
+.cdl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.cds{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:rgba(255,255,255,.4)}
+.tbar-cta{background:var(--white);color:var(--orange);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:9px 20px;border-radius:100px;transition:opacity .2s;white-space:nowrap}
+.tbar-cta:hover{opacity:.85}
+
+/* ── TICKER ── */
+.ticker-wrap{background:var(--blue);overflow:hidden;padding:14px 0}
+.ticker-track{display:flex;animation:ticker 24s linear infinite;width:max-content}
+.ticker-item{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);white-space:nowrap;padding:0 28px;display:flex;align-items:center;gap:28px}
+.ticker-item::after{content:'·';color:rgba(255,255,255,.3)}
+
+/* ── LAYOUT ── */
+section{position:relative}
+.container{max-width:1200px;margin:0 auto;padding:0 48px}
+.micro{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:20px}
+
+/* ── INTRO ── */
+.intro{padding:100px 0 90px;border-bottom:1px solid rgba(255,255,255,.06)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.intro-hl{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,4.5vw,60px);line-height:.92;text-transform:uppercase}
+.intro-hl em{font-style:italic;color:var(--orange)}
+.intro-r p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.46);margin-bottom:18px}
+.intro-r p strong{color:var(--white);font-weight:600}
+.live-ctr{margin-top:36px;padding:26px 28px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;position:relative;overflow:hidden}
+.live-ctr::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--blue),var(--orange))}
+.ctr-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
+.live-lbl{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.32)}
+.ctr-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(50px,7vw,84px);line-height:.9;letter-spacing:-.02em;color:var(--white)}
+.ctr-num span{color:var(--blue)}
+.ctr-sub{font-size:13px;color:rgba(255,255,255,.32);margin-top:6px}
+.ctr-sub strong{color:rgba(255,255,255,.6);font-weight:600}
+.act-feed{margin-top:18px;display:flex;flex-direction:column}
+.act-item{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,.38);line-height:1.3;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.act-item:last-child{border-bottom:none}
+.av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:800;flex-shrink:0;text-transform:uppercase}
+.av-b{background:rgba(26,47,232,.25);color:#6a8bff}
+.av-o{background:rgba(255,110,40,.2);color:var(--orange)}
+.av-g{background:rgba(18,192,107,.2);color:var(--green)}
+.a-name{color:rgba(255,255,255,.7);font-weight:600}
+.a-ev{color:var(--blue)}
+.a-ev.heal{color:var(--orange)}
+.a-ev.tf{color:rgba(240,237,232,.55)}
+.a-ago{margin-left:auto;font-size:11px;color:rgba(255,255,255,.2);white-space:nowrap;flex-shrink:0}
+
+/* ── T-SHIRT SECTION ── */
+.tsec{padding:80px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.tsec-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.tsec-lbl{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;color:var(--orange);text-transform:uppercase;margin-bottom:14px}
+.tsec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,5vw,58px);line-height:.88;text-transform:uppercase;margin-bottom:18px}
+.tsec-body{font-size:15px;line-height:1.7;color:rgba(255,255,255,.42);margin-bottom:22px}
+.tsec-body strong{color:var(--white);font-weight:600}
+.dl-chip{display:inline-flex;align-items:center;gap:10px;background:rgba(255,110,40,.1);border:1px solid rgba(255,110,40,.25);border-radius:100px;padding:10px 20px;margin-bottom:24px}
+.dl-chip span{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+.tee-visual{aspect-ratio:1/1;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.tee-wm{position:absolute;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;text-transform:uppercase;color:rgba(26,47,232,.06);pointer-events:none;white-space:nowrap}
+.tee-svg{position:relative;z-index:1;width:58%;max-width:230px}
+.swatches{display:flex;gap:10px;margin-top:20px;position:relative;z-index:1}
+.sw{width:28px;height:28px;border-radius:50%;cursor:pointer;transition:transform .2s;border:2px solid transparent}
+.sw:hover{transform:scale(1.15)}
+.sw.on{border-color:var(--white);box-shadow:0 0 0 3px rgba(255,255,255,.2)}
+.sw-bk{background:#111}.sw-bl{background:var(--blue)}.sw-or{background:var(--orange)}.sw-wh{background:var(--white)}
+.tee-cap{position:relative;z-index:1;margin-top:14px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.22)}
+
+/* ── EVENTS ── */
+.events{padding:100px 0}
+.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(32px,4.5vw,52px);line-height:.9;text-transform:uppercase}
+.sec-link{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;color:rgba(255,255,255,.32);text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:2px;transition:color .2s,border-color .2s}
+.sec-link:hover{color:var(--white);border-color:var(--white)}
+.ev-stack{display:flex;flex-direction:column;gap:3px}
+.ev-card{display:grid;grid-template-columns:72px 1fr 1fr auto;align-items:center;gap:40px;padding:34px 40px;border-radius:12px;position:relative;overflow:hidden;transition:transform .3s;color:inherit}
+.ev-card:hover{transform:translateX(6px)}
+.ev-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;border-radius:12px}
+.ev-card:hover::before{opacity:1}
+.ec-mv{background:rgba(26,47,232,.08);border:1px solid rgba(26,47,232,.2)}.ec-mv::before{background:rgba(26,47,232,.05)}
+.ec-hl{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}.ec-hl::before{background:rgba(255,110,40,.05)}
+.ec-tf{background:rgba(240,237,232,.04);border:1px solid rgba(240,237,232,.1)}.ec-tf::before{background:rgba(240,237,232,.03)}
+.ev-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:60px;line-height:1;letter-spacing:-.04em;color:rgba(255,255,255,.07);position:relative;z-index:1}
+.ev-l{position:relative;z-index:1}
+.ev-verb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(38px,5.5vw,66px);line-height:.85;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:4px}
+.ec-mv .ev-verb{color:var(--white)}.ec-hl .ev-verb{color:var(--white)}.ec-tf .ev-verb{color:var(--chalk)}
+.ev-type{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.ec-mv .ev-type{color:rgba(100,130,255,.65)}.ec-hl .ev-type{color:rgba(255,110,40,.6)}.ec-tf .ev-type{color:rgba(240,237,232,.35)}
+.ev-m{position:relative;z-index:1}
+.ev-date{font-size:12px;font-weight:600;letter-spacing:.07em;color:rgba(255,255,255,.48);text-transform:uppercase;margin-bottom:7px}
+.ev-body{font-size:14px;line-height:1.6;color:rgba(255,255,255,.36);max-width:320px}
+.ev-pill{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:100px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:transform .2s,opacity .2s;border:none;cursor:pointer}
+.ev-pill:hover{transform:scale(1.04);opacity:.9}
+.pm{background:var(--blue);color:var(--white)}.ph{background:var(--orange);color:var(--white)}.pt{background:var(--chalk);color:var(--black)}
+
+/* ── MERCH / SHOP ── */
+.shop{padding:100px 0;border-top:1px solid rgba(255,255,255,.06)}
+.shop-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px}
+.shop-title-wrap{}
+.shop-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:12px}
+.shop-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(38px,5vw,64px);line-height:.88;text-transform:uppercase}
+.shop-title .to{color:var(--orange)}
+.shop-sub{font-size:15px;line-height:1.65;color:rgba(255,255,255,.42);max-width:480px;margin-top:16px}
+.shop-cta-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.shop-all-link{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;color:rgba(255,255,255,.32);text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:2px;transition:color .2s,border-color .2s;white-space:nowrap}
+.shop-all-link:hover{color:var(--white);border-color:var(--white)}
+
+/* Product grid */
+.merch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.merch-card{border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);transition:transform .3s,border-color .3s;cursor:pointer;position:relative}
+.merch-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.15)}
+.merch-img{aspect-ratio:1/1;overflow:hidden;position:relative}
+.merch-img-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+.merch-img-bg.bg-blue{background:linear-gradient(135deg,rgba(26,47,232,.3),rgba(26,47,232,.1))}
+.merch-img-bg.bg-dark{background:linear-gradient(135deg,rgba(20,20,20,.8),rgba(40,40,40,.4))}
+.merch-img-bg.bg-orange{background:linear-gradient(135deg,rgba(255,110,40,.25),rgba(255,110,40,.08))}
+.merch-img-bg.bg-chalk{background:linear-gradient(135deg,rgba(240,237,232,.15),rgba(240,237,232,.05))}
+.merch-tee-preview{font-family:'Barlow Condensed',sans-serif;font-weight:900;text-align:center;pointer-events:none}
+.merch-badge{position:absolute;top:12px;left:12px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:100px}
+.badge-new{background:var(--blue);color:var(--white)}
+.badge-limited{background:var(--orange);color:var(--white)}
+.badge-bestseller{background:rgba(255,255,255,.15);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.2)}
+.merch-info{padding:16px 16px 18px}
+.merch-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-bottom:4px}
+.merch-desc{font-size:12px;color:rgba(255,255,255,.38);line-height:1.4;margin-bottom:12px}
+.merch-bottom{display:flex;align-items:center;justify-content:space-between}
+.merch-price{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;color:var(--white);letter-spacing:.02em}
+.merch-shop-btn{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);background:transparent;transition:background .2s,color .2s,border-color .2s;cursor:pointer}
+.merch-card:hover .merch-shop-btn{background:var(--blue);color:var(--white);border-color:var(--blue)}
+
+/* Merch color swatches row */
+.merch-colors{display:flex;gap:6px;margin-bottom:10px}
+.mc{width:14px;height:14px;border-radius:50%;border:1px solid rgba(255,255,255,.2)}
+
+/* Shop CTA banner */
+.shop-banner{margin-top:32px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.shop-banner-left{}
+.shop-banner-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;letter-spacing:.02em;text-transform:uppercase;margin-bottom:4px}
+.shop-banner-sub{font-size:13px;color:rgba(255,255,255,.42);line-height:1.5}
+.shop-banner-sub strong{color:rgba(255,255,255,.7);font-weight:600}
+.shop-banner-btn{background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:14px 32px;border-radius:100px;white-space:nowrap;transition:background .2s,transform .2s;display:inline-block}
+.shop-banner-btn:hover{background:var(--chalk);transform:translateY(-1px)}
+
+/* ── DONATE ── */
+.donate{padding:0 0 100px}
+.donate-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden}
+.donate-cols{display:grid;grid-template-columns:1fr 1fr}
+.donate-l{padding:60px 56px;border-right:1px solid rgba(255,255,255,.08)}
+.donate-r{padding:60px 56px}
+.d-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;color:var(--orange);text-transform:uppercase;margin-bottom:14px}
+.d-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(34px,4vw,52px);line-height:.88;text-transform:uppercase;margin-bottom:18px}
+.d-body{font-size:15px;line-height:1.7;color:rgba(255,255,255,.42);margin-bottom:24px}
+.d-body strong{color:var(--white);font-weight:600}
+.amt-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.amt{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:.06em;padding:11px 22px;border-radius:100px;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.7);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.amt:hover,.amt.on{background:var(--blue);color:var(--white);border-color:var(--blue)}
+.amt.cust{border-style:dashed}
+.custom-row{display:none;gap:10px;margin-bottom:20px}
+.custom-row.show{display:flex}
+.custom-in{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:13px 20px;font-family:'Barlow',sans-serif;font-size:15px;color:var(--white);outline:none}
+.custom-in::placeholder{color:rgba(255,255,255,.3)}
+.d-btn{background:var(--orange);color:var(--white);border:none;border-radius:100px;padding:15px 36px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:transform .2s,opacity .2s;width:100%}
+.d-btn:hover{transform:translateY(-1px);opacity:.9}
+.d-note{font-size:11px;color:rgba(255,255,255,.25);margin-top:14px;line-height:1.55}
+.impact-lbl{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:22px}
+.impacts{display:flex;flex-direction:column}
+.impact{display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.impact:last-child{border-bottom:none}
+.i-amt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;min-width:60px;line-height:1;margin-top:1px}
+.i-desc{font-size:14px;line-height:1.55;color:rgba(255,255,255,.45)}
+.i-desc strong{color:rgba(255,255,255,.75);font-weight:600}
+.sbar{border-top:1px solid rgba(255,255,255,.06);padding:32px 56px;display:flex;align-items:flex-start;gap:48px;flex-wrap:wrap}
+.sbar-sec{flex:1;min-width:220px}
+.sbar-lbl{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:4px;white-space:nowrap}
+.b-dmh{background:rgba(0,75,135,.25);color:#6aabff;border:1px solid rgba(0,75,135,.4)}
+.b-ph{background:rgba(0,103,71,.25);color:#6adba5;border:1px solid rgba(0,103,71,.4)}
+.b-ta{background:rgba(255,110,40,.12);color:var(--orange);border:1px solid rgba(255,110,40,.25)}
+.b-cc{background:rgba(255,255,255,.04);color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.09)}
+.b-lead{background:rgba(26,47,232,.15);color:#8aa0ff;border:1px solid rgba(26,47,232,.3);cursor:pointer}
+
+/* ── SIGNUP ── */
+.signup{padding:0 0 100px}
+.signup-in{background:var(--blue);border-radius:20px;padding:72px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;position:relative;overflow:hidden}
+.signup-wm{position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:130px;line-height:.85;text-transform:uppercase;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;writing-mode:vertical-rl}
+.s-lbl{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:14px}
+.s-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,4.5vw,58px);line-height:.88;text-transform:uppercase;margin-bottom:14px}
+.s-sub{font-size:15px;line-height:1.65;color:rgba(255,255,255,.55)}
+.s-form{position:relative;z-index:1}
+.s-inputs{display:flex;flex-direction:column;gap:10px}
+.s-input{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:15px 22px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--white);outline:none;transition:background .2s,border-color .2s;width:100%}
+.s-input::placeholder{color:rgba(255,255,255,.4)}
+.s-input:focus{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
+.s-submit{background:var(--white);color:var(--blue);border:none;border-radius:100px;padding:15px 36px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:transform .2s;width:100%;margin-top:4px}
+.s-submit:hover{transform:translateY(-1px)}
+.s-disc{font-size:11px;color:rgba(255,255,255,.3);margin-top:12px;line-height:1.5;text-align:center}
+
+/* ── ABOUT ── */
+.about{padding:100px 0;border-top:1px solid rgba(255,255,255,.06)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.about-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(32px,4vw,50px);line-height:.9;text-transform:uppercase;margin-bottom:22px}
+.about-body{font-size:15px;line-height:1.75;color:rgba(255,255,255,.42);margin-bottom:16px}
+.about-body strong{color:var(--white);font-weight:600}
+.p-lbl{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:14px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07)}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mosaic-main{grid-column:1/-1;border-radius:12px;overflow:hidden;aspect-ratio:16/9}
+.mosaic-main img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .6s}
+.mosaic-main:hover img{transform:scale(1.03)}
+.mosaic-sub{border-radius:10px;overflow:hidden;aspect-ratio:3/4}
+.mosaic-sub img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s}
+.mosaic-sub:hover img{transform:scale(1.04)}
+.mosaic-cap{margin-top:12px;font-size:11px;font-weight:600;letter-spacing:.12em;color:rgba(255,255,255,.22);text-transform:uppercase}
+
+/* ── FINAL CTA ── */
+.fcta{padding:130px 0 150px;text-align:center;position:relative;overflow:hidden}
+.fcta-wm{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;overflow:hidden;pointer-events:none}
+.fcta-wm span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(80px,15vw,200px);line-height:.85;text-transform:uppercase;white-space:nowrap;color:rgba(255,255,255,.022);display:block}
+.fcta-content{position:relative;z-index:1}
+.fcta-eye{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.26);text-transform:uppercase;margin-bottom:22px}
+.fcta-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(58px,10vw,138px);line-height:.84;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:40px}
+.fcta-title .tb{color:var(--blue)}.fcta-title .to{color:var(--orange)}
+.fcta-acts{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn-big{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:17px 44px;border-radius:100px;transition:transform .2s,opacity .2s;display:inline-block}
+.btn-big:hover{transform:translateY(-2px);opacity:.88}
+.bb-bl{background:var(--blue);color:var(--white)}.bb-or{background:var(--orange);color:var(--white)}
+.bb-out{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2)}
+.bb-out:hover{border-color:rgba(255,255,255,.5)}
+.bb-wh{background:var(--white);color:var(--black)}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.f-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.f-logo span{color:var(--blue)}
+.f-mid{font-size:11px;color:rgba(255,255,255,.18);letter-spacing:.05em;text-align:center;line-height:1.7}
+.f-right{font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.22);text-transform:uppercase}
+.f-right a{color:var(--blue)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.merch-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  .container{padding:0 20px}
+  nav{padding:16px 20px}
+  .nav-r .nav-link{display:none}
+  .hero-content{padding:0 20px 52px}
+  .intro-grid,.tsec-grid,.donate-cols,.signup-in,.about-grid{grid-template-columns:1fr;gap:36px}
+  .donate-l{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .donate-l,.donate-r{padding:36px 28px}
+  .sbar{padding:28px 28px}
+  .signup-in{padding:40px 28px}
+  .ev-card{grid-template-columns:1fr;gap:12px;padding:22px 18px}
+  .ev-n{display:none}
+  .mosaic{grid-template-columns:1fr}
+  .mosaic-main,.mosaic-sub{grid-column:auto;aspect-ratio:16/9}
+  footer{flex-direction:column;text-align:center;padding:28px 20px}
+  .tbar{padding:12px 20px}
+  .shop-header{flex-direction:column;align-items:flex-start;gap:20px}
+  .merch-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+}
+@media(max-width:480px){.merch-grid{grid-template-columns:1fr}}
+
+/* ── SHOP PHOTO ── */
+.shop{padding:100px 0;border-top:1px solid rgba(255,255,255,.06)}
+.shop-photo-inner{display:grid;grid-template-columns:1fr 1fr;border-radius:20px;overflow:hidden;min-height:560px}
+.shop-photo-img{position:relative;overflow:hidden}
+.shop-photo-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s ease}
+.shop-photo-inner:hover .shop-photo-img img{transform:scale(1.03)}
+.shop-photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--black) 100%)}
+.shop-photo-content{background:var(--black);display:flex;flex-direction:column;justify-content:center;padding:64px 56px}
+.shop-photo-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:16px}
+.shop-photo-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(44px,6vw,76px);line-height:.86;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:20px}
+.shop-photo-sub{font-size:15px;line-height:1.7;color:rgba(255,255,255,.42);margin-bottom:32px;max-width:360px}
+.shop-photo-btn{display:inline-block;background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:15px 36px;border-radius:100px;transition:background .2s,transform .2s;align-self:flex-start}
+.shop-photo-btn:hover{background:var(--chalk);transform:translateY(-1px)}
+@media(max-width:900px){
+  .shop-photo-inner{grid-template-columns:1fr}
+  .shop-photo-overlay{background:linear-gradient(to bottom,transparent 50%,var(--black) 100%)}
+  .shop-photo-img{aspect-ratio:4/3}
+  .shop-photo-content{padding:40px 28px}
+}
+
+/* ── TEE PHOTO ── */
+.tee-photo{border-radius:16px;overflow:hidden;aspect-ratio:3/4;position:relative}
+.tee-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s}
+.tee-photo:hover img{transform:scale(1.03)}
+.tee-photo-tag{position:absolute;bottom:0;left:0;right:0;padding:20px 20px 18px;background:linear-gradient(to top,rgba(8,8,8,.85),transparent);font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+/* ── SPEAKERS ── */
+.speakers{padding:80px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.spk-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.spk-body{font-size:15px;line-height:1.75;color:rgba(255,255,255,.42);margin-bottom:20px}
+.spk-body strong{color:var(--white);font-weight:600}
+.spk-apply-box{background:rgba(26,47,232,.08);border:1px solid rgba(26,47,232,.2);border-radius:16px;padding:28px 32px}
+.spk-apply-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(100,130,255,.7);margin-bottom:12px}
+.spk-apply-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;margin-bottom:12px}
+.spk-apply-body{font-size:13px;line-height:1.65;color:rgba(255,255,255,.4);margin-bottom:20px}
+.spk-fields{display:flex;flex-direction:column;gap:10px}
+.spk-input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px 16px;font-family:'Barlow',sans-serif;font-size:13px;color:var(--white);outline:none;width:100%;transition:border-color .2s}
+.spk-input:focus{border-color:rgba(100,130,255,.5)}
+.spk-input::placeholder{color:rgba(255,255,255,.28)}
+.spk-submit{background:var(--blue);color:var(--white);border:none;border-radius:8px;padding:13px 24px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;width:100%;margin-top:4px;transition:opacity .2s}
+.spk-submit:hover{opacity:.85}
+.spk-or{text-align:center;font-size:12px;color:rgba(255,255,255,.25);margin:10px 0}
+.spk-email-link{display:block;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(100,130,255,.7);padding:10px;border:1px solid rgba(26,47,232,.2);border-radius:8px;transition:background .2s}
+.spk-email-link:hover{background:rgba(26,47,232,.1)}
+.spk-slots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.spk-slot{background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.1);border-radius:12px;padding:20px;text-align:center}
+.spk-slot-dot{width:12px;height:12px;border-radius:50%;margin:0 auto 10px;border:1px solid currentColor}
+.spk-slot-txt{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.spk-slot-sub{font-size:11px;color:rgba(255,255,255,.15);margin-top:4px}
+.spk-announced{font-size:11px;font-weight:600;letter-spacing:.12em;color:rgba(255,255,255,.2);text-transform:uppercase;text-align:center;margin-top:16px}
+
+/* ── SPONSORS ── */
+.sponsors{padding:96px 0}
+.sp-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:64px}
+.sp-body{font-size:15px;line-height:1.75;color:rgba(255,255,255,.42);margin-bottom:16px}
+.sp-body strong{color:var(--white);font-weight:600}
+.sp-contact-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px 24px;margin-top:24px}
+.sp-contact-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:10px}
+.sp-contact-email{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:.06em;color:var(--blue);margin-bottom:4px}
+.sp-contact-sub{font-size:12px;color:rgba(255,255,255,.3)}
+.tier-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tier-card{border-radius:16px;padding:28px 28px 24px;position:relative;overflow:hidden}
+.tier-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;padding:5px 12px;border-radius:100px;display:inline-block;margin-bottom:16px}
+.tier-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;line-height:1;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:4px}
+.tier-price{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+.tier-divider{height:1px;margin-bottom:14px}
+.tier-perks{display:flex;flex-direction:column;gap:7px}
+.tier-perk{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.45}
+.tier-perk-dot{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;margin-top:1px}
+.tier-lead{background:linear-gradient(135deg,rgba(26,47,232,.15),rgba(26,47,232,.06));border:1px solid rgba(26,47,232,.35);grid-column:1/-1;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+.tier-lead .tier-tag{background:rgba(26,47,232,.25);color:#8aabff}
+.tier-lead .tier-name{font-size:30px}
+.tier-lead .tier-price{color:rgba(255,255,255,.5)}
+.tier-lead .tier-divider{background:rgba(26,47,232,.3)}
+.tier-lead .tier-perk{color:rgba(255,255,255,.55)}
+.tier-lead .tier-perk-dot{background:rgba(26,47,232,.3);color:#8aabff}
+.tier-lead-badge{background:rgba(26,47,232,.2);border:1px solid rgba(26,47,232,.35);border-radius:12px;padding:16px 20px;text-align:center;min-width:140px}
+.tier-lead-badge-txt{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(100,130,255,.7);margin-bottom:6px}
+.tier-lead-badge-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:var(--white);line-height:1}
+.tier-lead-badge-sub{font-size:10px;color:rgba(255,255,255,.3);margin-top:4px}
+.tier-supporting{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1)}
+.tier-supporting .tier-tag{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)}
+.tier-supporting .tier-price{color:rgba(255,255,255,.4)}
+.tier-supporting .tier-divider{background:rgba(255,255,255,.08)}
+.tier-supporting .tier-perk{color:rgba(255,255,255,.45)}
+.tier-supporting .tier-perk-dot{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)}
+.tier-wellness{background:rgba(255,110,40,.06);border:1px solid rgba(255,110,40,.18)}
+.tier-wellness .tier-tag{background:rgba(255,110,40,.15);color:var(--orange)}
+.tier-wellness .tier-price{color:rgba(255,110,40,.7)}
+.tier-wellness .tier-divider{background:rgba(255,110,40,.15)}
+.tier-wellness .tier-perk{color:rgba(255,255,255,.44)}
+.tier-wellness .tier-perk-dot{background:rgba(255,110,40,.2);color:var(--orange)}
+.tier-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.tier-inkind{background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.1)}
+.tier-inkind .tier-tag{background:rgba(255,255,255,.05);color:rgba(255,255,255,.35)}
+.tier-inkind .tier-price{color:rgba(255,255,255,.3)}
+.tier-inkind .tier-divider{background:rgba(255,255,255,.06)}
+.tier-inkind .tier-perk{color:rgba(255,255,255,.35)}
+.tier-inkind .tier-perk-dot{background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)}
+.tier-supporter{background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.08)}
+.tier-supporter .tier-tag{background:rgba(255,255,255,.05);color:rgba(255,255,255,.3)}
+.tier-supporter .tier-price{color:rgba(255,255,255,.28)}
+.tier-supporter .tier-divider{background:rgba(255,255,255,.06)}
+.tier-supporter .tier-perk{color:rgba(255,255,255,.32)}
+.tier-supporter .tier-perk-dot{background:rgba(255,255,255,.05);color:rgba(255,255,255,.28)}
+@media(max-width:900px){
+  .spk-grid,.sp-intro-grid{grid-template-columns:1fr;gap:36px}
+  .tier-grid{grid-template-columns:1fr}
+  .tier-lead{grid-template-columns:1fr}
+  .tier-row{grid-template-columns:1fr}
+}
+
+/* ── TRAILER ── */
+.trailer{padding:80px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.trailer-inner{position:relative;border-radius:20px;overflow:hidden;background:#000;aspect-ratio:16/9;max-width:900px;margin:0 auto;box-shadow:0 32px 80px rgba(0,0,0,.6)}
+.trailer-inner video{width:100%;height:100%;object-fit:cover;display:block}
+.trailer-inner::before{content:'';position:absolute;inset:0;border-radius:20px;border:1px solid rgba(255,255,255,.08);pointer-events:none;z-index:2}
+.trailer-label{text-align:center;margin-bottom:28px}
+.trailer-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:10px}
+.trailer-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(28px,4vw,44px);line-height:.9;text-transform:uppercase;letter-spacing:-.01em}
+.trailer-title span{color:var(--blue)}
+
+/* ── POWERED BY ── */
+.powered-by{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.powered-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);white-space:nowrap}
+.powered-logo{height:44px;width:auto;opacity:.85;filter:brightness(0) invert(1);transition:opacity .2s}
+.powered-logo:hover{opacity:1}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-icon">UN<br>STOP<br>PABLE</div>
+  <div class="popup-text">
+    <div class="popup-title">The Unstoppable Experience</div>
+    <div class="popup-sub">3 events this May. <strong>Free tee if you register by May 2nd.</strong> 377+ already joined.</div>
+  </div>
+  <button class="popup-cta" onclick="goToEvents()">Find My Event</button>
+  <button class="popup-x" onclick="dismissPopup()">✕</button>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-dot"></div>
+  <div>
+    <div class="toast-body"><strong id="t-name">Someone</strong> just registered for <span id="t-ev" class="a-ev">MOVE</span></div>
+    <div class="toast-ago">just now</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://www.healthmatters.clinic" class="nav-logo">Health Matters Clinic</a>
+  <div class="nav-r">
+    <a href="#trailer" class="nav-link">Watch</a>
+    <a href="#events" class="nav-link">Events</a>
+    <a href="#shop" class="nav-link">Shop</a>
+    <a href="#speakers" class="nav-link">Speak</a>
+    <a href="#sponsors" class="nav-link">Partners</a>
+    <a href="#donate" class="nav-link">Donate</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#events" class="nav-cta">Find My Experience</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo"><img src="assets/hero.png" alt="Team Unstoppable running crew with Los Angeles skyline at golden hour — Health Matters Clinic Take Action LA"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-wmark" id="hwm">
+    <span>UNSTOPPABLE</span><span>UNSTOPPABLE</span><span>UNSTOPPABLE</span><span>UNSTOPPABLE</span><span>UNSTOPPABLE</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge"><div class="badge-dot"></div><img src="assets/lacdmh-logo.png" style="height:18px;opacity:.7;filter:brightness(0) invert(1)" alt="Take Action LA"><span class="badge-text" style="padding-left:4px">Mental Health Awareness Month · May 2026</span></div>
+    <div class="hero-eyebrow">Health Matters Clinic Presents</div>
+    <h1 class="hero-title">The<br><span class="tb">Unstoppable</span><br>Experience</h1>
+    <p class="hero-sub">Three events. One movement. No matter where you are on your journey — there's a space built for you.</p>
+    <div class="hero-actions">
+      <a href="#events" class="btn-primary">Find My Experience →</a>
+      <a href="#about" class="btn-ghost"><div class="ghost-ring">↓</div>Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- T-SHIRT BAR -->
+<div class="tbar">
+  <span class="tbar-text">Register by May 2nd <span>and get a FREE Unstoppable tee —</span> Limited sizes</span>
+  <div class="cdown">
+    <div class="cdu"><span class="cdn" id="cd-d">--</span><span class="cdl">Days</span></div>
+    <span class="cds">:</span>
+    <div class="cdu"><span class="cdn" id="cd-h">--</span><span class="cdl">Hrs</span></div>
+    <span class="cds">:</span>
+    <div class="cdu"><span class="cdn" id="cd-m">--</span><span class="cdl">Min</span></div>
+  </div>
+  <a href="#events" class="tbar-cta">Register Now →</a>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">Move</span><span class="ticker-item">Heal</span><span class="ticker-item">Transform</span>
+    <span class="ticker-item">May 2026 · Los Angeles</span><span class="ticker-item">Take Action LA</span>
+    <span class="ticker-item">Show Up</span><span class="ticker-item">Be Heard</span><span class="ticker-item">Become Unstoppable</span>
+    <span class="ticker-item">Free Tee · Register by May 2nd</span><span class="ticker-item">Shop the Drop →</span>
+    <span class="ticker-item">Move</span><span class="ticker-item">Heal</span><span class="ticker-item">Transform</span>
+    <span class="ticker-item">May 2026 · Los Angeles</span><span class="ticker-item">Take Action LA</span>
+    <span class="ticker-item">Show Up</span><span class="ticker-item">Be Heard</span><span class="ticker-item">Become Unstoppable</span>
+    <span class="ticker-item">Free Tee · Register by May 2nd</span><span class="ticker-item">Shop the Drop →</span>
+  </div>
+</div>
+
+
+<!-- TRAILER -->
+<section class="trailer">
+  <div class="container">
+    <div class="trailer-label reveal">
+      <div class="trailer-eyebrow">Now Playing</div>
+      <div class="trailer-title">The <span>Unstoppable</span> Experience</div>
+    </div>
+    <div class="trailer-inner reveal rd1">
+      <video
+        controls
+        preload="metadata"
+        poster="assets/hero.png"
+        playsinline
+        style="width:100%;height:100%;object-fit:cover">
+        <source src="assets/trailer.mov" type="video/mp4">
+        <source src="assets/trailer.mov" type="video/quicktime">
+        Your browser does not support video playback.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="reveal">
+        <div class="micro">Why This Matters</div>
+        <h2 class="intro-hl">For too long,<br>conversations<br>around mental<br>health have been<br><em>kept quiet.</em></h2>
+      </div>
+      <div class="intro-r reveal rd2">
+        <p>This May, we're doing things differently. We're creating <strong>space to move, to heal, and to transform together.</strong></p>
+        <p>Whether you need to catch your breath, find community, or take the next step — the Unstoppable Experience was built for you. Show up exactly as you are.</p>
+        <div class="live-ctr">
+          <div class="ctr-top"><div class="live-dot"></div><span class="live-lbl">Live — Joining the Movement</span></div>
+          <div class="ctr-num"><span id="reg-count">377</span>+</div>
+          <div class="ctr-sub">and counting have joined the <strong>Unstoppable Experience</strong></div>
+          <div class="act-feed" id="act-feed">
+            <div class="act-item"><div class="av av-b">JR</div><div><span class="a-name">Jasmine R.</span> registered for <span class="a-ev">MOVE</span></div><span class="a-ago">2m ago</span></div>
+            <div class="act-item"><div class="av av-o">DM</div><div><span class="a-name">David M.</span> registered for <span class="a-ev heal">HEAL</span></div><span class="a-ago">11m ago</span></div>
+            <div class="act-item"><div class="av av-g">SL</div><div><span class="a-name">Sofia L.</span> registered for <span class="a-ev tf">TRANSFORM</span></div><span class="a-ago">24m ago</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- T-SHIRT SECTION -->
+<section class="tsec" id="tshirt">
+  <div class="container">
+    <div class="tsec-grid">
+      <div class="reveal">
+        <div class="tsec-lbl">Limited Offer · While Supplies Last</div>
+        <h2 class="tsec-title">Register Early.<br>Rock the Tee.</h2>
+        <p class="tsec-body">Everyone who registers for any Unstoppable Experience event <strong>by May 2nd</strong> gets a free Unstoppable tee — our limited-edition Health Matters Clinic drop.</p>
+        <div class="dl-chip"><span>Deadline: May 2, 2026 · Limited Sizes</span></div>
+        <p class="tsec-body" style="font-size:14px">Already registered? Bring your confirmation to the event and pick up your tee at check-in while supplies last.</p>
+        <a href="#events" class="btn-primary" style="display:inline-block;margin-top:10px;background:var(--orange)">Claim My Free Tee →</a>
+      </div>
+      <div class="reveal rd2">
+        <div class="tee-photo">
+          <img src="assets/tee.png" alt="Unstoppable tee — white and black colorways — Health Matters Clinic">
+          <div class="tee-photo-tag">Unstoppable Tee · White &amp; Black · healthmatters.clinic/shop</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="container">
+    <div class="sec-hdr reveal">
+      <div><div class="micro">Three Experiences · One Movement</div><div class="sec-title">Find Your<br>Experience</div></div>
+      <a href="https://www.healthmatters.clinic/resources/eventfinder" class="sec-link" target="_blank">All Events ↗</a>
+    </div>
+    <div class="ev-stack">
+      <a href="https://www.healthmatters.clinic/resources/eventfinder?event=event-1772063101013&rsvp=true" class="ev-card ec-mv reveal" target="_blank">
+        <div class="ev-n">01</div>
+        <div class="ev-l"><div class="ev-verb">Move</div><div class="ev-type">Wellness Walk / Run</div></div>
+        <div class="ev-m">
+          <div class="ev-date">May 9, 2026 · 8:00 AM · 123 W Manchester Blvd, Inglewood</div>
+          <div class="ev-body">Move your body, clear your mind, connect with your crew. Lace up. Walk, run, recharge together. All paces. Free giveaways.</div>
+        </div>
+        <button class="ev-pill pm">Register →</button>
+      </a>
+      <a href="https://www.healthmatters.clinic/resources/eventfinder?event=event-1772064063990&rsvp=true" class="ev-card ec-hl reveal rd1" target="_blank">
+        <div class="ev-n">02</div>
+        <div class="ev-l"><div class="ev-verb">Heal</div><div class="ev-type">Wellness Meetup</div></div>
+        <div class="ev-m">
+          <div class="ev-date">May 20, 2026 · 5:45 PM · 123 W Manchester Blvd, Inglewood</div>
+          <div class="ev-body">Music, movement, and self-care experiences made for YOU. Pull up. Tap in. Leave Unstoppable. Free giveaways.</div>
+        </div>
+        <button class="ev-pill ph">RSVP →</button>
+      </a>
+      <a href="https://www.healthmatters.clinic/resources/eventfinder?event=event-1773943614235&rsvp=true" class="ev-card ec-tf reveal rd2" target="_blank">
+        <div class="ev-n">03</div>
+        <div class="ev-l"><div class="ev-verb">Transform</div><div class="ev-type">Virtual · Live</div></div>
+        <div class="ev-m">
+          <div class="ev-date">May 27, 2026 · 6:00–7:00 PM · Online — Join From Anywhere</div>
+          <div class="ev-body">Step into your next chapter. A live, interactive virtual session to reflect, learn, and grow. No travel needed.</div>
+        </div>
+        <button class="ev-pill pt">Join →</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP / MERCH -->
+<section class="shop" id="shop">
+  <div class="container">
+    <div class="shop-photo-wrap reveal">
+      <div class="shop-photo-inner">
+        <div class="shop-photo-img">
+          <img src="assets/shop-tote.png" alt="Unstoppable tote bag — Health Matters Clinic merch">
+          <div class="shop-photo-overlay"></div>
+        </div>
+        <div class="shop-photo-content">
+          <div class="shop-photo-eyebrow">Wear the Movement</div>
+          <h2 class="shop-photo-title">Shop the<br><span style="color:var(--orange)">Unstoppable</span><br>Drop</h2>
+          <p class="shop-photo-sub">Limited-edition merch from Health Matters Clinic. Hoodies, tees, hats, and totes. Every purchase supports free community health programs across Los Angeles.</p>
+          <a href="https://www.healthmatters.clinic/shop" class="shop-photo-btn" target="_blank">View Full Store →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section class="speakers" id="speakers">
+  <div class="container">
+    <div class="spk-grid">
+      <div class="reveal">
+        <div class="micro">Speakers & Voices</div>
+        <h2 class="sec-title" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,5vw,56px);line-height:.9;text-transform:uppercase;margin-bottom:20px">Want to<br>Speak?</h2>
+        <p class="spk-body">We're looking for <strong>community voices, healers, practitioners, and leaders</strong> who want to share their story, expertise, or vision for mental wellness in LA.</p>
+        <p class="spk-body">Whether you're a licensed therapist, a lived experience advocate, a wellness coach, or a community organizer — there's a stage for you here.</p>
+        <div class="spk-slots">
+          <div class="spk-slot">
+            <div class="spk-slot-dot" style="color:rgba(100,130,255,.5)"></div>
+            <div class="spk-slot-txt" style="color:rgba(100,130,255,.6)">MOVE</div>
+            <div class="spk-slot-sub">Keynote · May 9</div>
+          </div>
+          <div class="spk-slot">
+            <div class="spk-slot-dot" style="color:rgba(255,110,40,.5)"></div>
+            <div class="spk-slot-txt" style="color:rgba(255,110,40,.6)">HEAL</div>
+            <div class="spk-slot-sub">Panel · May 20</div>
+          </div>
+          <div class="spk-slot">
+            <div class="spk-slot-dot" style="color:rgba(18,192,107,.5)"></div>
+            <div class="spk-slot-txt" style="color:rgba(18,192,107,.6)">TRANSFORM</div>
+            <div class="spk-slot-sub">Virtual · May 27</div>
+          </div>
+          <div class="spk-slot">
+            <div class="spk-slot-dot" style="color:rgba(255,255,255,.15)"></div>
+            <div class="spk-slot-txt">More TBA</div>
+            <div class="spk-slot-sub">Announced Soon</div>
+          </div>
+        </div>
+        <div class="spk-announced">Speakers announced on a rolling basis · April–May 2026</div>
+      </div>
+      <div class="reveal rd2">
+        <div class="spk-apply-box">
+          <div class="spk-apply-label">Speaker Application</div>
+          <div class="spk-apply-title">Apply to Speak</div>
+          <div class="spk-apply-body">Tell us who you are, what you'd share, and which event fits best. We'll be in touch within 5 business days.</div>
+          <div class="spk-fields">
+            <input class="spk-input" placeholder="Full name" type="text">
+            <input class="spk-input" placeholder="Email address" type="email">
+            <input class="spk-input" placeholder="Topic / talk title" type="text">
+            <select class="spk-input">
+              <option value="">Which event?</option>
+              <option>MOVE — May 9 (Walk/Run)</option>
+              <option>HEAL — May 20 (Wellness Meetup)</option>
+              <option>TRANSFORM — May 27 (Virtual)</option>
+              <option>Open to any</option>
+            </select>
+            <textarea class="spk-input" placeholder="Tell us about you and your talk (2–3 sentences)" rows="3" style="border-radius:8px;resize:vertical"></textarea>
+            <button class="spk-submit" onclick="handleSpeaker(this)">Submit Application</button>
+          </div>
+          <div class="spk-or">— or —</div>
+          <a href="/cdn-cgi/l/email-protection#8be8e4e5ffeae8ffcbe3eeeae7ffe3e6eaffffeef9f8a5e8e7e2e5e2e8" class="spk-email-link"><span class="__cf_email__" data-cfemail="3655595842575542765e53575a425e5b57424253444518555a5f585f55">[email&#160;protected]</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<section class="sponsors" id="sponsors">
+  <div class="container">
+    <div class="sp-intro-grid reveal">
+      <div>
+        <div class="micro">Community Partners</div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,5vw,56px);line-height:.9;text-transform:uppercase;margin-bottom:18px">Join as a<br>Community<br>Partner</h2>
+        <p class="sp-body">The Unstoppable Experience reaches <strong>a targeted, health-conscious community</strong> across three high-impact events in May. Our audience is LA-based, wellness-motivated, and deeply engaged.</p>
+        <p class="sp-body">In partnership with the LA County Department of Mental Health's Take Action campaign — all partner recognition uses <em>"In partnership with"</em> language in compliance with grant guidelines.</p>
+        <div class="sp-contact-box">
+          <div class="sp-contact-label">Partner Inquiries</div>
+          <div class="sp-contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2645494852474552664e43474a524e4b47525243545508454a4f484f45">[email&#160;protected]</a></div>
+          <div class="sp-contact-sub">We respond within 2 business days</div>
+        </div>
+      </div>
+      <div>
+        <div class="micro" style="margin-bottom:16px">Audience Reach</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px 20px">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;line-height:1;color:var(--white)">750<span style="color:var(--blue)">+</span></div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:4px">Event Attendees</div>
+          </div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px 20px">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;line-height:1;color:var(--white)">3K<span style="color:var(--blue)">+</span></div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:4px">Email / Social Reach</div>
+          </div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px 20px">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;line-height:1;color:var(--white)">800<span style="color:var(--blue)">+</span></div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:4px">Active Volunteers</div>
+          </div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px 20px">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:40px;line-height:1;color:var(--white)">3</div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:4px">Events This May</div>
+          </div>
+        </div>
+        <a href="/cdn-cgi/l/email-protection#5d3e3233293c3e291d35383c312935303c2929382f2e733e313433343e" class="btn-primary" style="display:block;text-align:center;padding:15px">Become a Community Partner →</a>
+      </div>
+    </div>
+
+    <div class="tier-grid reveal">
+
+      <div class="tier-card tier-lead">
+        <div>
+          <span class="tier-tag">Lead Community Partner</span>
+          <div class="tier-name">Lead Community Partner</div>
+          <div class="tier-price">Primary Partner · Secured</div>
+          <div class="tier-divider"></div>
+          <div class="tier-perks">
+            <div class="tier-perk"><div class="tier-perk-dot">✓</div>Top placement on all signage, website, and promotional materials</div>
+            <div class="tier-perk"><div class="tier-perk-dot">✓</div>Co-branded alongside Take Action LA · listed as Lead Community Partner</div>
+            <div class="tier-perk"><div class="tier-perk-dot">✓</div>Verbal recognition at all three events</div>
+            <div class="tier-perk"><div class="tier-perk-dot">✓</div>Featured across email + social to 3,000+ audience</div>
+            <div class="tier-perk"><div class="tier-perk-dot">✓</div>On-site activation table + wellness kit inclusion</div>
+            <div class="tier-perk"><div class="tier-perk-dot">✓</div>Post-event recap + impact report</div>
+          </div>
+        </div>
+        <div>
+          <div class="tier-lead-badge">
+            <div class="tier-lead-badge-txt">Status</div>
+            <div class="tier-lead-badge-val">Secured</div>
+            <div class="tier-lead-badge-sub">Primary partner placed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier-card tier-supporting">
+        <span class="tier-tag">Supporting Partner</span>
+        <div class="tier-name">Supporting Partner</div>
+        <div class="tier-price">$2,500 – $5,000</div>
+        <div class="tier-divider"></div>
+        <div class="tier-perks">
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Logo on event materials + website</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>On-site table or brand activation</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Goodie bag + digital goodie bag inclusion</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>1–2 dedicated social media features</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Mention in post-event recap</div>
+        </div>
+      </div>
+
+      <div class="tier-card tier-wellness">
+        <span class="tier-tag">Community Wellness Partner</span>
+        <div class="tier-name">Community Wellness Partner</div>
+        <div class="tier-price">$1,000 – $2,500</div>
+        <div class="tier-divider"></div>
+        <div class="tier-perks">
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Product sampling up to 400 units</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Goodie bag + digital goodie bag inclusion</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Logo on website + event materials</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Group social mention</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tier-row reveal rd1">
+      <div class="tier-card tier-inkind">
+        <span class="tier-tag">Product / In-Kind Partner</span>
+        <div class="tier-name">Product Partner</div>
+        <div class="tier-price">In-Kind · Product or Service</div>
+        <div class="tier-divider"></div>
+        <div class="tier-perks">
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Product in goodie bags + wellness kits</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Optional on-site sampling</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Digital goodie bag inclusion</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Sponsor recognition on website</div>
+        </div>
+      </div>
+      <div class="tier-card tier-supporter">
+        <span class="tier-tag">Community Supporter</span>
+        <div class="tier-name">Community Supporter</div>
+        <div class="tier-price">$500 – $1,000</div>
+        <div class="tier-divider"></div>
+        <div class="tier-perks">
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Digital goodie bag inclusion</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Website mention + recognition</div>
+          <div class="tier-perk"><div class="tier-perk-dot">✓</div>Optional offer or discount for attendees</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="donate" id="donate">
+  <div class="container">
+    <div class="donate-box reveal">
+      <div class="donate-cols">
+        <div class="donate-l">
+          <div class="d-eyebrow">Support the Movement</div>
+          <h2 class="d-title">Fuel the<br>Experience</h2>
+          <p class="d-body">Your donation helps us bring <strong>free mental health events, wellness tools, and community care</strong> directly to Angelenos who need it most — no cost, no barriers.</p>
+          <div class="amt-grid">
+            <button class="amt" onclick="pickAmt('$10',this)">$10</button>
+            <button class="amt" onclick="pickAmt('$25',this)">$25</button>
+            <button class="amt on" onclick="pickAmt('$50',this)">$50</button>
+            <button class="amt" onclick="pickAmt('$100',this)">$100</button>
+            <button class="amt" onclick="pickAmt('$250',this)">$250</button>
+            <button class="amt cust" onclick="toggleCustom()">Other</button>
+          </div>
+          <div class="custom-row" id="custom-row">
+            <input type="text" class="custom-in" id="custom-in" placeholder="Enter amount (e.g. 75)" oninput="customUpdate(this.value)">
+          </div>
+          <button class="d-btn" id="d-btn" onclick="handleDonate()">Donate $50 to Health Matters Clinic →</button>
+          <p class="d-note">Health Matters Clinic is a registered 501(c)(3) nonprofit · EIN 85-3784250 · All donations are tax-deductible · Secure payment processing</p>
+        </div>
+        <div class="donate-r">
+          <div class="impact-lbl">Your Donation in Action</div>
+          <div class="impacts">
+            <div class="impact"><div class="i-amt" style="color:var(--blue)">$10</div><div class="i-desc">Provides <strong>wellness resources and mental health tools</strong> for one community member at an event</div></div>
+            <div class="impact"><div class="i-amt" style="color:var(--blue)">$25</div><div class="i-desc">Covers <strong>supplies and giveaways</strong> that make our events welcoming and barrier-free</div></div>
+            <div class="impact"><div class="i-amt" style="color:var(--orange)">$50</div><div class="i-desc">Helps us <strong>staff a pop-up wellness station</strong> connecting community members to care</div></div>
+            <div class="impact"><div class="i-amt" style="color:var(--orange)">$100</div><div class="i-desc">Supports one <strong>community health worker</strong> for a full day of outreach and engagement</div></div>
+            <div class="impact"><div class="i-amt" style="color:var(--white)">$250+</div><div class="i-desc">Helps fund an <strong>entire event experience</strong> — venue, programming, supplies, and outreach</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="sbar">
+        <div class="sbar-sec">
+          <div class="sbar-lbl">Powered By</div>
+          <div class="powered-by">
+            <img src="assets/lacdmh-logo.png" class="powered-logo" alt="Take Action LA — LA County Department of Mental Health" style="height:56px">
+          </div>
+        </div>
+        <div class="sbar-sec">
+          <div class="sbar-lbl">Lead Supporting Partner</div>
+          <div class="badges">
+            <a class="badge b-lead" href="mailto:contact@healthmatters.clinic?subject=Unstoppable Experience Partnership Inquiry">Become a Lead Supporting Partner →</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNUP -->
+<section class="signup" id="signup">
+  <div class="container">
+    <div class="signup-in reveal">
+      <div class="signup-wm">UNSTOPPABLE</div>
+      <div>
+        <div class="s-lbl">Don't Miss a Thing</div>
+        <h2 class="s-title">Get Updates.<br>Show Up.</h2>
+        <p class="s-sub">Event reminders, t-shirt deadline alerts, new drop notifications, and community resources — straight to your inbox. No spam.</p>
+      </div>
+      <div class="s-form">
+        <div class="s-inputs">
+          <input type="text" class="s-input" placeholder="First name" id="s-name">
+          <input type="email" class="s-input" placeholder="Email address" id="s-email">
+          <button class="s-submit" id="s-btn" onclick="handleSignup()">I'm In — Keep Me Posted</button>
+        </div>
+        <p class="s-disc">Free to attend. Free tee with early registration by May 2nd.<br>Presented by Health Matters Clinic · LA County DMH Take Action Campaign.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="micro">About Health Matters Clinic</div>
+        <h2 class="about-title">Community-<br>Centered<br>Care</h2>
+        <p class="about-body">Health Matters Clinic is a <strong>Los Angeles-based nonprofit</strong> focused on health equity and community-based care. Since 2020, we've served <strong>25,000+ people</strong> through mobile health services, pop-up clinics, street medicine outreach, and mental wellness programs — supported by 800+ volunteers.</p>
+        <p class="about-body">The Unstoppable Experience is part of the <strong>Take Action for Mental Health Awareness Month</strong> campaign — a partnership with the LA County Department of Mental Health to bring accessible, stigma-free mental wellness programming directly into our communities.</p>
+        <div class="p-lbl">Powered By</div>
+        <div class="powered-by">
+          <img src="assets/lacdmh-logo.png" class="powered-logo" alt="Take Action LA — LA County Department of Mental Health" style="height:60px">
+        </div>
+      </div>
+      <div class="reveal rd2">
+        <div class="mosaic">
+          <div class="mosaic-main"><img src="assets/mosaic-main.png" alt="Team Unstoppable running with LA skyline — Health Matters Clinic Take Action LA Mental Health Awareness Month 2026"></div>
+          <div class="mosaic-sub"><img src="assets/flyer-move.png" alt="Live Unstoppable Walk Run — May 9 2026 Inglewood CA"></div>
+          <div class="mosaic-sub"><img src="assets/flyer-heal.png" alt="Unstoppable Wellness Meetup — May 20 2026 Inglewood CA"></div>
+        </div>
+        <div class="mosaic-cap">Team Unstoppable · Los Angeles, CA · May 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="fcta">
+  <div class="fcta-wm"><span>UNSTOPPABLE</span><span>UNSTOPPABLE</span><span>UNSTOPPABLE</span></div>
+  <div class="container">
+    <div class="fcta-content reveal">
+      <div class="fcta-eye">This isn't just about awareness. It's about action.</div>
+      <h2 class="fcta-title">Show Up.<br><span class="tb">Be Heard.</span><br><span class="to">Become</span><br>Unstoppable.</h2>
+      <div class="fcta-acts">
+        <a href="https://www.healthmatters.clinic/resources/eventfinder" class="btn-big bb-bl" target="_blank">Find My Experience →</a>
+        <a href="https://www.healthmatters.clinic/shop" class="btn-big bb-wh" target="_blank">Shop the Drop →</a>
+        <a href="https://www.healthmatters.clinic/donate" class="btn-big bb-or" target="_blank">Donate →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">Health <span>Matters</span> Clinic</div>
+  <div class="f-mid">
+    EIN 85-3784250 · Los Angeles, CA<br>
+    <a href="https://www.healthmatters.clinic/initiatives/takeactionla" style="color:var(--blue)">healthmatters.clinic/initiatives/takeactionla</a> · © 2026 Health Matters Clinic<br>
+    <span style="color:rgba(255,255,255,.12)">Part of the Take Action LA Mental Health Awareness Month Campaign · LA County DMH</span>
+  </div>
+  <div class="f-right"><a href="mailto:contact@healthmatters.clinic">contact@healthmatters.clinic</a></div>
+</footer>
+
+<script>
+// Cursor
+const cur=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.querySelectorAll('a,button,.merch-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+});
+
+// Scroll reveal
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>ro.observe(r));
+
+// Parallax watermark
+const hwm=document.getElementById('hwm');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  hwm&&hwm.querySelectorAll('span').forEach((s,i)=>{s.style.transform=`translateX(${(i%2===0?1:-1)*y*0.04}px)`});
+},{passive:true});
+
+// Countdown to May 2
+function tick(){
+  const diff=new Date('2026-05-02T23:59:59')-new Date();
+  if(diff<=0){document.querySelector('.cdown').innerHTML='<span style="font-family:\'Barlow Condensed\',sans-serif;font-weight:700;font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.1em;text-transform:uppercase">Deadline passed</span>';return;}
+  document.getElementById('cd-d').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+}
+tick();setInterval(tick,60000);
+
+// Popup
+if(!sessionStorage.getItem('ue-pop')){setTimeout(()=>document.getElementById('popup').classList.add('show'),3000);}
+function dismissPopup(){document.getElementById('popup').classList.remove('show');sessionStorage.setItem('ue-pop','1');}
+function goToEvents(){dismissPopup();document.getElementById('events').scrollIntoView({behavior:'smooth'});}
+
+// Live toasts
+const toastData=[
+  ['Marcus T.','MOVE','av-b',''],['Alicia R.','HEAL','av-o','heal'],['Devon W.','TRANSFORM','av-g','tf'],
+  ['Priya S.','MOVE','av-b',''],['Jordan K.','HEAL','av-o','heal'],['Camila V.','TRANSFORM','av-g','tf'],
+  ['Isaiah B.','MOVE','av-b',''],['Nadia O.','HEAL','av-o','heal'],['Tyler M.','TRANSFORM','av-g','tf'],
+  ['Brianna C.','MOVE','av-b',''],['Elena V.','HEAL','av-o','heal'],['Marcus D.','TRANSFORM','av-g','tf'],
+];
+let tIdx=0,count=377;
+const toastEl=document.getElementById('toast'),feedEl=document.getElementById('act-feed'),countEl=document.getElementById('reg-count');
+function showToast(){
+  const[name,event,avCls,evCls]=toastData[tIdx%toastData.length];tIdx++;
+  document.getElementById('t-name').textContent=name;
+  const te=document.getElementById('t-ev');te.textContent=event;te.className='a-ev'+(evCls?' '+evCls:'');
+  toastEl.classList.add('show');
+  const init=name.split(' ').map(w=>w[0]).join('');
+  const item=document.createElement('div');item.className='act-item';
+  item.innerHTML=`<div class="av ${avCls}">${init}</div><div><span class="a-name">${name}</span> registered for <span class="a-ev${evCls?' '+evCls:''}">${event}</span></div><span class="a-ago">just now</span>`;
+  feedEl.prepend(item);
+  const all=feedEl.querySelectorAll('.act-item');if(all.length>4)all[all.length-1].remove();
+  countEl.textContent=++count;
+  setTimeout(()=>toastEl.classList.remove('show'),4500);
+}
+function scheduleToast(){setTimeout(()=>{showToast();scheduleToast();},18000+Math.random()*27000);}
+setTimeout(scheduleToast,9000);
+
+// T-shirt color
+function setTee(fill,stroke,el){
+  document.getElementById('tee-path').setAttribute('fill',fill);
+  document.getElementById('tee-path').setAttribute('stroke',stroke);
+  document.querySelectorAll('.sw').forEach(s=>s.classList.remove('on'));el.classList.add('on');
+}
+
+// Donate
+let selAmt='$50';
+function pickAmt(amt,el){
+  selAmt=amt;
+  document.querySelectorAll('.amt').forEach(b=>b.classList.remove('on'));el.classList.add('on');
+  document.getElementById('d-btn').textContent=`Donate ${amt} to Health Matters Clinic →`;
+  document.getElementById('custom-row').classList.remove('show');
+}
+function toggleCustom(){
+  document.getElementById('custom-row').classList.toggle('show');
+  document.querySelectorAll('.amt').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.amt')[5].classList.add('on');
+  document.getElementById('d-btn').textContent='Donate to Health Matters Clinic →';
+}
+function customUpdate(v){
+  const n=v.replace(/[^0-9.]/g,'');
+  document.getElementById('d-btn').textContent=n?`Donate $${n} to Health Matters Clinic →`:'Donate to Health Matters Clinic →';
+}
+function handleDonate(){window.open('https://www.healthmatters.clinic/donate','_blank');}
+
+// Speaker form
+function handleSpeaker(btn){
+  const form=btn.closest('.spk-apply-box');
+  const name=(form.querySelector('input[placeholder*="name"]')||{}).value||'';
+  const email=(form.querySelector('input[placeholder*="email"]')||{}).value||'';
+  const topic=(form.querySelector('input[placeholder*="topic"]')||{}).value||'';
+  btn.textContent='Sending...';btn.disabled=true;
+  fetch('https://hmc-volunteer-portal-172668994130.us-central1.run.app/api/public/rsvp',{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({eventId:'unstoppable-speaker-2026',eventTitle:'Speaker Application - Unstoppable Experience',eventDate:'May 2026',name:name,email:email,phone:'',needs:'Speaker: '+topic,source:'Take Action LA Speaker Form'})
+  }).catch(()=>{});
+  btn.textContent='Application Sent ✓';
+  btn.style.background='#12c06b';
+}
+
+// Email signup
+function handleSignup(){
+  const name=document.getElementById('s-name').value.trim();
+  const email=document.getElementById('s-email').value.trim();
+  if(!email){document.getElementById('s-email').focus();return;}
+  const btn=document.getElementById('s-btn');
+  btn.textContent='Sending...';btn.disabled=true;
+  // Submit to portal RSVP endpoint
+  fetch('https://hmc-volunteer-portal-172668994130.us-central1.run.app/api/public/rsvp',{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({eventId:'unstoppable-experience-2026',eventTitle:'The Unstoppable Experience',eventDate:'May 2026',name:name,email:email,phone:'',needs:'Newsletter signup',source:'Take Action LA Landing Page'})
+  }).catch(()=>{});
+  btn.textContent=`You're on the list${name?', '+name:''} ✓`;
+  btn.style.background='#12c06b';btn.style.color='#fff';
+  setTimeout(showToast,1500);
+}
+</script>
+
+<!--
+════════════════════════════════════════════════════════
+  WEBFLOW POPUP EMBED
+  Paste this <script> block into a Webflow Embed element
+  on your homepage, /events, and /resources/eventfinder
+  Links to: /initiatives/takeactionla
+  Fires once per session · auto-dismisses after 12s
+════════════════════════════════════════════════════════
+
+<script>
+(function(){
+  if(sessionStorage.getItem('ue-shown'))return;
+  var el=document.createElement('div');
+  el.innerHTML='<div id="_uep" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);z-index:9999;background:#fff;color:#080808;border-radius:16px;padding:18px 52px 18px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 16px 48px rgba(0,0,0,.22);max-width:480px;width:calc(100% - 40px);transition:transform .6s cubic-bezier(.34,1.56,.64,1);cursor:pointer;" onclick="window.location=\'/initiatives/takeactionla\'">'
+  +'<div style="width:44px;height:44px;border-radius:10px;background:#1A2FE8;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:\'Barlow Condensed\',sans-serif;font-weight:900;font-size:9px;color:#fff;text-transform:uppercase;text-align:center;line-height:1.2;">UN<br>STOP<br>PABLE</div>'
+  +'<div style="flex:1;"><div style="font-family:\'Barlow Condensed\',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;margin-bottom:3px;">The Unstoppable Experience</div><div style="font-size:12px;color:rgba(0,0,0,.55);line-height:1.4;">3 events this May. <strong style="color:#080808;">Free tee</strong> if you register by May 2nd.</div></div>'
+  +'<div style="background:#1A2FE8;color:#fff;font-family:\'Barlow Condensed\',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;border-radius:100px;white-space:nowrap;flex-shrink:0;">Find My Event</div>'
+  +'<button onclick="event.stopPropagation();document.getElementById(\'_uep\').parentElement.remove();sessionStorage.setItem(\'ue-shown\',\'1\');" style="position:absolute;top:10px;right:12px;background:none;border:none;cursor:pointer;font-size:16px;color:rgba(0,0,0,.3);">✕</button>'
+  +'</div>';
+  document.body.appendChild(el);
+  setTimeout(()=>{document.getElementById('_uep').style.transform='translateX(0)';},800);
+  setTimeout(()=>{var p=document.getElementById('_uep');if(p){p.style.transform='translate
