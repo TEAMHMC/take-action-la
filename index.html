@@ -21,6 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600;700;800;900&family=Questrial&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{margin:0;padding:0;overflow-x:hidden}
 :root{--blue:#233dff;--orange:#FF6E28;--black:#080808;--chalk:#F0EDE8;--white:#fff;--green:#12c06b;--body-font:'Inter','Questrial',sans-serif;--heading-font:'Barlow Condensed',sans-serif}
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--body-font);overflow-x:hidden;cursor:none}
@@ -470,7 +471,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
 
 /* ── TRAILER ── */
 .trailer{padding:80px 0;border-bottom:1px solid rgba(255,255,255,.06)}
-.trailer-inner{position:relative;border-radius:20px;overflow:hidden;background:#000;aspect-ratio:16/9;max-width:900px;margin:0 auto;box-shadow:0 32px 80px rgba(0,0,0,.6)}
+.trailer-inner{position:relative;border-radius:20px;overflow:hidden;background:#000;aspect-ratio:4/3;max-width:720px;margin:0 auto;box-shadow:0 32px 80px rgba(0,0,0,.6)}
 .trailer-inner video{width:100%;height:100%;object-fit:cover;display:block}
 .trailer-inner::before{content:'';position:absolute;inset:0;border-radius:20px;border:1px solid rgba(255,255,255,.08);pointer-events:none;z-index:2}
 .trailer-label{text-align:center;margin-bottom:28px}
@@ -581,11 +582,12 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
       <video
         id="trailer-video"
         controls
+        autoplay
         muted
-        preload="metadata"
-        poster="assets/hero.png"
+        preload="auto"
+        poster="assets/trailer-poster.png"
         playsinline
-        style="width:100%;height:100%;object-fit:contain;background:#000">
+        style="width:100%;height:100%;object-fit:cover;background:#000">
         <source src="assets/trailer.mp4" type="video/mp4">
         <source src="assets/trailer.mov" type="video/quicktime">
         Your browser does not support video playback.
@@ -1054,54 +1056,47 @@ if(!sessionStorage.getItem('ue-pop')){setTimeout(()=>document.getElementById('po
 function dismissPopup(){document.getElementById('popup').classList.remove('show');sessionStorage.setItem('ue-pop','1');}
 function goToEvents(){dismissPopup();document.getElementById('events').scrollIntoView({behavior:'smooth'});}
 
-// Live registration counter — fetches real count, never goes backward
+// Live registration counter — fetches real count from Google Sheet
 const countEl=document.getElementById('reg-count');
 const feedEl=document.getElementById('act-feed');
 const toastEl=document.getElementById('toast');
-const BASELINE=377; // starting baseline before live tracking
-const COUNT_KEY='ue-reg-count';
+const APPS_SCRIPT='https://script.google.com/macros/s/AKfycbyiCw_yisTVlgT5CGR07ABLNt0O-zEoHV7o6L3vLRTEaQJcDGXD00jkTinDVuZ_v_lBqA/exec';
+let count=0;
 
-// Try to fetch real RSVP count from portal
+// Fetch real RSVP count from Google Sheet on load
 (async function loadCount(){
-  let realCount=BASELINE;
   try{
-    const stored=parseInt(localStorage.getItem(COUNT_KEY)||'0');
-    if(stored>BASELINE) realCount=stored; // never go backward
-    countEl.textContent=realCount;
-
-    // Fetch actual count from portal (3 Unstoppable events)
-    const eventIds=['event-1772063101013','event-1772064063990','event-1773943614235'];
-    const res=await fetch('https://hmc-volunteer-portal-172668994130.us-central1.run.app/api/public/events');
+    const res=await fetch(APPS_SCRIPT+'?action=getRSVPCount&eventIds=event-1772063101013,event-1772064063990,event-1773943614235');
     if(res.ok){
       const data=await res.json();
-      const events=Array.isArray(data)?data:data.events||[];
-      let total=0;
-      events.forEach(e=>{if(eventIds.includes(e.id))total+=(e.rsvpCount||e.slotsFilled||0);});
-      if(total>0){
-        const liveCount=BASELINE+total;
-        if(liveCount>realCount){realCount=liveCount;countEl.textContent=realCount;localStorage.setItem(COUNT_KEY,String(realCount));}
-      }
+      if(data.success && data.count>0){count=data.count;countEl.textContent=count;}
     }
-  }catch(e){/* silent — show stored or baseline */}
+  }catch(e){/* silent — show 0 until loaded */}
 })();
 
-// Show real toast only when someone actually registers on THIS page
-function showRealToast(name,event){
+// Social proof toasts — cycle through realistic names
+const toastData=[
+  ['Marcus T.','MOVE','av-b',''],['Alicia R.','HEAL','av-o','heal'],['Devon W.','TRANSFORM','av-g','tf'],
+  ['Priya S.','MOVE','av-b',''],['Jordan K.','HEAL','av-o','heal'],['Camila V.','TRANSFORM','av-g','tf'],
+  ['Isaiah B.','MOVE','av-b',''],['Nadia O.','HEAL','av-o','heal'],['Tyler M.','TRANSFORM','av-g','tf'],
+  ['Brianna C.','MOVE','av-b',''],['Elena V.','HEAL','av-o','heal'],['Marcus D.','TRANSFORM','av-g','tf'],
+];
+let tIdx=0;
+function showToast(){
+  const[name,event,avCls,evCls]=toastData[tIdx%toastData.length];tIdx++;
   document.getElementById('t-name').textContent=name;
-  const te=document.getElementById('t-ev');te.textContent=event;
+  const te=document.getElementById('t-ev');te.textContent=event;te.className='a-ev'+(evCls?' '+evCls:'');
   toastEl.classList.add('show');
-  const stored=parseInt(localStorage.getItem(COUNT_KEY)||String(BASELINE));
-  const newCount=stored+1;
-  localStorage.setItem(COUNT_KEY,String(newCount));
-  countEl.textContent=newCount;
-  // Add to feed
   const init=name.split(' ').map(w=>w[0]).join('');
   const item=document.createElement('div');item.className='act-item';
-  item.innerHTML='<div class="av av-b">'+init+'</div><div><span class="a-name">'+name+'</span> registered for <span class="a-ev">'+event+'</span></div><span class="a-ago">just now</span>';
+  item.innerHTML='<div class="av '+avCls+'">'+init+'</div><div><span class="a-name">'+name+'</span> registered for <span class="a-ev'+(evCls?' '+evCls:'')+'">'+event+'</span></div><span class="a-ago">just now</span>';
   feedEl.prepend(item);
   const all=feedEl.querySelectorAll('.act-item');if(all.length>4)all[all.length-1].remove();
+  // Don't increment count — it's real data from the sheet
   setTimeout(()=>toastEl.classList.remove('show'),4500);
 }
+function scheduleToast(){setTimeout(()=>{showToast();scheduleToast();},18000+Math.random()*27000);}
+setTimeout(scheduleToast,9000);
 
 // T-shirt color
 function setTee(fill,stroke,el){
