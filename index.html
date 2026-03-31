@@ -15,7 +15,7 @@
 <meta property="og:description" content="Move. Heal. Transform. Three free mental health events this May in Los Angeles for Mental Health Awareness Month. Serving Inglewood, Long Beach, and SPA 8. Register by May 2nd for a free Unstoppable tee.">
 <meta property="og:url" content="https://www.healthmatters.clinic/takeactionla">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://www.healthmatters.clinic/assets/unstoppable-og.jpg">
+<meta property="og:image" content="https://teamhmc.github.io/take-action-la/assets/hero.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600;700;800;900&family=Questrial&display=swap" rel="stylesheet">
@@ -760,7 +760,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
             <button class="spk-submit" onclick="handleSpeaker(this)">Submit Application</button>
           </div>
           <div class="spk-or">— or —</div>
-          <a href="/cdn-cgi/l/email-protection#8be8e4e5ffeae8ffcbe3eeeae7ffe3e6eaffffeef9f8a5e8e7e2e5e2e8" class="spk-email-link"><span class="__cf_email__" data-cfemail="3655595842575542765e53575a425e5b57424253444518555a5f585f55">[email&#160;protected]</span></a>
+          <a href="mailto:unstoppable@healthmatters.clinic?subject=Speaker Inquiry — Unstoppable Experience" class="spk-email-link">unstoppable@healthmatters.clinic</a>
         </div>
       </div>
     </div>
@@ -1102,12 +1102,7 @@ function showToast(){
 function scheduleToast(){setTimeout(()=>{showToast();scheduleToast();},18000+Math.random()*27000);}
 setTimeout(scheduleToast,9000);
 
-// T-shirt color
-function setTee(fill,stroke,el){
-  document.getElementById('tee-path').setAttribute('fill',fill);
-  document.getElementById('tee-path').setAttribute('stroke',stroke);
-  document.querySelectorAll('.sw').forEach(s=>s.classList.remove('on'));el.classList.add('on');
-}
+// T-shirt color (placeholder — no interactive color picker in current version)
 
 // Donate
 let selAmt='$50';
@@ -1166,17 +1161,21 @@ if(trailerVideo){
 function handleSignup(){
   const name=document.getElementById('s-name').value.trim();
   const email=document.getElementById('s-email').value.trim();
+  if(!name){document.getElementById('s-name').focus();return;}
   if(!email){document.getElementById('s-email').focus();return;}
   const btn=document.getElementById('s-btn');
   btn.textContent='Sending...';btn.disabled=true;
-  // Submit to portal RSVP endpoint
   fetch('https://hmc-volunteer-portal-172668994130.us-central1.run.app/api/public/rsvp',{
     method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({eventId:'unstoppable-experience-2026',eventTitle:'The Unstoppable Experience',eventDate:'May 2026',name:name,email:email,phone:'',needs:'Newsletter signup',source:'Take Action LA Landing Page'})
-  }).catch(()=>{});
-  btn.textContent=`You're on the list${name?', '+name:''} ✓`;
-  btn.style.background='#12c06b';btn.style.color='#fff';
-  setTimeout(showToast,1500);
+  }).then(()=>{
+    btn.textContent='You\'re on the list, '+name+' ✓';
+    btn.style.background='#12c06b';btn.style.color='#fff';
+    setTimeout(showToast,1500);
+  }).catch(()=>{
+    btn.textContent='Something went wrong — try again';
+    btn.style.background='#ef4444';btn.disabled=false;
+  });
 }
 </script>
 
