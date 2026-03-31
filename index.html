@@ -59,8 +59,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .nav-r{display:flex;align-items:center;gap:24px;position:relative;z-index:1}
 .nav-link{font-family:var(--body-font);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.45);transition:color .2s}
 .nav-link:hover{color:var(--white)}
-.nav-cta{background:var(--blue);color:var(--white);font-family:var(--body-font);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:11px 24px;border-radius:100px;border:2px solid var(--blue);transition:background .2s,color .2s,border-color .2s}
-.nav-cta:hover{background:var(--white);color:var(--blue);border-color:var(--white)}
+.nav-cta{background:var(--orange);color:var(--white);font-family:var(--body-font);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:11px 24px;border-radius:100px;border:2px solid var(--white);transition:background .2s,color .2s,border-color .2s}
+.nav-cta:hover{background:#e85e1c}
 
 /* ── HERO ── */
 .hero{position:relative;height:100vh;min-height:720px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
@@ -78,8 +78,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-title .tb{color:var(--blue)}
 .hero-sub{margin-top:22px;font-family:var(--body-font);font-size:clamp(14px,1.6vw,17px);line-height:1.65;color:rgba(255,255,255,.48);max-width:480px;animation:fadeUp .8s ease .3s both}
 .hero-actions{margin-top:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;animation:fadeUp .8s ease .4s both}
-.btn-primary{background:var(--blue);color:var(--white);font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:16px 36px;border-radius:100px;display:inline-block;transition:background .2s,transform .2s;border:2px solid var(--blue)}
-.btn-primary:hover{background:transparent;color:var(--white);border-color:var(--white);transform:translateY(-1px)}
+.btn-primary{background:var(--orange);color:var(--white);font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:16px 36px;border-radius:100px;display:inline-block;transition:background .2s,transform .2s;border:2px solid var(--white)}
+.btn-primary:hover{background:#e85e1c;transform:translateY(-1px)}
 .btn-ghost{color:rgba(255,255,255,.55);font-family:var(--body-font);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:color .2s}
 .btn-ghost:hover{color:var(--white)}
 .ghost-ring{width:32px;height:32px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;transition:border-color .2s}
@@ -181,7 +181,7 @@ section{position:relative}
 .ev-body{font-size:14px;line-height:1.6;color:rgba(255,255,255,.36);max-width:320px}
 .ev-pill{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:100px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:transform .2s,opacity .2s;border:none;cursor:pointer}
 .ev-pill:hover{transform:scale(1.04);opacity:.9}
-.pm{background:var(--blue);color:var(--white)}.ph{background:var(--orange);color:var(--white)}.pt{background:var(--chalk);color:var(--black)}
+.pm{background:var(--blue);color:var(--white);border:2px solid var(--white)}.ph{background:var(--orange);color:var(--white);border:2px solid var(--white)}.pt{background:var(--chalk);color:var(--black);border:2px solid var(--white)}
 
 /* ── MERCH / SHOP ── */
 .shop{padding:100px 0;border-top:1px solid rgba(255,255,255,.06)}
@@ -311,9 +311,9 @@ section{position:relative}
 .fcta-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(58px,10vw,138px);line-height:.84;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:40px}
 .fcta-title .tb{color:var(--blue)}.fcta-title .to{color:var(--orange)}
 .fcta-acts{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.btn-big{font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 44px;border-radius:100px;transition:transform .2s,opacity .2s;display:inline-block;border:2px solid transparent}
+.btn-big{font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 44px;border-radius:100px;transition:transform .2s,opacity .2s;display:inline-block;border:2px solid var(--white)}
 .btn-big:hover{transform:translateY(-2px);opacity:.88}
-.bb-bl{background:var(--blue);color:var(--white)}.bb-or{background:var(--orange);color:var(--white)}
+.bb-bl{background:var(--blue);color:var(--white);border-color:var(--white)}.bb-or{background:var(--orange);color:var(--white);border-color:var(--white)}
 .bb-out{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2)}
 .bb-out:hover{border-color:rgba(255,255,255,.5)}
 .bb-wh{background:var(--white);color:var(--black)}
@@ -482,7 +482,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
 /* ── POWERED BY ── */
 .powered-by{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .powered-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);white-space:nowrap}
-.powered-logo{height:44px;width:auto;opacity:.85;filter:brightness(0) invert(1);transition:opacity .2s}
+.powered-logo{height:80px;width:auto;opacity:.9;transition:opacity .2s}
 .powered-logo:hover{opacity:1}
 </style>
 </head>
@@ -492,7 +492,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
 
 <!-- POPUP -->
 <div class="popup" id="popup">
-  <div class="popup-icon" style="background:transparent;padding:0"><img src="assets/unstoppable-logo.png" alt="Unstoppable" style="width:48px;height:48px;object-fit:contain"></div>
+  <div class="popup-icon" style="background:var(--blue);padding:8px;border-radius:12px"><img src="assets/unstoppable-logo-white.png" alt="Unstoppable" style="width:32px;height:32px;object-fit:contain;filter:brightness(0) invert(1)"></div>
   <div class="popup-text">
     <div class="popup-title">The Unstoppable Experience</div>
     <div class="popup-sub">3 events this May. <strong>Free tee if you register by May 2nd.</strong> 377+ already joined.</div>
@@ -887,7 +887,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
       <div>
         <div style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:12px">Powered By</div>
         <div style="display:flex;align-items:center;gap:16px">
-          <img src="assets/takeaction-logo.png" style="height:48px;opacity:.7;filter:brightness(0) invert(1)" alt="Take Action LA">
+          <img src="assets/takeaction-logo.png" style="height:80px;opacity:.9" alt="Take Action LA">
           <span style="font-family:var(--body-font);font-size:13px;color:rgba(255,255,255,.35)">LA County Department of Mental Health · Take Action Campaign</span>
         </div>
       </div>
@@ -1018,7 +1018,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
     <a href="https://www.healthmatters.clinic/initiatives/takeactionla" style="color:var(--blue)">healthmatters.clinic/initiatives/takeactionla</a> · © 2026 Health Matters Clinic<br>
     <span style="color:rgba(255,255,255,.12)">Part of the Take Action LA Mental Health Awareness Month Campaign · LA County DMH</span>
   </div>
-  <div class="f-right"><a href="mailto:contact@healthmatters.clinic">contact@healthmatters.clinic</a></div>
+  <div class="f-right"><a href="mailto:unstoppable@healthmatters.clinic">unstoppable@healthmatters.clinic</a></div>
 </footer>
 
 <script>
@@ -1141,7 +1141,7 @@ function handleSpeaker(btn){
   }).then(()=>{}).catch(()=>{});
   // Also send email as backup
   const mailBody=encodeURIComponent('Speaker Application - Unstoppable Experience\n\nName: '+name+'\nEmail: '+email+'\nTopic: '+topic);
-  window.open('mailto:contact@healthmatters.clinic?subject=Speaker Application - Unstoppable Experience&body='+mailBody,'_blank');
+  window.open('mailto:unstoppable@healthmatters.clinic?subject=Speaker Application - Unstoppable Experience&body='+mailBody,'_blank');
   btn.textContent='Application Sent ✓';
   btn.style.background='#12c06b';
 }
