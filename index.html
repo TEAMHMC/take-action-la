@@ -18,12 +18,12 @@
 <meta property="og:image" content="https://www.healthmatters.clinic/assets/unstoppable-og.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600;700;800;900&family=Questrial&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#1A2FE8;--orange:#FF6E28;--black:#080808;--chalk:#F0EDE8;--white:#fff;--green:#12c06b}
+:root{--blue:#233dff;--orange:#FF6E28;--black:#080808;--chalk:#F0EDE8;--white:#fff;--green:#12c06b;--body-font:'Inter','Questrial',sans-serif;--heading-font:'Barlow Condensed',sans-serif}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden;cursor:none}
+body{background:var(--black);color:var(--white);font-family:var(--body-font);overflow-x:hidden;cursor:none}
 a{text-decoration:none;color:inherit}
 img{display:block}
 
@@ -54,12 +54,12 @@ img{display:block}
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px}
 nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,8,8,.92),transparent);pointer-events:none}
-.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8);position:relative;z-index:1}
-.nav-r{display:flex;align-items:center;gap:28px;position:relative;z-index:1}
-.nav-link{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);transition:color .2s}
+.nav-logo{font-family:var(--body-font);font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.9);position:relative;z-index:1}
+.nav-r{display:flex;align-items:center;gap:24px;position:relative;z-index:1}
+.nav-link{font-family:var(--body-font);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.45);transition:color .2s}
 .nav-link:hover{color:var(--white)}
-.nav-cta{background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;border-radius:100px;transition:background .2s,color .2s}
-.nav-cta:hover{background:var(--blue);color:var(--white)}
+.nav-cta{background:var(--blue);color:var(--white);font-family:var(--body-font);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:11px 24px;border-radius:100px;border:2px solid var(--blue);transition:background .2s,color .2s,border-color .2s}
+.nav-cta:hover{background:var(--white);color:var(--blue);border-color:var(--white)}
 
 /* ── HERO ── */
 .hero{position:relative;height:100vh;min-height:720px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
@@ -75,11 +75,11 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.25em;color:var(--orange);text-transform:uppercase;margin-bottom:10px;animation:fadeUp .8s ease .1s both}
 .hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(64px,12vw,148px);line-height:.84;text-transform:uppercase;letter-spacing:-.02em;animation:fadeUp .8s ease .2s both}
 .hero-title .tb{color:var(--blue)}
-.hero-sub{margin-top:22px;font-size:clamp(14px,1.6vw,17px);line-height:1.65;color:rgba(255,255,255,.48);max-width:480px;animation:fadeUp .8s ease .3s both}
+.hero-sub{margin-top:22px;font-family:var(--body-font);font-size:clamp(14px,1.6vw,17px);line-height:1.65;color:rgba(255,255,255,.48);max-width:480px;animation:fadeUp .8s ease .3s both}
 .hero-actions{margin-top:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;animation:fadeUp .8s ease .4s both}
-.btn-primary{background:var(--blue);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:15px 34px;border-radius:100px;display:inline-block;transition:background .2s,transform .2s}
-.btn-primary:hover{background:#0d1fc0;transform:translateY(-1px)}
-.btn-ghost{color:rgba(255,255,255,.55);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:color .2s}
+.btn-primary{background:var(--blue);color:var(--white);font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:16px 36px;border-radius:100px;display:inline-block;transition:background .2s,transform .2s;border:2px solid var(--blue)}
+.btn-primary:hover{background:transparent;color:var(--white);border-color:var(--white);transform:translateY(-1px)}
+.btn-ghost{color:rgba(255,255,255,.55);font-family:var(--body-font);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:color .2s}
 .btn-ghost:hover{color:var(--white)}
 .ghost-ring{width:32px;height:32px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;transition:border-color .2s}
 .btn-ghost:hover .ghost-ring{border-color:rgba(255,255,255,.55)}
@@ -310,7 +310,7 @@ section{position:relative}
 .fcta-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(58px,10vw,138px);line-height:.84;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:40px}
 .fcta-title .tb{color:var(--blue)}.fcta-title .to{color:var(--orange)}
 .fcta-acts{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.btn-big{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:17px 44px;border-radius:100px;transition:transform .2s,opacity .2s;display:inline-block}
+.btn-big{font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 44px;border-radius:100px;transition:transform .2s,opacity .2s;display:inline-block;border:2px solid transparent}
 .btn-big:hover{transform:translateY(-2px);opacity:.88}
 .bb-bl{background:var(--blue);color:var(--white)}.bb-or{background:var(--orange);color:var(--white)}
 .bb-out{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2)}
@@ -319,11 +319,12 @@ section{position:relative}
 
 /* ── FOOTER ── */
 footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.f-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.f-logo{font-family:var(--body-font);font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35)}
 .f-logo span{color:var(--blue)}
-.f-mid{font-size:11px;color:rgba(255,255,255,.18);letter-spacing:.05em;text-align:center;line-height:1.7}
-.f-right{font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.22);text-transform:uppercase}
-.f-right a{color:var(--blue)}
+.f-mid{font-family:var(--body-font);font-size:12px;color:rgba(255,255,255,.2);letter-spacing:.02em;text-align:center;line-height:1.7}
+.f-right{font-family:var(--body-font);font-size:12px;font-weight:600;color:rgba(255,255,255,.25)}
+.f-right a{color:var(--blue);transition:color .2s}
+.f-right a:hover{color:var(--white)}
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
@@ -584,7 +585,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
         poster="assets/hero.png"
         playsinline
         style="width:100%;height:100%;object-fit:cover">
-        <source src="assets/trailer.mov" type="video/mp4">
+        <source src="assets/trailer.mp4" type="video/mp4">
         <source src="assets/trailer.mov" type="video/quicktime">
         Your browser does not support video playback.
       </video>
