@@ -95,7 +95,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .cdn{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;display:block;color:var(--white)}
 .cdl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .cds{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:rgba(255,255,255,.4)}
-.tbar-cta{background:var(--white);color:var(--orange);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:9px 20px;border-radius:100px;transition:opacity .2s;white-space:nowrap}
+.tbar-cta{background:var(--white);color:var(--orange);font-family:var(--body-font);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;border-radius:100px;border:1.5px solid var(--black);transition:opacity .2s;white-space:nowrap}
 .tbar-cta:hover{opacity:.85}
 
 /* ── TICKER ── */
@@ -121,7 +121,7 @@ section{position:relative}
 .ctr-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
 .live-lbl{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.32)}
-.ctr-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(50px,7vw,84px);line-height:.9;letter-spacing:-.02em;color:var(--white)}
+.ctr-num{font-family:var(--heading-font);font-weight:900;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:.02em;color:var(--white)}
 .ctr-num span{color:var(--blue)}
 .ctr-sub{font-size:13px;color:rgba(255,255,255,.32);margin-top:6px}
 .ctr-sub strong{color:rgba(255,255,255,.6);font-weight:600}
@@ -229,7 +229,8 @@ section{position:relative}
 .shop-banner-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;letter-spacing:.02em;text-transform:uppercase;margin-bottom:4px}
 .shop-banner-sub{font-size:13px;color:rgba(255,255,255,.42);line-height:1.5}
 .shop-banner-sub strong{color:rgba(255,255,255,.7);font-weight:600}
-.shop-banner-btn{background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:14px 32px;border-radius:100px;white-space:nowrap;transition:background .2s,transform .2s;display:inline-block}
+.shop-banner-btn{background:var(--white);color:var(--black);font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:16px 32px;border-radius:100px;border:1.5px solid var(--black);white-space:nowrap;transition:background .2s,transform .2s;display:inline-flex;align-items:center;gap:10px}
+.shop-banner-btn::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--black)}
 .shop-banner-btn:hover{background:var(--chalk);transform:translateY(-1px)}
 
 /* ── DONATE ── */
@@ -250,7 +251,7 @@ section{position:relative}
 .custom-row.show{display:flex}
 .custom-in{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:13px 20px;font-family:'Barlow',sans-serif;font-size:15px;color:var(--white);outline:none}
 .custom-in::placeholder{color:rgba(255,255,255,.3)}
-.d-btn{background:var(--orange);color:var(--white);border:none;border-radius:100px;padding:15px 36px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:transform .2s,opacity .2s;width:100%}
+.d-btn{background:var(--orange);color:var(--white);border:1.5px solid var(--white);border-radius:100px;padding:16px 36px;font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:transform .2s,opacity .2s;width:100%}
 .d-btn:hover{transform:translateY(-1px);opacity:.9}
 .d-note{font-size:11px;color:rgba(255,255,255,.25);margin-top:14px;line-height:1.55}
 .impact-lbl{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:22px}
@@ -269,7 +270,8 @@ section{position:relative}
 .b-ph{background:rgba(0,103,71,.25);color:#6adba5;border:1px solid rgba(0,103,71,.4)}
 .b-ta{background:rgba(255,110,40,.12);color:var(--orange);border:1px solid rgba(255,110,40,.25)}
 .b-cc{background:rgba(255,255,255,.04);color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.09)}
-.b-lead{background:rgba(26,47,232,.15);color:#8aa0ff;border:1px solid rgba(26,47,232,.3);cursor:pointer}
+.b-lead{background:var(--orange);color:var(--white);border:1.5px solid var(--white);border-radius:100px;padding:14px 28px;cursor:pointer;font-family:var(--body-font);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:opacity .2s,transform .2s;display:inline-block;text-decoration:none}
+.b-lead:hover{opacity:.9;transform:translateY(-1px)}
 
 /* ── SIGNUP ── */
 .signup{padding:0 0 100px}
@@ -283,7 +285,7 @@ section{position:relative}
 .s-input{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:15px 22px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--white);outline:none;transition:background .2s,border-color .2s;width:100%}
 .s-input::placeholder{color:rgba(255,255,255,.4)}
 .s-input:focus{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
-.s-submit{background:var(--white);color:var(--blue);border:none;border-radius:100px;padding:15px 36px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:transform .2s;width:100%;margin-top:4px}
+.s-submit{background:var(--white);color:var(--blue);border:1.5px solid var(--black);border-radius:100px;padding:16px 36px;font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:transform .2s;width:100%;margin-top:4px}
 .s-submit:hover{transform:translateY(-1px)}
 .s-disc{font-size:11px;color:rgba(255,255,255,.3);margin-top:12px;line-height:1.5;text-align:center}
 
@@ -331,6 +333,11 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
 .f-right a:hover{color:var(--white)}
 
 /* ── ANIMATIONS ── */
+/* ── ACCESSIBILITY ── */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
@@ -392,19 +399,20 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
 .spk-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
 .spk-body{font-size:15px;line-height:1.75;color:rgba(255,255,255,.42);margin-bottom:20px}
 .spk-body strong{color:var(--white);font-weight:600}
-.spk-apply-box{background:rgba(26,47,232,.08);border:1px solid rgba(26,47,232,.2);border-radius:16px;padding:28px 32px}
-.spk-apply-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(100,130,255,.7);margin-bottom:12px}
-.spk-apply-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;margin-bottom:12px}
-.spk-apply-body{font-size:13px;line-height:1.65;color:rgba(255,255,255,.4);margin-bottom:20px}
+.spk-apply-box{background:rgba(26,47,232,.08);border:1px solid rgba(26,47,232,.2);border-radius:20px;padding:28px 32px}
+.spk-apply-label{font-family:var(--heading-font);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(100,130,255,.7);margin-bottom:12px}
+.spk-apply-title{font-family:var(--heading-font);font-weight:900;font-size:28px;text-transform:uppercase;margin-bottom:12px}
+.spk-apply-body{font-family:var(--body-font);font-size:13px;line-height:1.65;color:rgba(255,255,255,.4);margin-bottom:20px}
 .spk-fields{display:flex;flex-direction:column;gap:10px}
-.spk-input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px 16px;font-family:'Barlow',sans-serif;font-size:13px;color:var(--white);outline:none;width:100%;transition:border-color .2s}
+.spk-input{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);border-radius:100px;padding:14px 20px;font-family:var(--body-font);font-size:14px;color:var(--white);outline:none;width:100%;transition:border-color .2s}
 .spk-input:focus{border-color:rgba(100,130,255,.5)}
 .spk-input::placeholder{color:rgba(255,255,255,.28)}
-.spk-submit{background:var(--blue);color:var(--white);border:none;border-radius:8px;padding:13px 24px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;width:100%;margin-top:4px;transition:opacity .2s}
-.spk-submit:hover{opacity:.85}
+.spk-submit{background:var(--orange);color:var(--white);border:1.5px solid var(--white);border-radius:100px;padding:15px 24px;font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;width:100%;margin-top:4px;transition:opacity .2s,transform .2s}
+.spk-submit:hover{opacity:.9;transform:translateY(-1px)}
 .spk-or{text-align:center;font-size:12px;color:rgba(255,255,255,.25);margin:10px 0}
-.spk-email-link{display:block;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(100,130,255,.7);padding:10px;border:1px solid rgba(26,47,232,.2);border-radius:8px;transition:background .2s}
-.spk-email-link:hover{background:rgba(26,47,232,.1)}
+.spk-email-link{display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;font-family:var(--body-font);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);padding:14px 24px;border:1.5px solid rgba(255,255,255,.3);border-radius:100px;transition:border-color .2s,background .2s}
+.spk-email-link::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--white)}
+.spk-email-link:hover{border-color:var(--white);background:rgba(255,255,255,.05)}
 .spk-slots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
 .spk-slot{background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.1);border-radius:12px;padding:20px;text-align:center}
 .spk-slot-dot{width:12px;height:12px;border-radius:50%;margin:0 auto 10px;border:1px solid currentColor}
@@ -492,7 +500,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
+<!-- Accessibility: Skip to content -->
+<a href="#events" class="sr-only" style="position:absolute;left:-9999px;top:0;z-index:10000;padding:12px 24px;background:var(--blue);color:var(--white);font-size:14px;font-weight:700;border-radius:0 0 8px 0" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to Events</a>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
@@ -501,8 +511,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
     <div class="popup-title">The Unstoppable Experience</div>
     <div class="popup-sub">3 events this May. <strong>Free tee if you register by May 2nd.</strong> 377+ already joined.</div>
   </div>
-  <button class="popup-cta" onclick="goToEvents()">Find My Event</button>
-  <button class="popup-x" onclick="dismissPopup()">✕</button>
+  <button class="popup-cta" onclick="goToEvents()" aria-label="Find my event">Find My Event</button>
+  <button class="popup-x" onclick="dismissPopup()" aria-label="Close popup">✕</button>
 </div>
 
 <!-- TOAST -->
@@ -649,7 +659,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
 </section>
 
 <!-- EVENTS -->
-<section class="events" id="events">
+<section class="events" id="events" role="region" aria-label="Events">
   <div class="container">
     <div class="sec-hdr reveal">
       <div><div class="micro">Three Experiences · One Movement</div><div class="sec-title">Find Your<br>Experience</div></div>
@@ -905,7 +915,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
 </section>
 
 <!-- DONATE -->
-<section class="donate" id="donate">
+<section class="donate" id="donate" role="region" aria-label="Donate">
   <div class="container">
     <div class="donate-box reveal">
       <div class="donate-cols">
