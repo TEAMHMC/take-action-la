@@ -572,7 +572,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
 
 
 <!-- TRAILER -->
-<section class="trailer">
+<section class="trailer" id="trailer">
   <div class="container">
     <div class="trailer-label reveal">
       <div class="trailer-eyebrow">Now Playing</div>
@@ -580,11 +580,13 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
     </div>
     <div class="trailer-inner reveal rd1">
       <video
+        id="trailer-video"
         controls
+        muted
         preload="metadata"
         poster="assets/hero.png"
         playsinline
-        style="width:100%;height:100%;object-fit:cover">
+        style="width:100%;height:100%;object-fit:contain;background:#000">
         <source src="assets/trailer.mp4" type="video/mp4">
         <source src="assets/trailer.mov" type="video/quicktime">
         Your browser does not support video playback.
@@ -771,7 +773,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
         <p class="sp-body">In partnership with the LA County Department of Mental Health's Take Action campaign — all partner recognition uses <em>"In partnership with"</em> language in compliance with grant guidelines.</p>
         <div class="sp-contact-box">
           <div class="sp-contact-label">Partner Inquiries</div>
-          <div class="sp-contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2645494852474552664e43474a524e4b47525243545508454a4f484f45">[email&#160;protected]</a></div>
+          <div class="sp-contact-email"><a href="mailto:sponsor@healthmatters.clinic">sponsor@healthmatters.clinic</a></div>
           <div class="sp-contact-sub">We respond within 2 business days</div>
         </div>
       </div>
@@ -795,7 +797,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
             <div style="font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:4px">Events This May</div>
           </div>
         </div>
-        <a href="/cdn-cgi/l/email-protection#5d3e3233293c3e291d35383c312935303c2929382f2e733e313433343e" class="btn-primary" style="display:block;text-align:center;padding:15px">Become a Community Partner →</a>
+        <a href="mailto:partner@healthmatters.clinic?subject=Unstoppable Experience Partnership Inquiry" class="btn-primary" style="display:block;text-align:center;padding:15px">Become a Community Partner →</a>
       </div>
     </div>
 
@@ -880,6 +882,20 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
       </div>
     </div>
 
+    <div style="margin-top:48px;padding:36px 0;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px" class="reveal rd2">
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:12px">Powered By</div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <img src="assets/lacdmh-logo.png" style="height:48px;opacity:.7;filter:brightness(0) invert(1)" alt="Take Action LA">
+          <span style="font-family:var(--body-font);font-size:13px;color:rgba(255,255,255,.35)">LA County Department of Mental Health · Take Action Campaign</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:12px">Lead Supporting Partner</div>
+        <a href="mailto:sponsor@healthmatters.clinic?subject=Lead Supporting Partner Inquiry" class="badge b-lead" style="font-size:12px;padding:10px 18px">Become a Lead Supporting Partner →</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -909,27 +925,20 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex
         <div class="donate-r">
           <div class="impact-lbl">Your Donation in Action</div>
           <div class="impacts">
-            <div class="impact"><div class="i-amt" style="color:var(--blue)">$10</div><div class="i-desc">Provides <strong>wellness resources and mental health tools</strong> for one community member at an event</div></div>
-            <div class="impact"><div class="i-amt" style="color:var(--blue)">$25</div><div class="i-desc">Covers <strong>supplies and giveaways</strong> that make our events welcoming and barrier-free</div></div>
-            <div class="impact"><div class="i-amt" style="color:var(--orange)">$50</div><div class="i-desc">Helps us <strong>staff a pop-up wellness station</strong> connecting community members to care</div></div>
-            <div class="impact"><div class="i-amt" style="color:var(--orange)">$100</div><div class="i-desc">Supports one <strong>community health worker</strong> for a full day of outreach and engagement</div></div>
-            <div class="impact"><div class="i-amt" style="color:var(--white)">$250+</div><div class="i-desc">Helps fund an <strong>entire event experience</strong> — venue, programming, supplies, and outreach</div></div>
+            <div class="impact"><div class="i-amt" style="color:var(--blue)">$10</div><div class="i-desc">Helps provide <strong>printed wellness materials and self-care kits</strong> for community members at events</div></div>
+            <div class="impact"><div class="i-amt" style="color:var(--blue)">$25</div><div class="i-desc">Covers <strong>refreshments and supplies</strong> for one event session — water, snacks, and wellness items</div></div>
+            <div class="impact"><div class="i-amt" style="color:var(--orange)">$50</div><div class="i-desc">Helps cover <strong>event signage, printed flyers, and outreach materials</strong> to promote awareness in the community</div></div>
+            <div class="impact"><div class="i-amt" style="color:var(--orange)">$100</div><div class="i-desc">Contributes to <strong>transportation and logistics</strong> — helping our team set up and run events across LA County</div></div>
+            <div class="impact"><div class="i-amt" style="color:var(--white)">$250+</div><div class="i-desc">Sponsors <strong>free Unstoppable tees and giveaways</strong> that reward community members for showing up for their mental health</div></div>
           </div>
         </div>
       </div>
       <div class="sbar">
         <div class="sbar-sec">
-          <div class="sbar-lbl">Powered By</div>
+          <div class="sbar-lbl">A Health Matters Clinic Initiative</div>
           <div class="powered-by">
-            <img src="assets/lacdmh-logo.png" class="powered-logo" alt="Take Action LA — LA County Department of Mental Health" style="height:56px">
+            <span style="font-family:var(--body-font);font-size:12px;color:rgba(255,255,255,.35)">EIN 85-3784250 · 501(c)(3) Nonprofit</span>
           </div>
-        </div>
-        <div class="sbar-sec">
-          <div class="sbar-lbl">Lead Supporting Partner</div>
-          <div class="badges">
-            <a class="badge b-lead" href="mailto:contact@healthmatters.clinic?subject=Unstoppable Experience Partnership Inquiry">Become a Lead Supporting Partner →</a>
-          </div>
-
         </div>
       </div>
     </div>
@@ -1098,19 +1107,37 @@ function customUpdate(v){
 }
 function handleDonate(){window.open('https://www.healthmatters.clinic/donate','_blank');}
 
-// Speaker form
+// Speaker form — sends to portal AND opens email draft as backup
 function handleSpeaker(btn){
   const form=btn.closest('.spk-apply-box');
-  const name=(form.querySelector('input[placeholder*="name"]')||{}).value||'';
-  const email=(form.querySelector('input[placeholder*="email"]')||{}).value||'';
-  const topic=(form.querySelector('input[placeholder*="topic"]')||{}).value||'';
+  const inputs=form.querySelectorAll('input');
+  const name=(inputs[0]||{}).value||'';
+  const email=(inputs[1]||{}).value||'';
+  const topic=(inputs[2]||{}).value||'';
+  if(!name||!email){alert('Please fill in your name and email.');return;}
   btn.textContent='Sending...';btn.disabled=true;
+  // Send to portal
   fetch('https://hmc-volunteer-portal-172668994130.us-central1.run.app/api/public/rsvp',{
     method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({eventId:'unstoppable-speaker-2026',eventTitle:'Speaker Application - Unstoppable Experience',eventDate:'May 2026',name:name,email:email,phone:'',needs:'Speaker: '+topic,source:'Take Action LA Speaker Form'})
-  }).catch(()=>{});
+    body:JSON.stringify({eventId:'unstoppable-speaker-2026',eventTitle:'Speaker Application - Unstoppable Experience',eventDate:'May 2026',name:name,email:email,phone:'',needs:'Speaker Application: '+topic,source:'Take Action LA Speaker Form'})
+  }).then(()=>{}).catch(()=>{});
+  // Also send email as backup
+  const mailBody=encodeURIComponent('Speaker Application - Unstoppable Experience\n\nName: '+name+'\nEmail: '+email+'\nTopic: '+topic);
+  window.open('mailto:contact@healthmatters.clinic?subject=Speaker Application - Unstoppable Experience&body='+mailBody,'_blank');
   btn.textContent='Application Sent ✓';
   btn.style.background='#12c06b';
+}
+
+// Trailer autoplay on scroll
+const trailerVideo=document.getElementById('trailer-video');
+if(trailerVideo){
+  const trailerObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){trailerVideo.play().catch(()=>{});}
+      else{trailerVideo.pause();}
+    });
+  },{threshold:0.3});
+  trailerObs.observe(trailerVideo);
 }
 
 // Email signup
