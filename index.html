@@ -385,12 +385,12 @@ section{position:relative}
 .about-body strong{color:var(--white);font-weight:600}
 .p-lbl{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:14px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07)}
 /* ── FLYER CAROUSEL ── */
-.flyer-carousel{position:relative;display:flex;align-items:center;justify-content:center;height:440px;user-select:none}
+.flyer-carousel{position:relative;display:flex;align-items:center;justify-content:center;height:580px;user-select:none}
 .fc-slide{position:absolute;border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s cubic-bezier(.4,0,.2,1),width .55s cubic-bezier(.4,0,.2,1),z-index 0s}
 .fc-slide img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.fc-slide[data-state="center"]{width:52%;aspect-ratio:3/4;transform:translateX(0) scale(1);opacity:1;z-index:3}
-.fc-slide[data-state="left"]{width:42%;aspect-ratio:3/4;transform:translateX(-72%) scale(.88);opacity:.38;z-index:2}
-.fc-slide[data-state="right"]{width:42%;aspect-ratio:3/4;transform:translateX(72%) scale(.88);opacity:.38;z-index:2}
+.fc-slide[data-state="center"]{width:62%;aspect-ratio:3/4;transform:translateX(0) scale(1);opacity:1;z-index:3}
+.fc-slide[data-state="left"]{width:38%;aspect-ratio:3/4;transform:translateX(-78%) scale(.85);opacity:.32;z-index:2}
+.fc-slide[data-state="right"]{width:38%;aspect-ratio:3/4;transform:translateX(78%) scale(.85);opacity:.32;z-index:2}
 .fc-slide[data-state="center"]:hover{opacity:.9}
 .fc-slide[data-state="left"]:hover,.fc-slide[data-state="right"]:hover{opacity:.65}
 .fc-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
@@ -450,10 +450,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .signup-in{padding:40px 28px}
   .ev-card{grid-template-columns:1fr;gap:12px;padding:22px 18px}
   .ev-n{display:none}
-  .flyer-carousel{height:320px}
-  .fc-slide[data-state="center"]{width:62%}
-  .fc-slide[data-state="left"]{width:46%;transform:translateX(-68%) scale(.86)}
-  .fc-slide[data-state="right"]{width:46%;transform:translateX(68%) scale(.86)}
+  .flyer-carousel{height:380px}
+  .fc-slide[data-state="center"]{width:72%}
+  .fc-slide[data-state="left"]{width:42%;transform:translateX(-74%) scale(.84);opacity:.25}
+  .fc-slide[data-state="right"]{width:42%;transform:translateX(74%) scale(.84);opacity:.25}
   footer{flex-direction:column;text-align:center;padding:28px 20px}
   .tbar{padding:12px 20px}
   .shop-header{flex-direction:column;align-items:flex-start;gap:20px}
