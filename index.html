@@ -175,11 +175,12 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .tbar-text{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--white)}
 .tbar-text span{color:rgba(255,255,255,.65);font-weight:600}
 .cdown{display:flex;gap:8px;align-items:center}
-.cdu{background:rgba(0,0,0,.2);border-radius:6px;padding:4px 10px;text-align:center}
-.cdn{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;display:block;color:var(--white)}
-.cdl{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-.cds{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;color:rgba(255,255,255,.4)}
-.tbar-cta{background:var(--white);color:var(--orange);font-family:var(--body-font);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;border-radius:100px;border:1.5px solid var(--white);transition:opacity .2s;white-space:nowrap}
+.cdu{background:rgba(0,0,0,.3);border-radius:6px;padding:6px 14px;text-align:center;min-width:52px}
+.cdn{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;line-height:1;display:block;color:var(--white);letter-spacing:.02em}
+.cdl{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:2px;display:block}
+.cds{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:rgba(255,255,255,.5);line-height:1;margin-bottom:14px}
+.tbar-cta{background:var(--white);color:var(--orange);font-family:var(--body-font);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;border-radius:100px;border:1.5px solid var(--white);transition:opacity .2s;white-space:nowrap;display:inline-flex;align-items:center;gap:8px}
+.tbar-cta::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0}
 .tbar-cta:hover{opacity:.85}
 
 /* ── TICKER ── */
@@ -383,10 +384,7 @@ section{position:relative}
 .about-body{font-size:17px;line-height:1.75;color:rgba(255,255,255,.5);margin-bottom:16px}
 .about-body strong{color:var(--white);font-weight:600}
 .p-lbl{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:14px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07)}
-.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.mosaic-main{grid-column:1/-1;border-radius:12px;overflow:hidden;aspect-ratio:16/9}
-.mosaic-main img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .6s}
-.mosaic-main:hover img{transform:scale(1.03)}
+.mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .mosaic-sub{border-radius:10px;overflow:hidden;aspect-ratio:3/4}
 .mosaic-sub img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s}
 .mosaic-sub:hover img{transform:scale(1.04)}
@@ -446,7 +444,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .ev-card{grid-template-columns:1fr;gap:12px;padding:22px 18px}
   .ev-n{display:none}
   .mosaic{grid-template-columns:1fr}
-  .mosaic-main,.mosaic-sub{grid-column:auto;aspect-ratio:16/9}
   footer{flex-direction:column;text-align:center;padding:28px 20px}
   .tbar{padding:12px 20px}
   .shop-header{flex-direction:column;align-items:flex-start;gap:20px}
@@ -1082,11 +1079,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       </div>
       <div class="reveal rd2">
         <div class="mosaic">
-          <div class="mosaic-main"><img src="assets/mosaic-main.png" alt="Team Unstoppable running with LA skyline — Health Matters Clinic Take Action LA Mental Health Awareness Month 2026"></div>
           <div class="mosaic-sub"><img src="assets/flyer-move.png" alt="Live Unstoppable Walk Run — May 9 2026 Inglewood CA"></div>
           <div class="mosaic-sub"><img src="assets/flyer-heal.png" alt="Unstoppable Wellness Meetup — May 20 2026 Inglewood CA"></div>
+          <div class="mosaic-sub"><img src="assets/flyer-transform.png" alt="Unstoppable Experience Virtual — May 27 2026"></div>
         </div>
-        <div class="mosaic-cap">Team Unstoppable · Los Angeles, CA · May 2026</div>
       </div>
     </div>
   </div>
