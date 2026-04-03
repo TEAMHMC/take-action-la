@@ -411,17 +411,13 @@ section{position:relative}
 .bb-wh{background:var(--white);color:var(--black);border-color:var(--black)}.bb-wh::before{background:var(--black)}
 
 /* ── FOOTER ── */
-footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex;flex-direction:column;align-items:center;gap:20px}
-.f-top{width:100%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .f-logo{font-family:var(--body-font);font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35)}
 .f-logo span{color:var(--blue)}
-.f-links{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-.f-links a{font-family:var(--body-font);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.3);transition:color .2s;text-decoration:none}
-.f-links a:hover{color:var(--white)}
+.f-mid{font-family:var(--body-font);font-size:12px;color:rgba(255,255,255,.2);letter-spacing:.02em;text-align:center;line-height:1.7}
 .f-right{font-family:var(--body-font);font-size:12px;font-weight:600;color:rgba(255,255,255,.25)}
 .f-right a{color:var(--blue);transition:color .2s}
 .f-right a:hover{color:var(--white)}
-.f-mid{font-family:var(--body-font);font-size:11px;color:rgba(255,255,255,.15);letter-spacing:.02em;text-align:center;line-height:1.7;width:100%;border-top:1px solid rgba(255,255,255,.04);padding-top:16px}
 
 /* ── ANIMATIONS ── */
 /* ── ACCESSIBILITY ── */
@@ -1114,21 +1110,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 <!-- FOOTER -->
 <footer>
-  <div class="f-top">
-    <a href="https://www.healthmatters.clinic" class="f-logo">Health <span>Matters</span> Clinic</a>
-    <nav class="f-links">
-      <a href="https://www.healthmatters.clinic">Main Site</a>
-      <a href="https://www.healthmatters.clinic/resources/eventfinder">Events</a>
-      <a href="https://www.healthmatters.clinic/resources/calmkit">CalmKit</a>
-      <a href="https://www.healthmatters.clinic/resources/resourcedirectory">Resources</a>
-      <a href="mailto:unstoppable@healthmatters.clinic">Contact</a>
-    </nav>
-    <div class="f-right"><a href="mailto:unstoppable@healthmatters.clinic">unstoppable@healthmatters.clinic</a></div>
-  </div>
+  <div class="f-logo">Health <span>Matters</span> Clinic</div>
   <div class="f-mid">
-    EIN 85-3784250 · Los Angeles, CA · © 2026 Health Matters Clinic<br>
-    <span>Part of the Take Action LA Mental Health Awareness Month Campaign · LA County DMH</span>
+    EIN 85-3784250 · Los Angeles, CA<br>
+    <a href="https://www.healthmatters.clinic/takeactionla" style="color:var(--blue)">healthmatters.clinic/takeactionla</a> · © 2026 Health Matters Clinic<br>
+    <span style="color:rgba(255,255,255,.12)">Part of the Take Action LA Mental Health Awareness Month Campaign · LA County DMH</span>
   </div>
+  <div class="f-right"><a href="mailto:unstoppable@healthmatters.clinic">unstoppable@healthmatters.clinic</a></div>
 </footer>
 
 <script>
