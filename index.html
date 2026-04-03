@@ -153,7 +153,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(8,8,8,.2) 0%,rgba(8,8,8,.05) 28%,rgba(8,8,8,.5) 58%,rgba(8,8,8,.95) 86%,var(--black) 100%)}
 .hero-wmark{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;overflow:hidden;pointer-events:none;opacity:.1}
 .hero-wmark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(80px,14vw,180px);line-height:.86;text-transform:uppercase;white-space:nowrap;color:var(--white);display:block}
-.hero-content{position:relative;z-index:3;padding:0 48px 72px}
+.hero-content{position:relative;z-index:3;padding:0 48px 40px}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:8px 16px 8px 8px;margin-bottom:22px;animation:fadeUp .8s ease both}
 .badge-dot{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--orange));flex-shrink:0}
 .badge-text{font-size:14px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.6);text-transform:uppercase}
@@ -384,11 +384,18 @@ section{position:relative}
 .about-body{font-size:17px;line-height:1.75;color:rgba(255,255,255,.5);margin-bottom:16px}
 .about-body strong{color:var(--white);font-weight:600}
 .p-lbl{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:14px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07)}
-.mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-.mosaic-sub{border-radius:10px;overflow:hidden;aspect-ratio:3/4}
-.mosaic-sub img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s}
-.mosaic-sub:hover img{transform:scale(1.04)}
-.mosaic-cap{margin-top:12px;font-size:14px;font-weight:600;letter-spacing:.12em;color:rgba(255,255,255,.22);text-transform:uppercase}
+/* ── FLYER CAROUSEL ── */
+.flyer-carousel{position:relative;display:flex;align-items:center;justify-content:center;height:440px;user-select:none}
+.fc-slide{position:absolute;border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s cubic-bezier(.4,0,.2,1),width .55s cubic-bezier(.4,0,.2,1),z-index 0s}
+.fc-slide img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.fc-slide[data-state="center"]{width:52%;aspect-ratio:3/4;transform:translateX(0) scale(1);opacity:1;z-index:3}
+.fc-slide[data-state="left"]{width:42%;aspect-ratio:3/4;transform:translateX(-72%) scale(.88);opacity:.38;z-index:2}
+.fc-slide[data-state="right"]{width:42%;aspect-ratio:3/4;transform:translateX(72%) scale(.88);opacity:.38;z-index:2}
+.fc-slide[data-state="center"]:hover{opacity:.9}
+.fc-slide[data-state="left"]:hover,.fc-slide[data-state="right"]:hover{opacity:.65}
+.fc-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.fc-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s,transform .3s;cursor:pointer}
+.fc-dot.on{background:var(--orange);transform:scale(1.3)}
 
 /* ── FINAL CTA ── */
 .fcta{padding:130px 0 150px;text-align:center;position:relative;overflow:hidden}
@@ -443,7 +450,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .signup-in{padding:40px 28px}
   .ev-card{grid-template-columns:1fr;gap:12px;padding:22px 18px}
   .ev-n{display:none}
-  .mosaic{grid-template-columns:1fr}
+  .flyer-carousel{height:320px}
+  .fc-slide[data-state="center"]{width:62%}
+  .fc-slide[data-state="left"]{width:46%;transform:translateX(-68%) scale(.86)}
+  .fc-slide[data-state="right"]{width:46%;transform:translateX(68%) scale(.86)}
   footer{flex-direction:column;text-align:center;padding:28px 20px}
   .tbar{padding:12px 20px}
   .shop-header{flex-direction:column;align-items:flex-start;gap:20px}
@@ -1078,10 +1088,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <p class="about-body">The Unstoppable Experience is part of the <strong>Take Action for Mental Health Awareness Month</strong> campaign — a partnership with the LA County Department of Mental Health to bring accessible, stigma-free mental wellness programming directly into our communities.</p>
       </div>
       <div class="reveal rd2">
-        <div class="mosaic">
-          <div class="mosaic-sub"><img src="assets/flyer-move.png" alt="Live Unstoppable Walk Run — May 9 2026 Inglewood CA"></div>
-          <div class="mosaic-sub"><img src="assets/flyer-heal.png" alt="Unstoppable Wellness Meetup — May 20 2026 Inglewood CA"></div>
-          <div class="mosaic-sub"><img src="assets/flyer-transform.png" alt="Unstoppable Experience Virtual — May 27 2026"></div>
+        <div class="flyer-carousel" id="flyerCarousel">
+          <div class="fc-slide" data-idx="0"><img src="assets/flyer-move.png" alt="Live Unstoppable Walk Run — May 9 2026 Inglewood CA"></div>
+          <div class="fc-slide" data-idx="1"><img src="assets/flyer-heal.png" alt="Unstoppable Wellness Meetup — May 20 2026 Inglewood CA"></div>
+          <div class="fc-slide" data-idx="2"><img src="assets/flyer-transform.png" alt="Unstoppable Experience Virtual — May 27 2026"></div>
+        </div>
+        <div class="fc-dots" id="fcDots">
+          <div class="fc-dot on" data-i="0"></div>
+          <div class="fc-dot" data-i="1"></div>
+          <div class="fc-dot" data-i="2"></div>
         </div>
       </div>
     </div>
@@ -1268,6 +1283,49 @@ function handleSignup(){
     btn.style.background='#ef4444';btn.disabled=false;
   });
 }
+
+// Flyer carousel
+(function(){
+  var carousel=document.getElementById('flyerCarousel');
+  if(!carousel)return;
+  var slides=carousel.querySelectorAll('.fc-slide');
+  var dots=document.querySelectorAll('#fcDots .fc-dot');
+  var current=0,timer=null,paused=false;
+
+  function update(idx){
+    var n=slides.length;
+    slides.forEach(function(s,i){
+      var offset=(i-idx+n)%n;
+      if(offset===0)s.dataset.state='center';
+      else if(offset===1)s.dataset.state='right';
+      else s.dataset.state='left';
+    });
+    dots.forEach(function(d,i){d.classList.toggle('on',i===idx);});
+  }
+
+  function next(){current=(current+1)%slides.length;update(current);}
+
+  function startAuto(){
+    clearInterval(timer);
+    timer=setInterval(function(){if(!paused)next();},2800);
+  }
+
+  slides.forEach(function(s,i){
+    s.addEventListener('mouseenter',function(){paused=true;current=i;update(i);});
+    s.addEventListener('mouseleave',function(){paused=false;});
+    s.addEventListener('click',function(){current=i;update(i);});
+  });
+
+  dots.forEach(function(d){
+    d.addEventListener('click',function(){
+      current=parseInt(d.dataset.i)||0;
+      update(current);
+    });
+  });
+
+  update(current);
+  startAuto();
+})();
 </script>
 
 <!--
