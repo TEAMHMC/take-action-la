@@ -1231,12 +1231,13 @@ function handleSpeaker(btn){
   fetch('https://hmc-volunteer-portal-172668994130.us-central1.run.app/api/public/rsvp',{
     method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({eventId:'unstoppable-speaker-2026',eventTitle:'Speaker Application - Unstoppable Experience',eventDate:'May 2026',name:name,email:email,phone:'',needs:'Speaker Application: '+topic,source:'Take Action LA Speaker Form'})
-  }).then(()=>{}).catch(()=>{});
-  // Also send email as backup
-  const mailBody=encodeURIComponent('Speaker Application - Unstoppable Experience\n\nName: '+name+'\nEmail: '+email+'\nTopic: '+topic);
-  window.open('mailto:unstoppable@healthmatters.clinic?subject=Speaker Application - Unstoppable Experience&body='+mailBody,'_blank');
-  btn.textContent='Application Sent ✓';
-  btn.style.background='#12c06b';
+  }).then(()=>{
+    btn.textContent='Application Sent ✓';
+    btn.style.background='#12c06b';
+  }).catch(()=>{
+    btn.textContent='Something went wrong — try again';
+    btn.style.background='#ef4444';btn.disabled=false;
+  });
 }
 
 // Trailer autoplay on scroll
