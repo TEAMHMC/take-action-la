@@ -250,16 +250,16 @@ section{position:relative}
 .prize-fallback-txt{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;text-transform:uppercase;color:rgba(255,255,255,.4)}
 .prize-badge{position:absolute;bottom:-12px;right:16px;z-index:2;background:var(--blue);color:var(--white);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border-radius:100px}
 
-/* ── TERMS SECTION ── */
-.terms-sec{padding:60px 0;border-bottom:1px solid rgba(255,255,255,.06)}
-.terms-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:40px}
-.terms-header{display:flex;align-items:flex-start;gap:18px;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
-.terms-icon{font-size:32px;color:rgba(255,255,255,.2);font-family:'Barlow Condensed',sans-serif;font-weight:900;line-height:1;flex-shrink:0}
-.terms-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px}
-.terms-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;text-transform:uppercase}
-.terms-body{display:flex;flex-direction:column;gap:14px}
-.terms-body p{font-size:14px;line-height:1.75;color:rgba(255,255,255,.45)}
-.terms-body p strong{color:rgba(255,255,255,.8)}
+/* ── TERMS ACCORDION ── */
+.prize-terms-accordion{margin-top:20px;border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden}
+.prize-terms-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s;text-align:left}
+.prize-terms-toggle:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
+.toggle-arr{font-size:14px;transition:transform .2s}
+.prize-terms-body{max-height:0;overflow:hidden;transition:max-height .4s ease;display:flex;flex-direction:column;gap:10px;padding:0 18px}
+.prize-terms-body p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.4)}
+.prize-terms-body p strong{color:rgba(255,255,255,.7)}
+.prize-terms-body{padding-bottom:0}
+.prize-terms-body[style*="max-height"]{padding:16px 18px 20px}
 
 /* ── T-SHIRT SECTION ── */
 .tsec{padding:80px 0;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -766,7 +766,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="ev-l"><div class="ev-verb">Transform</div><div class="ev-type">Virtual · Live</div></div>
         <div class="ev-m">
           <div class="ev-date">May 27, 2026 · 6:00–7:00 PM · Online — Join From Anywhere</div>
-          <div class="ev-body">Step into your next chapter. A live, interactive virtual session to reflect, learn, and grow. No travel needed. <strong style="color:var(--chalk)">Live prize drawing — MacBook up for grabs.</strong></div>
+          <div class="ev-body">A free live virtual session — inspiring speakers, real talk on mental wellness, and tools to take your next step. Join from your phone, tablet, or laptop. MacBook prize drawing announced May 30.</div>
         </div>
         <button class="ev-pill pt">Join →</button>
       </a>
@@ -793,8 +793,23 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <div class="prize-chip">Winner announced May 30</div>
           <div class="prize-chip">Must attend to be eligible</div>
         </div>
-        <a href="#terms" class="prize-terms-link">View Official Terms &amp; Conditions ↓</a>
-        <a href="https://www.healthmatters.clinic/resources/eventfinder" target="_blank" rel="noopener" class="btn-primary" style="margin-top:28px;display:inline-flex;align-items:center;gap:10px;background:var(--blue)">Register for Free → Get Your Entry</a>
+        <a href="https://www.healthmatters.clinic/resources/eventfinder" target="_blank" rel="noopener" class="btn-primary" style="margin-top:4px;display:inline-flex;align-items:center;gap:10px;background:var(--blue)">Register for Free → Get Your Entry</a>
+        <div class="prize-terms-accordion" id="terms">
+          <button class="prize-terms-toggle" onclick="var b=this.nextElementSibling,o=b.style.maxHeight;b.style.maxHeight=o?null:'2000px';this.querySelector('.toggle-arr').textContent=o?'↓':'↑'" aria-expanded="false">
+            <span>Official Terms &amp; Conditions</span><span class="toggle-arr">↓</span>
+          </button>
+          <div class="prize-terms-body">
+            <p><strong>NO PURCHASE NECESSARY.</strong> Open to residents of Los Angeles County, age 18 or older. Void where prohibited by law.</p>
+            <p><strong>How to Enter:</strong> Earn one (1) entry for each Unstoppable Experience event you attend, check into using your registration QR code, and at which you complete the official post-event survey. Maximum of three (3) entries per person (MOVE — May 9; HEAL — May 20; TRANSFORM — May 27, 2026). Registration is required before the event. Walk-ins are not eligible for prize entries.</p>
+            <p><strong>Eligibility:</strong> Must be present at each in-person event. For the virtual TRANSFORM event, must attend the live session, check in via the link provided, and complete the post-event survey during or immediately after.</p>
+            <p><strong>Survey Requirement:</strong> Post-event survey completion at each event is required to validate your entry. Surveys available at check-in. No survey = no entry for that event.</p>
+            <p><strong>Prize:</strong> One (1) MacBook. ARV: $1,099–$1,299 USD. No cash equivalent. Non-transferable.</p>
+            <p><strong>Drawing &amp; Notification:</strong> Drawing takes place after May 27, 2026. Winner announced on or before May 30, 2026. Winner notified by email and must respond within 48 hours or an alternate winner will be selected.</p>
+            <p><strong>Verification:</strong> HMC will verify check-in and survey records before the drawing. Unverified entries will be disqualified.</p>
+            <p><strong>T-Shirt (separate):</strong> Free tees are in-person pickup only at check-in. Must register by May 2, 2026 and select size at registration. No shipping. No size = no tee.</p>
+            <p><strong>Sponsor:</strong> Health Matters Clinic, Inglewood, CA — unstoppable@healthmatters.clinic</p>
+          </div>
+        </div>
       </div>
       <div class="prize-right reveal rd2">
         <div class="prize-img-wrap">
@@ -803,32 +818,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <div class="prize-img-fallback"><div class="prize-fallback-icon">💻</div><div class="prize-fallback-txt">MacBook</div></div>
           <div class="prize-badge">1 Winner · May 30</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TERMS & CONDITIONS -->
-<section class="terms-sec" id="terms">
-  <div class="container">
-    <div class="terms-box reveal">
-      <div class="terms-header">
-        <div class="terms-icon">§</div>
-        <div>
-          <div class="terms-eyebrow">Official Sweepstakes Rules</div>
-          <div class="terms-title">MacBook Giveaway — Terms &amp; Conditions</div>
-        </div>
-      </div>
-      <div class="terms-body">
-        <p><strong>NO PURCHASE NECESSARY.</strong> Open to residents of Los Angeles County, age 18 or older. Void where prohibited by law.</p>
-        <p><strong>How to Enter:</strong> Earn one (1) entry for each Unstoppable Experience event you attend in full, check into using your unique registration QR code, and at which you complete the official post-event survey. Maximum of three (3) entries per person across all three events (MOVE — May 9; HEAL — May 20; TRANSFORM — May 27, 2026). Registration is required before the event begins. Walk-ins without a prior registration are not eligible for prize entries.</p>
-        <p><strong>Eligibility:</strong> Entrants must be present at each in-person event to receive an entry for that event. For the virtual TRANSFORM event (May 27), entrants must attend the live session, check in via the registration link provided, and complete the post-event survey during or immediately after the session.</p>
-        <p><strong>Survey Requirement:</strong> Completion of the post-event survey at each event is required to validate your entry for that event. Surveys will be made available at check-in. No survey = no entry for that event.</p>
-        <p><strong>Prize:</strong> One (1) MacBook (model and configuration to be confirmed). Approximate retail value (ARV): $1,099–$1,299 USD. No cash equivalent. Prize is non-transferable.</p>
-        <p><strong>Drawing &amp; Winner Notification:</strong> Drawing will take place on or after May 27, 2026 following the TRANSFORM event. Winner will be announced publicly on or before May 30, 2026. The winner will be notified via the email address provided at registration and must respond within 48 hours of notification, or an alternate winner will be selected.</p>
-        <p><strong>Verification:</strong> Health Matters Clinic will verify check-in and survey completion records for all entries prior to the drawing. Entries without confirmed check-in and completed survey will be disqualified.</p>
-        <p><strong>T-Shirt Offer (separate from prize drawing):</strong> Free Unstoppable tees are available for in-person pickup at check-in only. You must have registered before May 2, 2026 and selected your size at the time of registration. Tees will not be mailed or held. No size selection at registration = no tee. While supplies last.</p>
-        <p><strong>Sponsor:</strong> Health Matters Clinic, Inglewood, CA. For questions, contact unstoppable@healthmatters.clinic.</p>
       </div>
     </div>
   </div>
