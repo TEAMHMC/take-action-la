@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <!-- ═══ SEO ═══ -->
 <title>Unstoppable Experience — Take Action LA · Health Matters Clinic</title>
@@ -105,9 +105,11 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{margin:0;padding:0;overflow-x:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 :root{--blue:#233dff;--orange:#FF6E28;--black:#080808;--chalk:#F0EDE8;--white:#fff;--green:#12c06b;--body-font:'Inter','Questrial',sans-serif;--heading-font:'Barlow Condensed',sans-serif}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:var(--body-font);font-size:16px;line-height:1.6;overflow-x:hidden;cursor:none}
+body{background:var(--black);color:var(--white);font-family:var(--body-font);font-size:16px;line-height:1.6;overflow-x:hidden}
+@media(pointer:fine){body{cursor:none}}
 a{text-decoration:none;color:inherit}
 img{display:block}
 
@@ -124,7 +126,7 @@ img{display:block}
 .popup-sub{font-size:12px;color:rgba(0,0,0,.55);line-height:1.45}
 .popup-sub strong{color:var(--black)}
 .popup-cta{background:var(--blue);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:10px 18px;border-radius:100px;white-space:nowrap;flex-shrink:0;border:none;cursor:pointer}
-.popup-x{position:absolute;top:10px;right:12px;font-size:16px;color:rgba(0,0,0,.3);background:none;border:none;cursor:pointer}
+.popup-x{position:absolute;top:8px;right:8px;font-size:16px;color:rgba(0,0,0,.3);background:none;border:none;cursor:pointer;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%}
 
 /* ── TOAST ── */
 .toast{position:fixed;bottom:104px;left:24px;z-index:490;background:rgba(16,16,16,.96);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:12px;transform:translateX(-130%);transition:transform .5s cubic-bezier(.34,1.56,.64,1);max-width:290px}
@@ -147,7 +149,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .nav-cta:hover{background:#e85e1c}
 
 /* ── HERO ── */
-.hero{position:relative;height:100vh;min-height:720px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero{position:relative;height:100svh;min-height:720px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
 .hero-photo{position:absolute;inset:0;z-index:0}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(8,8,8,.2) 0%,rgba(8,8,8,.05) 28%,rgba(8,8,8,.5) 58%,rgba(8,8,8,.95) 86%,var(--black) 100%)}
@@ -222,6 +224,42 @@ section{position:relative}
 .a-ev.heal{color:var(--orange)}
 .a-ev.tf{color:rgba(240,237,232,.55)}
 .a-ago{margin-left:auto;font-size:11px;color:rgba(255,255,255,.2);white-space:nowrap;flex-shrink:0}
+
+/* ── MACBOOK PRIZE ── */
+.prize-sec{padding:100px 0;border-bottom:1px solid rgba(255,255,255,.06);background:radial-gradient(ellipse 70% 60% at 70% 50%,rgba(35,61,255,.07) 0%,transparent 70%)}
+.prize-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.prize-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.25em;color:var(--blue);text-transform:uppercase;margin-bottom:16px}
+.prize-headline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,6vw,80px);line-height:.88;text-transform:uppercase;margin-bottom:24px}
+.prize-headline span{color:var(--blue)}
+.prize-body{font-size:17px;line-height:1.7;color:rgba(255,255,255,.55);margin-bottom:28px}
+.prize-body strong{color:var(--white);font-weight:600}
+.prize-rules{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.prize-rule{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:rgba(255,255,255,.65)}
+.prize-rule strong{color:var(--white)}
+.prize-rule-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:var(--blue);min-width:28px;line-height:1}
+.prize-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.prize-chip{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:7px 14px;border-radius:100px;border:1px solid rgba(35,61,255,.3);background:rgba(35,61,255,.08);color:rgba(255,255,255,.7)}
+.prize-terms-link{font-size:13px;color:rgba(255,255,255,.4);text-decoration:underline;text-underline-offset:3px;display:block;margin-bottom:4px;transition:color .2s}
+.prize-terms-link:hover{color:rgba(255,255,255,.7)}
+.prize-right{display:flex;justify-content:center;align-items:center}
+.prize-img-wrap{position:relative;width:100%;max-width:480px}
+.prize-glow{position:absolute;inset:-20%;background:radial-gradient(ellipse,rgba(35,61,255,.25) 0%,transparent 65%);pointer-events:none;z-index:0}
+.prize-img{width:100%;position:relative;z-index:1;filter:drop-shadow(0 30px 60px rgba(35,61,255,.3))}
+.prize-img-fallback{display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:60px;background:rgba(35,61,255,.06);border:1px solid rgba(35,61,255,.15);border-radius:20px;min-height:260px}
+.prize-fallback-icon{font-size:64px}
+.prize-fallback-txt{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.prize-badge{position:absolute;bottom:-12px;right:16px;z-index:2;background:var(--blue);color:var(--white);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border-radius:100px}
+
+/* ── TERMS SECTION ── */
+.terms-sec{padding:60px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.terms-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:40px}
+.terms-header{display:flex;align-items:flex-start;gap:18px;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
+.terms-icon{font-size:32px;color:rgba(255,255,255,.2);font-family:'Barlow Condensed',sans-serif;font-weight:900;line-height:1;flex-shrink:0}
+.terms-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px}
+.terms-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;text-transform:uppercase}
+.terms-body{display:flex;flex-direction:column;gap:14px}
+.terms-body p{font-size:14px;line-height:1.75;color:rgba(255,255,255,.45)}
+.terms-body p strong{color:rgba(255,255,255,.8)}
 
 /* ── T-SHIRT SECTION ── */
 .tsec{padding:80px 0;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -335,7 +373,7 @@ section{position:relative}
 .amt.cust{border-style:dashed}
 .custom-row{display:none;gap:10px;margin-bottom:20px}
 .custom-row.show{display:flex}
-.custom-in{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:13px 20px;font-family:'Barlow',sans-serif;font-size:15px;color:var(--white);outline:none}
+.custom-in{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:13px 20px;font-family:'Barlow',sans-serif;font-size:16px;color:var(--white);outline:none}
 .custom-in::placeholder{color:rgba(255,255,255,.3)}
 .d-btn{background:var(--orange);color:var(--white);border:1.5px solid var(--white);border-radius:100px;padding:16px 36px;font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:transform .2s,opacity .2s;width:100%}
 .d-btn::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--white);margin-right:10px;vertical-align:middle}
@@ -369,9 +407,9 @@ section{position:relative}
 .s-sub{font-size:17px;line-height:1.65;color:rgba(255,255,255,.6)}
 .s-form{position:relative;z-index:1}
 .s-inputs{display:flex;flex-direction:column;gap:10px}
-.s-input{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:15px 22px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--white);outline:none;transition:background .2s,border-color .2s;width:100%}
+.s-input{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:15px 22px;font-family:'Barlow',sans-serif;font-size:16px;color:var(--white);outline:none;transition:background .2s,border-color .2s;width:100%}
 .s-input::placeholder{color:rgba(255,255,255,.4)}
-.s-input:focus{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
+.s-input:focus{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5);box-shadow:0 0 0 3px rgba(255,255,255,.1)}
 .s-submit{background:var(--white);color:var(--blue);border:1.5px solid var(--black);border-radius:100px;padding:16px 36px;font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:transform .2s;width:100%;margin-top:4px}
 .s-submit::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-right:10px;vertical-align:middle}
 .s-submit:hover{transform:translateY(-1px)}
@@ -443,7 +481,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   nav{padding:16px 20px}
   .nav-r .nav-link{display:none}
   .hero-content{padding:0 20px 52px}
-  .intro-grid,.tsec-grid,.donate-cols,.signup-in,.about-grid{grid-template-columns:1fr;gap:36px}
+  .intro-grid,.tsec-grid,.donate-cols,.signup-in,.about-grid,.prize-grid{grid-template-columns:1fr;gap:36px}
   .donate-l{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
   .donate-l,.donate-r{padding:36px 28px}
   .sbar{padding:28px 28px}
@@ -498,8 +536,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .spk-apply-title{font-family:var(--heading-font);font-weight:900;font-size:28px;text-transform:uppercase;margin-bottom:12px}
 .spk-apply-body{font-family:var(--body-font);font-size:16px;line-height:1.65;color:rgba(255,255,255,.4);margin-bottom:20px}
 .spk-fields{display:flex;flex-direction:column;gap:10px}
-.spk-input{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);border-radius:100px;padding:14px 20px;font-family:var(--body-font);font-size:14px;color:var(--white);outline:none;width:100%;transition:border-color .2s}
-.spk-input:focus{border-color:rgba(100,130,255,.5)}
+.spk-input{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);border-radius:100px;padding:14px 20px;font-family:var(--body-font);font-size:16px;color:var(--white);outline:none;width:100%;transition:border-color .2s}
+.spk-input:focus{border-color:rgba(100,130,255,.5);box-shadow:0 0 0 3px rgba(100,130,255,.2)}
 .spk-input::placeholder{color:rgba(255,255,255,.28)}
 .spk-submit{background:var(--orange);color:var(--white);border:1.5px solid var(--white);border-radius:100px;padding:15px 24px;font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;width:100%;margin-top:4px;transition:opacity .2s,transform .2s}
 .spk-submit::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--white);margin-right:10px;vertical-align:middle}
@@ -591,6 +629,23 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .powered-label{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);white-space:nowrap}
 .powered-logo{height:80px;width:auto;opacity:.9;transition:opacity .2s}
 .powered-logo:hover{opacity:1}
+
+/* ── REDUCED MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .ticker-track{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* ── EXTRA-SMALL SCREENS (<375px) ── */
+@media(max-width:375px){
+  .hero-content{padding:0 16px 32px}
+  .hero-title{font-size:clamp(48px,14vw,64px)}
+  .btn-primary{padding:14px 24px;font-size:13px}
+  .ev-card{padding:16px}
+  .tbar{padding:10px 14px;gap:10px}
+  .cdu{min-width:40px;padding:5px 10px}
+}
 </style>
 </head>
 <body>
@@ -711,10 +766,70 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="ev-l"><div class="ev-verb">Transform</div><div class="ev-type">Virtual · Live</div></div>
         <div class="ev-m">
           <div class="ev-date">May 27, 2026 · 6:00–7:00 PM · Online — Join From Anywhere</div>
-          <div class="ev-body">Step into your next chapter. A live, interactive virtual session to reflect, learn, and grow. No travel needed.</div>
+          <div class="ev-body">Step into your next chapter. A live, interactive virtual session to reflect, learn, and grow. No travel needed. <strong style="color:var(--chalk)">Live prize drawing — MacBook up for grabs.</strong></div>
         </div>
         <button class="ev-pill pt">Join →</button>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- MACBOOK PRIZE -->
+<section class="prize-sec" id="prize">
+  <div class="container">
+    <div class="prize-grid reveal">
+      <div class="prize-left">
+        <div class="prize-eyebrow">Scan to Join · Win a MacBook</div>
+        <h2 class="prize-headline">Show Up.<br>Get an Entry.<br><span>Win Big.</span></h2>
+        <p class="prize-body">Attend any Unstoppable Experience event, check in with your QR code, and complete the short survey — and you're entered. Come to all three events and earn up to <strong>3 entries</strong>.</p>
+        <div class="prize-rules">
+          <div class="prize-rule"><span class="prize-rule-num">01</span><div><strong>Register</strong> for any or all three events</div></div>
+          <div class="prize-rule"><span class="prize-rule-num">02</span><div><strong>Check in</strong> at each event with your registration QR code</div></div>
+          <div class="prize-rule"><span class="prize-rule-num">03</span><div><strong>Complete the survey</strong> at each event you attend</div></div>
+          <div class="prize-rule"><span class="prize-rule-num">04</span><div><strong>Live drawing</strong> at TRANSFORM — May 27, 2026</div></div>
+        </div>
+        <div class="prize-chips">
+          <div class="prize-chip">Up to 3 entries</div>
+          <div class="prize-chip">Winner announced May 30</div>
+          <div class="prize-chip">Must attend to be eligible</div>
+        </div>
+        <a href="#terms" class="prize-terms-link">View Official Terms &amp; Conditions ↓</a>
+        <a href="https://www.healthmatters.clinic/resources/eventfinder" target="_blank" rel="noopener" class="btn-primary" style="margin-top:28px;display:inline-flex;align-items:center;gap:10px;background:var(--blue)">Register for Free → Get Your Entry</a>
+      </div>
+      <div class="prize-right reveal rd2">
+        <div class="prize-img-wrap">
+          <div class="prize-glow"></div>
+          <img src="assets/macbook.png" alt="MacBook Air — prize giveaway at Unstoppable Experience" class="prize-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="prize-img-fallback"><div class="prize-fallback-icon">💻</div><div class="prize-fallback-txt">MacBook</div></div>
+          <div class="prize-badge">1 Winner · May 30</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS & CONDITIONS -->
+<section class="terms-sec" id="terms">
+  <div class="container">
+    <div class="terms-box reveal">
+      <div class="terms-header">
+        <div class="terms-icon">§</div>
+        <div>
+          <div class="terms-eyebrow">Official Sweepstakes Rules</div>
+          <div class="terms-title">MacBook Giveaway — Terms &amp; Conditions</div>
+        </div>
+      </div>
+      <div class="terms-body">
+        <p><strong>NO PURCHASE NECESSARY.</strong> Open to residents of Los Angeles County, age 18 or older. Void where prohibited by law.</p>
+        <p><strong>How to Enter:</strong> Earn one (1) entry for each Unstoppable Experience event you attend in full, check into using your unique registration QR code, and at which you complete the official post-event survey. Maximum of three (3) entries per person across all three events (MOVE — May 9; HEAL — May 20; TRANSFORM — May 27, 2026). Registration is required before the event begins. Walk-ins without a prior registration are not eligible for prize entries.</p>
+        <p><strong>Eligibility:</strong> Entrants must be present at each in-person event to receive an entry for that event. For the virtual TRANSFORM event (May 27), entrants must attend the live session, check in via the registration link provided, and complete the post-event survey during or immediately after the session.</p>
+        <p><strong>Survey Requirement:</strong> Completion of the post-event survey at each event is required to validate your entry for that event. Surveys will be made available at check-in. No survey = no entry for that event.</p>
+        <p><strong>Prize:</strong> One (1) MacBook (model and configuration to be confirmed). Approximate retail value (ARV): $1,099–$1,299 USD. No cash equivalent. Prize is non-transferable.</p>
+        <p><strong>Drawing &amp; Winner Notification:</strong> Drawing will take place on or after May 27, 2026 following the TRANSFORM event. Winner will be announced publicly on or before May 30, 2026. The winner will be notified via the email address provided at registration and must respond within 48 hours of notification, or an alternate winner will be selected.</p>
+        <p><strong>Verification:</strong> Health Matters Clinic will verify check-in and survey completion records for all entries prior to the drawing. Entries without confirmed check-in and completed survey will be disqualified.</p>
+        <p><strong>T-Shirt Offer (separate from prize drawing):</strong> Free Unstoppable tees are available for in-person pickup at check-in only. You must have registered before May 2, 2026 and selected your size at the time of registration. Tees will not be mailed or held. No size selection at registration = no tee. While supplies last.</p>
+        <p><strong>Sponsor:</strong> Health Matters Clinic, Inglewood, CA. For questions, contact unstoppable@healthmatters.clinic.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -777,10 +892,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="reveal">
         <div class="tsec-lbl">Limited Offer · While Supplies Last</div>
         <h2 class="tsec-title">Register Early.<br>Rock the Tee.</h2>
-        <p class="tsec-body">Everyone who registers for any Unstoppable Experience event <strong>by May 2nd</strong> gets a free Unstoppable tee — our limited-edition Health Matters Clinic drop.</p>
+        <p class="tsec-body">Register for any Unstoppable Experience event <strong>by May 2nd</strong>, select your size, and get a free limited-edition Unstoppable tee — our official Health Matters Clinic drop.</p>
         <div class="dl-chip"><span>Deadline: May 2, 2026 · Limited Sizes</span></div>
-        <p class="tsec-body" style="font-size:14px">Already registered? Bring your confirmation to the event and pick up your tee at check-in while supplies last.</p>
-        <a href="https://www.healthmatters.clinic/resources/eventfinder" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:10px;background:var(--orange)">Register to Claim Your Tee →</a>
+        <div style="background:rgba(255,110,40,.08);border:1px solid rgba(255,110,40,.2);border-radius:12px;padding:16px 20px;margin-bottom:22px">
+          <p style="font-size:13px;line-height:1.65;color:rgba(255,255,255,.6);margin:0"><strong style="color:var(--orange)">In-person pickup only.</strong> Your tee is available at check-in at each event — we do not ship or hold tees. <strong style="color:rgba(255,255,255,.85)">You must select your size when you register.</strong> If no size was selected at registration, no tee will be reserved for you. No exceptions.</p>
+        </div>
+        <a href="https://www.healthmatters.clinic/resources/eventfinder" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:4px;background:var(--orange)">Register &amp; Select Your Size →</a>
       </div>
       <div class="reveal rd2">
         <div class="tee-photo">
@@ -851,17 +968,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <div class="spk-apply-title">Apply to Speak</div>
           <div class="spk-apply-body">Tell us who you are, what you'd share, and which event fits best. We'll be in touch within 5 business days.</div>
           <div class="spk-fields">
-            <input class="spk-input" placeholder="Full name" type="text">
-            <input class="spk-input" placeholder="Email address" type="email">
-            <input class="spk-input" placeholder="Topic / talk title" type="text">
-            <select class="spk-input">
+            <label for="spk-name" class="sr-only">Full name</label>
+            <input id="spk-name" class="spk-input" placeholder="Full name" type="text" autocomplete="name">
+            <label for="spk-email" class="sr-only">Email address</label>
+            <input id="spk-email" class="spk-input" placeholder="Email address" type="email" autocomplete="email">
+            <label for="spk-topic" class="sr-only">Topic or talk title</label>
+            <input id="spk-topic" class="spk-input" placeholder="Topic / talk title" type="text">
+            <label for="spk-event" class="sr-only">Which event</label>
+            <select id="spk-event" class="spk-input">
               <option value="">Which event?</option>
               <option>MOVE — May 9 (Walk/Run)</option>
               <option>HEAL — May 20 (Wellness Meetup)</option>
               <option>TRANSFORM — May 27 (Virtual)</option>
               <option>Open to any</option>
             </select>
-            <textarea class="spk-input" placeholder="Tell us about you and your talk (2–3 sentences)" rows="3" style="border-radius:8px;resize:vertical"></textarea>
+            <label for="spk-bio" class="sr-only">About you and your talk</label>
+            <textarea id="spk-bio" class="spk-input" placeholder="Tell us about you and your talk (2–3 sentences)" rows="3" style="border-radius:8px;resize:vertical"></textarea>
             <button class="spk-submit" onclick="handleSpeaker(this)">Submit Application</button>
           </div>
           <div class="spk-or">— or —</div>
@@ -1067,8 +1189,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       </div>
       <div class="s-form">
         <div class="s-inputs">
-          <input type="text" class="s-input" placeholder="First name" id="s-name">
-          <input type="email" class="s-input" placeholder="Email address" id="s-email">
+          <label for="s-name" class="sr-only">First name</label>
+          <input type="text" class="s-input" placeholder="First name" id="s-name" autocomplete="given-name">
+          <label for="s-email" class="sr-only">Email address</label>
+          <input type="email" class="s-input" placeholder="Email address" id="s-email" autocomplete="email">
           <button class="s-submit" id="s-btn" onclick="handleSignup()">I'm In — Keep Me Posted</button>
         </div>
         <p class="s-disc">Free to attend. Free tee with early registration by May 2nd.<br>Presented by Health Matters Clinic · LA County DMH Take Action Campaign.</p>
