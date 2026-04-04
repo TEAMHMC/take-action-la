@@ -242,13 +242,13 @@ section{position:relative}
 .prize-terms-link{font-size:13px;color:rgba(255,255,255,.4);text-decoration:underline;text-underline-offset:3px;display:block;margin-bottom:4px;transition:color .2s}
 .prize-terms-link:hover{color:rgba(255,255,255,.7)}
 .prize-right{display:flex;justify-content:center;align-items:center}
-.prize-img-wrap{position:relative;width:100%;max-width:480px}
-.prize-glow{position:absolute;inset:-20%;background:radial-gradient(ellipse,rgba(35,61,255,.25) 0%,transparent 65%);pointer-events:none;z-index:0}
-.prize-img{width:100%;position:relative;z-index:1;filter:drop-shadow(0 30px 60px rgba(35,61,255,.3))}
+.prize-img-wrap{position:relative;width:100%;max-width:480px;overflow:hidden;border-radius:16px}
+.prize-img{width:100%;display:block}
+.prize-img-fade{position:absolute;inset:0;background:linear-gradient(to right,var(--black) 0%,transparent 20%,transparent 70%,var(--black) 100%),linear-gradient(to bottom,transparent 60%,var(--black) 100%);pointer-events:none;z-index:1}
 .prize-img-fallback{display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:60px;background:rgba(35,61,255,.06);border:1px solid rgba(35,61,255,.15);border-radius:20px;min-height:260px}
 .prize-fallback-icon{font-size:64px}
 .prize-fallback-txt{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;text-transform:uppercase;color:rgba(255,255,255,.4)}
-.prize-badge{position:absolute;bottom:-12px;right:16px;z-index:2;background:var(--blue);color:var(--white);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border-radius:100px}
+.prize-badge{position:absolute;bottom:16px;right:16px;z-index:3;background:var(--blue);color:var(--white);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border-radius:100px}
 
 /* ── TERMS ACCORDION ── */
 .prize-terms-accordion{margin-top:20px;border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden}
@@ -786,7 +786,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <div class="prize-rule"><span class="prize-rule-num">01</span><div><strong>Register</strong> for any or all three events</div></div>
           <div class="prize-rule"><span class="prize-rule-num">02</span><div><strong>Check in</strong> at each event with your registration QR code</div></div>
           <div class="prize-rule"><span class="prize-rule-num">03</span><div><strong>Complete the survey</strong> at each event you attend</div></div>
-          <div class="prize-rule"><span class="prize-rule-num">04</span><div><strong>Live drawing</strong> at TRANSFORM — May 27, 2026</div></div>
+          <div class="prize-rule"><span class="prize-rule-num">04</span><div><strong>Winner announced</strong> May 30, 2026</div></div>
         </div>
         <div class="prize-chips">
           <div class="prize-chip">Up to 3 entries</div>
@@ -800,22 +800,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           </button>
           <div class="prize-terms-body">
             <p><strong>NO PURCHASE NECESSARY.</strong> Open to residents of Los Angeles County, age 18 or older. Void where prohibited by law.</p>
-            <p><strong>How to Enter:</strong> Earn one (1) entry for each Unstoppable Experience event you attend, check into using your registration QR code, and at which you complete the official post-event survey. Maximum of three (3) entries per person (MOVE — May 9; HEAL — May 20; TRANSFORM — May 27, 2026). Registration is required before the event. Walk-ins are not eligible for prize entries.</p>
+            <p><strong>NO PURCHASE NECESSARY.</strong> Open to residents of Los Angeles County, age 18 or older. Void where prohibited by law.</p>
+            <p><strong>How to Enter:</strong> Earn one (1) entry for each Unstoppable Experience event you attend, check into using your registration QR code, and at which you complete the official post-event survey. Maximum of three (3) entries per person (MOVE — May 9; HEAL — May 20; TRANSFORM — May 27, 2026). Registration is required before the event. Walk-ins are eligible for prize entries if they register and check in at the event.</p>
             <p><strong>Eligibility:</strong> Must be present at each in-person event. For the virtual TRANSFORM event, must attend the live session, check in via the link provided, and complete the post-event survey during or immediately after.</p>
             <p><strong>Survey Requirement:</strong> Post-event survey completion at each event is required to validate your entry. Surveys available at check-in. No survey = no entry for that event.</p>
-            <p><strong>Prize:</strong> One (1) MacBook. ARV: $1,099–$1,299 USD. No cash equivalent. Non-transferable.</p>
-            <p><strong>Drawing &amp; Notification:</strong> Drawing takes place after May 27, 2026. Winner announced on or before May 30, 2026. Winner notified by email and must respond within 48 hours or an alternate winner will be selected.</p>
+            <p><strong>Prize:</strong> One (1) MacBook Neo (starting at $599). No cash equivalent. Non-transferable.</p>
+            <p><strong>Drawing &amp; Notification:</strong> Drawing takes place after May 27, 2026. Winner announced on or before May 30, 2026. Winner notified by email and must respond within 48 hours with a valid mailing address to receive the prize, or an alternate winner will be selected.</p>
             <p><strong>Verification:</strong> HMC will verify check-in and survey records before the drawing. Unverified entries will be disqualified.</p>
-            <p><strong>T-Shirt (separate):</strong> Free tees are in-person pickup only at check-in. Must register by May 2, 2026 and select size at registration. No shipping. No size = no tee.</p>
             <p><strong>Sponsor:</strong> Health Matters Clinic, Inglewood, CA — unstoppable@healthmatters.clinic</p>
           </div>
         </div>
       </div>
       <div class="prize-right reveal rd2">
         <div class="prize-img-wrap">
-          <div class="prize-glow"></div>
-          <img src="assets/macbook.png" alt="MacBook Air — prize giveaway at Unstoppable Experience" class="prize-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="prize-img-fallback"><div class="prize-fallback-icon">💻</div><div class="prize-fallback-txt">MacBook</div></div>
+          <img src="assets/macbook.png" alt="MacBook Neo — prize giveaway at Unstoppable Experience" class="prize-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="prize-img-fallback"><div class="prize-fallback-icon">💻</div><div class="prize-fallback-txt">MacBook Neo</div></div>
+          <div class="prize-img-fade"></div>
           <div class="prize-badge">1 Winner · May 30</div>
         </div>
       </div>
@@ -882,11 +882,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="tsec-lbl">Limited Offer · While Supplies Last</div>
         <h2 class="tsec-title">Register Early.<br>Rock the Tee.</h2>
         <p class="tsec-body">Register for any Unstoppable Experience event <strong>by May 2nd</strong>, select your size, and get a free limited-edition Unstoppable tee — our official Health Matters Clinic drop.</p>
-        <div class="dl-chip"><span>Deadline: May 2, 2026 · Limited Sizes</span></div>
-        <div style="background:rgba(255,110,40,.08);border:1px solid rgba(255,110,40,.2);border-radius:12px;padding:16px 20px;margin-bottom:22px">
-          <p style="font-size:13px;line-height:1.65;color:rgba(255,255,255,.6);margin:0"><strong style="color:var(--orange)">In-person pickup only.</strong> Your tee is available at check-in at each event — we do not ship or hold tees. <strong style="color:rgba(255,255,255,.85)">You must select your size when you register.</strong> If no size was selected at registration, no tee will be reserved for you. No exceptions.</p>
-        </div>
+        <div class="dl-chip"><span>Deadline: May 2, 2026 · Limited Sizes · In-Person Events Only</span></div>
+        <p class="tsec-body" style="font-size:15px">Attending virtually on May 27? Virtual attendees receive a <strong>coupon code for a free tee</strong> — redeemable in the online shop.</p>
         <a href="https://www.healthmatters.clinic/resources/eventfinder" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:4px;background:var(--orange)">Register &amp; Select Your Size →</a>
+        <div class="prize-terms-accordion" style="margin-top:16px">
+          <button class="prize-terms-toggle" onclick="var b=this.nextElementSibling,o=b.style.maxHeight;b.style.maxHeight=o?null:'600px';this.querySelector('.toggle-arr').textContent=o?'↓':'↑'">
+            <span>T-Shirt Pickup Policy</span><span class="toggle-arr">↓</span>
+          </button>
+          <div class="prize-terms-body">
+            <p><strong style="color:rgba(255,255,255,.75)">In-person pickup only.</strong> Your tee is available at check-in at MOVE (May 9) and HEAL (May 20) only. We do not ship or hold tees.</p>
+            <p><strong style="color:rgba(255,255,255,.75)">Size must be selected at registration.</strong> If no size was selected when you registered, no tee will be reserved for you. No exceptions. While supplies last.</p>
+            <p>TRANSFORM (May 27) is a virtual event — in-person tee pickup does not apply. Virtual attendees will receive a coupon code for a free tee redeemable in the online shop.</p>
+          </div>
+        </div>
       </div>
       <div class="reveal rd2">
         <div class="tee-photo">
@@ -949,7 +957,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
             <div class="spk-slot-sub">Announced Soon</div>
           </div>
         </div>
-        <div class="spk-announced">Speakers announced on a rolling basis · April–May 2026</div>
       </div>
       <div class="reveal rd2">
         <div class="spk-apply-box">
@@ -992,11 +999,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,5vw,56px);line-height:.9;text-transform:uppercase;margin-bottom:18px">Join as a<br>Community<br>Partner</h2>
         <p class="sp-body">The Unstoppable Experience reaches <strong>a targeted, health-conscious community</strong> across three high-impact events in May. Our audience is LA-based, wellness-motivated, and deeply engaged.</p>
         <p class="sp-body">In partnership with the LA County Department of Mental Health's Take Action campaign — all partner recognition uses <em>"In partnership with"</em> language in compliance with grant guidelines.</p>
-        <div class="sp-contact-box">
-          <div class="sp-contact-label">Partner Inquiries</div>
-          <div class="sp-contact-email"><a href="mailto:sponsor@healthmatters.clinic">sponsor@healthmatters.clinic</a></div>
-          <div class="sp-contact-sub">We respond within 2 business days</div>
-        </div>
       </div>
       <div>
         <div class="micro" style="margin-bottom:16px">Audience Reach</div>
@@ -1018,7 +1020,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
             <div style="font-size:13px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:4px">Events This May</div>
           </div>
         </div>
-        <a href="mailto:partner@healthmatters.clinic?subject=Unstoppable Experience Partnership Inquiry" class="btn-primary" style="display:block;text-align:center;padding:15px">Become a Community Partner →</a>
+        <a href="mailto:partner@healthmatters.clinic?subject=Unstoppable Experience Partnership Inquiry" class="btn-primary" style="display:block;text-align:center;padding:15px;background:var(--orange)">Become a Community Partner →</a>
+        <div class="spk-or">— or —</div>
+        <a href="mailto:sponsor@healthmatters.clinic" class="spk-email-link">sponsor@healthmatters.clinic</a>
+        <div style="text-align:center;font-size:12px;color:rgba(255,255,255,.3);margin-top:8px;letter-spacing:.05em">We respond within 2 business days</div>
       </div>
     </div>
 
