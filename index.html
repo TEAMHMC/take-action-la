@@ -1364,16 +1364,21 @@ function handleDonate(){window.open('https://www.healthmatters.clinic/donate','_
 // Speaker form — sends to portal AND opens email draft as backup
 function handleSpeaker(btn){
   const form=btn.closest('.spk-apply-box');
-  const inputs=form.querySelectorAll('input');
-  const name=(inputs[0]||{}).value||'';
-  const email=(inputs[1]||{}).value||'';
-  const topic=(inputs[2]||{}).value||'';
+  const name=(form.querySelector('#spk-name')||{}).value||'';
+  const email=(form.querySelector('#spk-email')||{}).value||'';
+  const topic=(form.querySelector('#spk-topic')||{}).value||'';
+  const event=(form.querySelector('#spk-event')||{}).value||'';
+  const bio=(form.querySelector('#spk-bio')||{}).value||'';
   if(!name||!email){alert('Please fill in your name and email.');return;}
   btn.textContent='Sending...';btn.disabled=true;
-  // Send to portal
+  const needs=[
+    topic?'Topic: '+topic:'',
+    event?'Event: '+event:'',
+    bio?'Bio: '+bio:''
+  ].filter(Boolean).join(' | ');
   fetch('https://hmc-volunteer-portal-172668994130.us-central1.run.app/api/public/rsvp',{
     method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({eventId:'unstoppable-speaker-2026',eventTitle:'Speaker Application - Unstoppable Experience',eventDate:'May 2026',name:name,email:email,phone:'',needs:'Speaker Application: '+topic,source:'Take Action LA Speaker Form'})
+    body:JSON.stringify({eventId:'unstoppable-speaker-2026',eventTitle:'Speaker Application - Unstoppable Experience',eventDate:'May 2026',name:name,email:email,phone:'',needs:'Speaker Application: '+needs,source:'Take Action LA Speaker Form'})
   }).then(()=>{
     btn.textContent='Application Sent ✓';
     btn.style.background='#12c06b';
