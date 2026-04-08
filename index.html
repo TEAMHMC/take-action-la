@@ -649,6 +649,31 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .tbar{padding:10px 14px;gap:10px}
   .cdu{min-width:40px;padding:5px 10px}
 }
+
+/* ── FAQ ── */
+.faq-sec{padding:96px 0;border-top:1px solid rgba(255,255,255,.06)}
+.faq-sec .faq-wrap{--color-text-primary:#fff;--color-text-secondary:rgba(255,255,255,.5);--color-border-tertiary:rgba(255,255,255,.1);font-family:'Inter','Questrial',sans-serif;padding:2rem 0 3rem;max-width:760px;margin:0 auto}
+.faq-sec .faq-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px}
+.faq-sec .faq-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;letter-spacing:.04em;text-transform:uppercase;color:#fff;margin-bottom:2.5rem;line-height:1}
+.faq-sec .faq-section{margin-bottom:2.5rem}
+.faq-sec .section-label{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.faq-sec .section-tag{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;border-radius:3px;color:#fff}
+.faq-sec .section-tag.dark-text{color:#111}
+.faq-sec .section-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.faq-sec .faq-item{border-top:0.5px solid rgba(255,255,255,.1)}
+.faq-sec .faq-item:last-child{border-bottom:0.5px solid rgba(255,255,255,.1)}
+.faq-sec .faq-q{width:100%;background:none;border:none;padding:14px 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;color:#fff}
+.faq-sec .faq-q-text{font-family:'Inter',sans-serif;font-size:15px;font-weight:500;line-height:1.4;flex:1}
+.faq-sec .faq-chevron{flex-shrink:0;width:16px;height:16px;margin-top:2px;transition:transform .2s ease;color:rgba(255,255,255,.5)}
+.faq-sec .faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-sec .faq-a{display:none;padding:0 0 16px 0;font-size:14px;line-height:1.7;color:rgba(255,255,255,.5)}
+.faq-sec .faq-item.open .faq-a{display:block}
+.faq-sec .faq-a a{color:#233dff;text-decoration:none}
+.faq-sec .faq-a a:hover{text-decoration:underline}
+.faq-sec .faq-a strong{color:#fff;font-weight:500}
+.faq-sec .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.faq-sec .event-pill{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:3px;color:#fff}
+@media(max-width:600px){.faq-sec{padding:64px 0}}
 </style>
 </head>
 <body>
@@ -688,6 +713,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <a href="#sponsors" class="nav-link">Partners</a>
     <a href="#donate" class="nav-link">Donate</a>
     <a href="#about" class="nav-link">About</a>
+    <a href="#faq" class="nav-link">FAQ</a>
     <a href="#events" class="nav-cta">Find My Experience</a>
   </div>
 </nav>
@@ -912,20 +938,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   </div>
 </section>
 
-<!-- SHOP / MERCH -->
-<section class="shop" id="shop">
+<!-- ABOUT -->
+<section class="about" id="about" role="region" aria-label="About Health Matters Clinic">
   <div class="container">
-    <div class="shop-photo-wrap reveal">
-      <div class="shop-photo-inner">
-        <div class="shop-photo-img">
-          <img src="assets/shop-tote.png" alt="Unstoppable tote bag — Health Matters Clinic merch" loading="lazy">
-          <div class="shop-photo-overlay"></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="micro">About Health Matters Clinic</div>
+        <h2 class="about-title">Community-<br>Centered<br>Care</h2>
+        <p class="about-body">Health Matters Clinic is a <strong>Los Angeles-based nonprofit</strong> focused on health equity and community-based care. Since 2020, we've served <strong>25,000+ people</strong> through mobile health services, pop-up clinics, street medicine outreach, and mental wellness programs — supported by 800+ volunteers.</p>
+        <p class="about-body">The Unstoppable Experience is part of the <strong>Take Action for Mental Health Awareness Month</strong> campaign — a partnership with the LA County Department of Mental Health to bring accessible, stigma-free mental wellness programming directly into our communities.</p>
+      </div>
+      <div class="reveal rd2">
+        <div class="flyer-carousel" id="flyerCarousel" role="region" aria-label="Event flyers carousel — 3 events" aria-live="polite">
+          <div class="fc-slide" data-idx="0"><img src="assets/flyer-move.png" alt="Live Unstoppable Walk Run — May 9 2026 Inglewood CA" loading="lazy"></div>
+          <div class="fc-slide" data-idx="1"><img src="assets/flyer-heal.png" alt="Unstoppable Wellness Meetup — May 20 2026 Inglewood CA" loading="lazy"></div>
+          <div class="fc-slide" data-idx="2"><img src="assets/flyer-transform.png" alt="Unstoppable Experience Virtual — May 27 2026" loading="lazy"></div>
         </div>
-        <div class="shop-photo-content">
-          <div class="shop-photo-eyebrow">Wear the Movement</div>
-          <h2 class="shop-photo-title">Shop the<br><span style="color:var(--orange)">Unstoppable</span><br>Drop</h2>
-          <p class="shop-photo-sub">Limited-edition merch from Health Matters Clinic. Hoodies, tees, hats, and totes. Every purchase supports free community health programs across Los Angeles.</p>
-          <a href="https://www.healthmatters.clinic/shop" class="shop-photo-btn" target="_blank" rel="noopener" aria-label="View Full Unstoppable Merch Store — opens in a new tab">View Full Store</a>
+        <div class="fc-dots" id="fcDots" role="tablist" aria-label="Flyer carousel navigation">
+          <div class="fc-dot on" data-i="0" role="tab" aria-label="Show flyer 1 of 3: MOVE — Walk/Run May 9" aria-selected="true" tabindex="0"></div>
+          <div class="fc-dot" data-i="1" role="tab" aria-label="Show flyer 2 of 3: HEAL — Wellness Meetup May 20" aria-selected="false" tabindex="0"></div>
+          <div class="fc-dot" data-i="2" role="tab" aria-label="Show flyer 3 of 3: TRANSFORM — Virtual May 27" aria-selected="false" tabindex="0"></div>
         </div>
       </div>
     </div>
@@ -1166,14 +1198,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           </div>
         </div>
       </div>
-      <div class="sbar">
-        <div class="sbar-sec">
-          <div class="sbar-lbl">A Health Matters Clinic Initiative</div>
-          <div class="powered-by">
-            <span style="font-family:var(--body-font);font-size:12px;color:rgba(255,255,255,.35)">501(c)(3) Nonprofit</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1202,28 +1226,241 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" id="about" role="region" aria-label="About Health Matters Clinic">
+<!-- SHOP / MERCH -->
+<section class="shop" id="shop">
   <div class="container">
-    <div class="about-grid">
-      <div class="reveal">
-        <div class="micro">About Health Matters Clinic</div>
-        <h2 class="about-title">Community-<br>Centered<br>Care</h2>
-        <p class="about-body">Health Matters Clinic is a <strong>Los Angeles-based nonprofit</strong> focused on health equity and community-based care. Since 2020, we've served <strong>25,000+ people</strong> through mobile health services, pop-up clinics, street medicine outreach, and mental wellness programs — supported by 800+ volunteers.</p>
-        <p class="about-body">The Unstoppable Experience is part of the <strong>Take Action for Mental Health Awareness Month</strong> campaign — a partnership with the LA County Department of Mental Health to bring accessible, stigma-free mental wellness programming directly into our communities.</p>
-      </div>
-      <div class="reveal rd2">
-        <div class="flyer-carousel" id="flyerCarousel" role="region" aria-label="Event flyers carousel — 3 events" aria-live="polite">
-          <div class="fc-slide" data-idx="0"><img src="assets/flyer-move.png" alt="Live Unstoppable Walk Run — May 9 2026 Inglewood CA" loading="lazy"></div>
-          <div class="fc-slide" data-idx="1"><img src="assets/flyer-heal.png" alt="Unstoppable Wellness Meetup — May 20 2026 Inglewood CA" loading="lazy"></div>
-          <div class="fc-slide" data-idx="2"><img src="assets/flyer-transform.png" alt="Unstoppable Experience Virtual — May 27 2026" loading="lazy"></div>
+    <div class="shop-photo-wrap reveal">
+      <div class="shop-photo-inner">
+        <div class="shop-photo-img">
+          <img src="assets/shop-tote.png" alt="Unstoppable tote bag — Health Matters Clinic merch" loading="lazy">
+          <div class="shop-photo-overlay"></div>
         </div>
-        <div class="fc-dots" id="fcDots" role="tablist" aria-label="Flyer carousel navigation">
-          <div class="fc-dot on" data-i="0" role="tab" aria-label="Show flyer 1 of 3: MOVE — Walk/Run May 9" aria-selected="true" tabindex="0"></div>
-          <div class="fc-dot" data-i="1" role="tab" aria-label="Show flyer 2 of 3: HEAL — Wellness Meetup May 20" aria-selected="false" tabindex="0"></div>
-          <div class="fc-dot" data-i="2" role="tab" aria-label="Show flyer 3 of 3: TRANSFORM — Virtual May 27" aria-selected="false" tabindex="0"></div>
+        <div class="shop-photo-content">
+          <div class="shop-photo-eyebrow">Wear the Movement</div>
+          <h2 class="shop-photo-title">Shop the<br><span style="color:var(--orange)">Unstoppable</span><br>Drop</h2>
+          <p class="shop-photo-sub">Limited-edition merch from Health Matters Clinic. Hoodies, tees, hats, and totes. Every purchase supports free community health programs across Los Angeles.</p>
+          <a href="https://www.healthmatters.clinic/shop" class="shop-photo-btn" target="_blank" rel="noopener" aria-label="View Full Unstoppable Merch Store — opens in a new tab">View Full Store</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq" role="region" aria-label="Frequently Asked Questions">
+  <div class="container">
+    <div class="faq-wrap">
+      <div class="faq-eyebrow">Take Action LA · Mental Health Awareness Month 2026</div>
+      <div class="faq-title">Frequently Asked Questions</div>
+
+      <!-- GENERAL -->
+      <div class="faq-section">
+        <div class="section-label">
+          <span class="section-tag" style="background:#333">General</span>
+          <span class="section-name">About Take Action LA</span>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What is Take Action LA?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Take Action LA is an LA County Department of Mental Health (LACDMH) initiative for Mental Health Awareness Month in May 2026. Health Matters Clinic is proud to serve as the community partner bringing three free events to life across the month — all powered by our Unstoppable program. For more information, visit <a href="https://takeactionla.com" target="_blank">takeactionla.com</a>.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What is the Unstoppable program?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Unstoppable is Health Matters Clinic's flagship year-round mental health and wellness program — workshops, community events, and resources built for real people in real communities.<br><br>This May, we're bringing Unstoppable to Take Action LA through three themed events:<br><br><strong>MOVE</strong> — Live Unstoppable Walk/Run days: community walk/run events that get you moving and connected.<br><strong>HEAL</strong> — Unstoppable Wellness Meetup: an intimate evening of movement, conversation, and self-care.<br><strong>TRANSFORM</strong> — The Unstoppable Experience: a live virtual session built to help you reflect, learn, and grow.<br><br>Each event has its own energy and format — all three are free and open to everyone.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">How many events are there and where do I sign up?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">There are three events this May. Full details and registration for all three are at <a href="https://healthmatters.clinic/takeactionla" target="_blank">healthmatters.clinic/takeactionla</a>.<div class="pill-row"><span class="event-pill" style="background:#233dff">MOVE — May 9</span><span class="event-pill" style="background:#FF6E28">HEAL — May 20</span><span class="event-pill" style="background:#233dff">TRANSFORM — May 27</span></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Who hosts these events?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a"><a href="https://healthmatters.clinic" target="_blank">Health Matters Clinic (HMC)</a> is a Los Angeles-based nonprofit delivering free healthcare, mental health programming, and wellness resources to underserved communities across LA County. Take Action LA is produced in partnership with the LA County Department of Mental Health.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Are the events really free?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Yes — all three events are completely free and open to everyone. No cost, no catch. Register at <a href="https://healthmatters.clinic/takeactionla" target="_blank">healthmatters.clinic/takeactionla</a>.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Who should attend?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Everyone. These events are designed for anyone who lives, works, or cares about community in the LA area. You don't need to be experiencing a crisis or have a mental health diagnosis — Take Action LA is for people who want to move, connect, learn, and invest in their own wellness.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Is there an age requirement?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">All events are open to participants 18 and older. Minors are welcome when accompanied by a parent or guardian.</div>
+        </div>
+      </div>
+
+      <!-- MOVE -->
+      <div class="faq-section">
+        <div class="section-label">
+          <span class="section-tag" style="background:#233dff">MOVE</span>
+          <span class="section-name">Live Unstoppable Walk/Run · May 9</span>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What is MOVE?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">MOVE is part of our Live Unstoppable Walk/Run series — a free outdoor community event that combines movement with mental health awareness. Whether you walk, jog, or run, you belong here.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">When and where is MOVE?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a"><strong>Date:</strong> Saturday, May 9, 2026<br><strong>Start Time:</strong> 8:00 AM<br><strong>Location:</strong> Curtis Tucker Wellness Center · 123 W Manchester Blvd, Inglewood, CA 90301</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What time should I arrive?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Plan to arrive by <strong>8:00 AM</strong> — that's when we kick things off with an expert-led warmup and stretch (8:00–8:25 AM) before the walk/run begins. Check-in opens at 7:45 AM if you want to get settled early.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Do I need to be a runner to participate?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Not at all. This is a community walk/run — all paces are welcome. Walk the whole route, jog, or run. The goal is to show up and move together.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What should I wear and bring?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Wear comfortable athletic clothing and supportive shoes. Bring a water bottle. If you registered by May 2nd, watch for your <strong>free Unstoppable tee</strong> — you may want to wear it.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Is parking available at MOVE?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Free onsite parking is available, and street parking can be found in the surrounding area. Spots fill up fast on event morning — we encourage you to carpool, rideshare, or use Lyft to skip the parking scramble and arrive stress-free.</div>
+        </div>
+      </div>
+
+      <!-- HEAL -->
+      <div class="faq-section">
+        <div class="section-label">
+          <span class="section-tag" style="background:#FF6E28">HEAL</span>
+          <span class="section-name">Unstoppable Wellness Meetup · May 20</span>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What is HEAL?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">HEAL is the Unstoppable Wellness Meetup — an intimate community evening built around movement, real conversation, self-care stations, and connection. Think live music, a featured wellness conversation, an Ask the Expert session, and hands-on experiences all in one space.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">When and where is HEAL?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a"><strong>Date:</strong> Wednesday, May 20, 2026<br><strong>Doors open:</strong> 5:45 PM<br><strong>Program:</strong> 6:00 PM – 7:15 PM<br><strong>Location:</strong> Curtis Tucker Wellness Center · 123 W Manchester Blvd, Inglewood, CA 90301</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What experiences will be available at HEAL?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">The evening includes a movement activation session, a featured Unstoppable conversation, an Ask the Expert segment, and concurrent wellness stations — including a flower station, aromatherapy, massage, and a wellness resource table.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Who is the "Ask the Expert" for?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Anyone with questions about health, wellness resources, or navigating care in LA County. This is a live Q&amp;A — a low-barrier way to get real answers in a safe, community setting.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What should I wear to HEAL?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Come as you are. The vibe is welcoming and community-centered — comfortable, casual attire is perfect. There is a brief movement activation, so something you can move in comfortably is a plus.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Is parking available at HEAL?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Free onsite parking is available at the Curtis Tucker Wellness Center, with additional street parking nearby. Rideshare is always a great option — drop-off right at the front and walk in.</div>
+        </div>
+      </div>
+
+      <!-- TRANSFORM -->
+      <div class="faq-section">
+        <div class="section-label">
+          <span class="section-tag" style="background:#233dff">TRANSFORM</span>
+          <span class="section-name">The Unstoppable Experience · May 27</span>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What is TRANSFORM?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">TRANSFORM is The Unstoppable Experience — a live, interactive virtual session designed to help you reflect, learn, and grow. Packed with real talk, tools, and interactive moments, it's built for everyone — whether you're just getting started or ready to level up.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">When is TRANSFORM and how do I join?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a"><strong>Date:</strong> Wednesday, May 27, 2026<br><strong>Time:</strong> 7:00 PM – 8:00 PM PDT<br><strong>Format:</strong> Live on Zoom — the link is sent upon registration.<br><br>Register at <a href="https://healthmatters.clinic/takeactionla" target="_blank">healthmatters.clinic/takeactionla</a>.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What device can I use to join?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Any device with Zoom — laptop, desktop, tablet, or phone. The Zoom link will be in your confirmation email after you register.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Is there a giveaway for TRANSFORM attendees?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Yes — and it's a big one. The first 50 people who register, attend the full live session, <em>and</em> complete the post-event survey will be entered to win a MacBook. Three steps, one prize. Registration is free — sign up now at <a href="https://healthmatters.clinic/takeactionla" target="_blank">healthmatters.clinic/takeactionla</a>.</div>
+        </div>
+      </div>
+
+      <!-- REGISTRATION -->
+      <div class="faq-section">
+        <div class="section-label">
+          <span class="section-tag" style="background:#333">Registration</span>
+          <span class="section-name">Tickets &amp; Sign-Up</span>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">How do I register?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Visit <a href="https://healthmatters.clinic/takeactionla" target="_blank">healthmatters.clinic/takeactionla</a> and click the registration button for whichever event(s) you want to attend. You can register for one, two, or all three.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What is the deadline to get a free Unstoppable tee?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Register by <strong>May 2, 2026</strong> to qualify for a free Unstoppable tee (while supplies last). This applies across all three events.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Can I attend more than one event?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Absolutely. Register for as many events as you'd like — all three are free and each one is a distinct experience.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What do I need for check-in at the in-person events?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Your confirmation email or the name you registered under is all you need. No printed ticket required — just show up.</div>
+        </div>
+      </div>
+
+      <!-- GET INVOLVED -->
+      <div class="faq-section">
+        <div class="section-label">
+          <span class="section-tag dark-text" style="background:#f9c74f">Get Involved</span>
+          <span class="section-name">Volunteer &amp; Ambassadors</span>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">How can I get involved beyond attending?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">There are two ways to plug in:<br><br><strong>Unstoppable Ambassador</strong> — Spread the word using your personal referral link, tracked through our volunteer portal. The ambassador who gets the most confirmed attendees wins up to a $500 Visa e-gift card.<br><br><strong>Core Volunteer</strong> — 10 spots available for hands-on event support (3–6 hrs/week for 8 weeks leading up to the events). Apply at <a href="https://volunteer.healthmatters.clinic" target="_blank">volunteer.healthmatters.clinic</a>.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">What does a Core Volunteer do?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Core Volunteers help execute HMC's outreach and event plans, complete weekly communications tasks, and provide hands-on support on event days. Mandatory attendance at MOVE (May 9) and HEAL (May 20). Skills in event planning, marketing, or community organizing are a plus — training is provided.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">How do I become an Unstoppable Ambassador?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Create a free account at <a href="https://volunteer.healthmatters.clinic" target="_blank">volunteer.healthmatters.clinic</a>, then go to Referral Hub to grab your personal ambassador link for each event. Share it on social, in group chats, and in person — every registration through your link is tracked to you.</div>
+        </div>
+      </div>
+
+      <!-- ACCESSIBILITY -->
+      <div class="faq-section">
+        <div class="section-label">
+          <span class="section-tag" style="background:#555">Accessibility</span>
+          <span class="section-name">Access &amp; Support</span>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Are the venues ADA accessible?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Yes. The Curtis Tucker Wellness Center is ADA accessible. If you have specific accessibility needs, contact us at <a href="mailto:kayla@healthmatters.clinic">kayla@healthmatters.clinic</a> and we'll do everything we can to accommodate you.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Is bilingual support available?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Bilingual support is available upon request. For TRANSFORM (virtual), closed captions are available. Reach out to <a href="mailto:unstoppable@healthmatters.clinic">unstoppable@healthmatters.clinic</a> ahead of the event to arrange accommodations.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Are service animals permitted?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Yes, service animals are always welcome at HMC events.</div>
+        </div>
+      </div>
+
+      <!-- PARTNERS -->
+      <div class="faq-section">
+        <div class="section-label">
+          <span class="section-tag" style="background:#FF6F91">Partners</span>
+          <span class="section-name">Sponsors &amp; Media</span>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">How can my organization become a sponsor or partner?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">We have several partnership tiers available — from Lead Community Partner to Community Supporter. Submit our partner form at <a href="https://healthmatters.clinic/takeactionla" target="_blank">healthmatters.clinic/takeactionla</a> or email <a href="mailto:partner@healthmatters.clinic">partner@healthmatters.clinic</a> to get started.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Will events be photographed or recorded?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">Yes — photography and video will be captured at all three events for HMC's documentation and content purposes. By attending, you acknowledge that you may be photographed. If you have concerns, please notify a staff member at check-in.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">How do I contact the HMC team?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a">For Take Action LA questions, email <a href="mailto:unstoppable@healthmatters.clinic">unstoppable@healthmatters.clinic</a> or visit <a href="https://healthmatters.clinic" target="_blank">healthmatters.clinic</a>. For volunteer-specific questions, reach us at <a href="mailto:volunteers@healthmatters.clinic">volunteers@healthmatters.clinic</a>.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1472,6 +1709,16 @@ function handleSignup(){
   update(current);
   startAuto();
 })();
+
+// FAQ accordion
+document.querySelectorAll('.faq-sec .faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-sec .faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
 </script>
 
 <!--
