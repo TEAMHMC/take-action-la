@@ -698,16 +698,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <a href="#main-content" class="skip-nav">Skip to main content</a>
 <div class="cursor" id="cursor" aria-hidden="true"></div>
 
-<!-- POPUP -->
-<div class="popup" id="popup">
-  <div class="popup-icon" style="background:transparent;padding:0;width:48px;height:48px"><img src="assets/unstoppable-logo.png" alt="Unstoppable" style="width:48px;height:48px;object-fit:contain"></div>
-  <div class="popup-text">
-    <div class="popup-title">The Unstoppable Experience</div>
-    <div class="popup-sub">3 events this May. <strong>Free tee if you register by May 2nd.</strong> 377+ already joined.</div>
-  </div>
-  <button class="popup-cta" onclick="goToEvents()" aria-label="Find my event">Find My Event</button>
-  <button class="popup-x" onclick="dismissPopup()" aria-label="Close popup">✕</button>
-</div>
 
 <!-- TOAST -->
 <div class="toast" id="toast">
@@ -1542,9 +1532,6 @@ function tick(){
 tick();setInterval(tick,60000);
 
 // Popup
-if(!sessionStorage.getItem('ue-pop')){setTimeout(()=>document.getElementById('popup').classList.add('show'),3000);}
-function dismissPopup(){document.getElementById('popup').classList.remove('show');sessionStorage.setItem('ue-pop','1');}
-function goToEvents(){dismissPopup();document.getElementById('events').scrollIntoView({behavior:'smooth'});}
 
 // Live registration counter — fetches real count from Google Sheet
 const countEl=document.getElementById('reg-count');
