@@ -128,13 +128,14 @@ img{display:block}
 .popup-cta{background:var(--blue);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:10px 18px;border-radius:100px;white-space:nowrap;flex-shrink:0;border:none;cursor:pointer}
 .popup-x{position:absolute;top:8px;right:8px;font-size:16px;color:rgba(0,0,0,.3);background:none;border:none;cursor:pointer;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%}
 
-/* ── TOAST ── */
-.toast{position:fixed;bottom:104px;left:24px;z-index:490;background:rgba(16,16,16,.96);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:12px;transform:translateX(-130%);transition:transform .5s cubic-bezier(.34,1.56,.64,1);max-width:290px}
-.toast.show{transform:translateX(0)}
-.toast-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;animation:pulse 2s infinite}
-.toast-body{font-size:13px;line-height:1.4;color:rgba(255,255,255,.8)}
-.toast-body strong{color:var(--white);font-weight:600}
-.toast-ago{font-size:12px;color:rgba(255,255,255,.55);margin-top:2px}
+/* ── STICKY MOBILE CTA ── */
+.sticky-reg{display:none}
+@media(max-width:767px){
+  .sticky-reg{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(8,8,8,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 20px 16px;border-top:1px solid rgba(255,255,255,.08);align-items:center;gap:12px}
+  .sticky-reg-txt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);flex:1;line-height:1.3}
+  .sticky-reg-btn{background:var(--orange);color:var(--white);font-family:var(--body-font);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:12px 22px;border-radius:100px;white-space:nowrap;border:1.5px solid var(--white);display:inline-flex;align-items:center;gap:6px;flex-shrink:0}
+  .sticky-reg-btn::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--white)}
+}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(18,192,107,.4)}50%{box-shadow:0 0 0 5px rgba(18,192,107,0)}}
 
 /* ── NAV ── */
@@ -205,26 +206,17 @@ section{position:relative}
 .intro-hl em{font-style:italic;color:var(--orange)}
 .intro-r p{font-size:18px;line-height:1.75;color:rgba(255,255,255,.55);margin-bottom:18px}
 .intro-r p strong{color:var(--white);font-weight:600}
-.live-ctr{margin-top:36px;padding:26px 28px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;position:relative;overflow:hidden}
-.live-ctr::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:rgba(255,255,255,.08)}
-.ctr-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
-.live-lbl{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.32)}
-.ctr-num{font-family:var(--heading-font);font-weight:900;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:.02em;color:var(--white)}
-.ctr-num span{color:var(--blue)}
-.ctr-sub{font-size:15px;color:rgba(255,255,255,.32);margin-top:6px}
-.ctr-sub strong{color:rgba(255,255,255,.6);font-weight:600}
-.act-feed{margin-top:18px;display:flex;flex-direction:column}
-.act-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.55);line-height:1.3;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)}
-.act-item:last-child{border-bottom:none}
-.av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:800;flex-shrink:0;text-transform:uppercase}
-.av-b{background:rgba(26,47,232,.25);color:#6a8bff}
-.av-o{background:rgba(255,110,40,.2);color:var(--orange)}
-.av-g{background:rgba(18,192,107,.2);color:var(--green)}
-.a-name{color:rgba(255,255,255,.7);font-weight:600}
-.a-ev{color:var(--blue)}
-.a-ev.heal{color:var(--orange)}
-.a-ev.tf{color:rgba(240,237,232,.55)}
+/* ── SHARE NUDGE ── */
+.share-nudge{margin-top:32px;padding:22px 24px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.sn-copy{flex:1;min-width:200px}
+.sn-copy strong{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--white);display:block;margin-bottom:4px}
+.sn-copy p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.5;margin:0}
+.sn-btn{background:transparent;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);font-family:var(--body-font);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:11px 22px;border-radius:100px;cursor:pointer;transition:border-color .2s,color .2s;white-space:nowrap;flex-shrink:0}
+.sn-btn:hover{border-color:rgba(255,255,255,.55);color:var(--white)}
+/* ── SCARCITY ── */
+.ev-cap{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,160,60,.65);margin-top:8px}
+/* ── IDENTITY LINE ── */
+.ev-identity{font-size:17px;line-height:1.65;color:rgba(255,255,255,.45);max-width:680px;margin:0 0 40px}
 .a-ago{margin-left:auto;font-size:12px;color:rgba(255,255,255,.45);white-space:nowrap;flex-shrink:0}
 
 /* ── MACBOOK PRIZE ── */
@@ -547,7 +539,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .tee-photo-tag{position:absolute;bottom:0;left:0;right:0;padding:20px 20px 18px;background:linear-gradient(to top,rgba(8,8,8,.85),transparent);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 
 /* ── SPEAKERS ── */
-.speakers{padding:80px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.speakers{display:none}
 .spk-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
 .spk-body{font-size:18px;line-height:1.75;color:rgba(255,255,255,.6);margin-bottom:20px}
 .spk-body strong{color:var(--white);font-weight:600}
@@ -700,14 +692,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <div class="cursor" id="cursor" aria-hidden="true"></div>
 
 
-<!-- TOAST -->
-<div class="toast" id="toast">
-  <div class="toast-dot"></div>
-  <div>
-    <div class="toast-body"><strong id="t-name">Someone</strong> just registered for <span id="t-ev" class="a-ev">MOVE</span></div>
-    <div class="toast-ago">just now</div>
-  </div>
-</div>
 
 <!-- NAV -->
 <nav aria-label="Primary navigation">
@@ -716,12 +700,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <a href="#trailer" class="nav-link">Watch</a>
     <a href="#events" class="nav-link">Events</a>
     <a href="#shop" class="nav-link">Shop</a>
-    <a href="#speakers" class="nav-link">Speak</a>
     <a href="#sponsors" class="nav-link">Partners</a>
     <a href="#donate" class="nav-link">Donate</a>
     <a href="#about" class="nav-link">About</a>
     <a href="#faq" class="nav-link">FAQ</a>
-    <a href="#events" class="nav-cta">Find My Experience</a>
+    <a href="https://www.healthmatters.clinic/resources/eventfinder" class="nav-cta" target="_blank" rel="noopener">Register Free</a>
   </div>
 </nav>
 
@@ -740,7 +723,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <h1 class="hero-title">The<br><span class="tb">Unstoppable</span><br>Experience</h1>
     <p class="hero-sub">Three events. One mission. No matter where you are on your journey — there's a space built for you.</p>
     <div class="hero-actions">
-      <a href="#events" class="btn-primary">Find My Experience</a>
+      <a href="https://www.healthmatters.clinic/resources/eventfinder" class="btn-primary" target="_blank" rel="noopener">Register Free</a>
       <a href="#about" class="btn-ghost"><div class="ghost-ring">↓</div>Learn More</a>
     </div>
   </div>
@@ -781,6 +764,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div><div class="micro">Three Events. One Mission.</div><div class="sec-title">Find Your<br>Experience</div></div>
       <a href="https://www.healthmatters.clinic/resources/eventfinder" class="sec-link" target="_blank" rel="noopener" aria-label="All Events — opens in a new tab">All Events →</a>
     </div>
+    <p class="ev-identity reveal">If you've ever felt like your mental health journey was invisible — this was built for you. Three free events. Real community. No experience required.</p>
     <div class="ev-stack">
       <a href="https://www.healthmatters.clinic/resources/eventfinder?event=event-1772063101013&rsvp=true" class="ev-card ec-mv reveal" target="_blank" rel="noopener" aria-label="Register for MOVE — Wellness Walk/Run on May 9, 2026. Opens in a new tab.">
         <div class="ev-n" aria-hidden="true">01</div>
@@ -788,6 +772,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="ev-m">
           <div class="ev-date">May 9, 2026 · 8:00 AM · 123 W Manchester Blvd, Inglewood</div>
           <div class="ev-body">Move your body, clear your mind, connect with your crew. Lace up. Walk, run, recharge together. All paces. Free giveaways.</div>
+          <div class="ev-cap">Limited check-in capacity — register to secure your spot</div>
         </div>
         <span class="ev-pill pm" aria-hidden="true">Register</span>
       </a>
@@ -797,6 +782,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="ev-m">
           <div class="ev-date">May 20, 2026 · 5:45 PM · 123 W Manchester Blvd, Inglewood</div>
           <div class="ev-body">Music, movement, and self-care experiences made for YOU. Pull up. Tap in. Leave Unstoppable. Free giveaways.</div>
+          <div class="ev-cap">Limited check-in capacity — register to secure your spot</div>
         </div>
         <span class="ev-pill ph" aria-hidden="true">RSVP</span>
       </a>
@@ -809,6 +795,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         </div>
         <span class="ev-pill pt" aria-hidden="true">Join</span>
       </a>
+    </div>
+    <div class="share-nudge reveal">
+      <div class="sn-copy">
+        <strong>Know someone who needs this?</strong>
+        <p>Share this page — every person you bring is another reason to show up.</p>
+      </div>
+      <button class="sn-btn" onclick="sharePage()">Share This Event</button>
     </div>
   </div>
 </section>
@@ -873,16 +866,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="intro-r reveal rd2">
         <p>This May, we're doing things differently. We're creating <strong>space to move, to heal, and to transform together.</strong></p>
         <p>Whether you need to catch your breath, find community, or take the next step — the Unstoppable Experience was built for you. Show up exactly as you are.</p>
-        <div class="live-ctr">
-          <div class="ctr-top"><div class="live-dot"></div><span class="live-lbl">Live — Joining the Movement</span></div>
-          <div class="ctr-num"><span id="reg-count">377</span>+</div>
-          <div class="ctr-sub">and counting have joined the <strong>Unstoppable Experience</strong></div>
-          <div class="act-feed" id="act-feed">
-            <div class="act-item"><div class="av av-b">JR</div><div><span class="a-name">Jasmine R.</span> registered for <span class="a-ev">MOVE</span></div><span class="a-ago">2m ago</span></div>
-            <div class="act-item"><div class="av av-o">DM</div><div><span class="a-name">David M.</span> registered for <span class="a-ev heal">HEAL</span></div><span class="a-ago">11m ago</span></div>
-            <div class="act-item"><div class="av av-g">SL</div><div><span class="a-name">Sofia L.</span> registered for <span class="a-ev tf">TRANSFORM</span></div><span class="a-ago">24m ago</span></div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1496,8 +1479,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="f-mid">
     EIN 85-3784250 · Los Angeles, CA<br>
     <a href="https://www.healthmatters.clinic/takeactionla" style="color:var(--blue)">healthmatters.clinic/takeactionla</a> · © 2026 Health Matters Clinic<br>
-    <span style="color:rgba(255,255,255,.12)">Part of the Take Action LA Mental Health Awareness Month Campaign · LA County DMH</span><br>
-    <span style="color:rgba(255,255,255,.2);font-size:11px">ADA accommodations available — <a href="mailto:Kayla@healthmatters.clinic" style="color:rgba(255,255,255,.35);text-decoration:underline;text-underline-offset:3px">Kayla@healthmatters.clinic</a></span>
+    <span style="color:rgba(255,255,255,.55);font-size:13px;font-weight:600">♿ ADA Accommodations Available</span><br>
+    <span style="color:rgba(255,255,255,.45);font-size:13px">Need accessibility support? Contact Kayla before the event:</span><br>
+    <a href="mailto:Kayla@healthmatters.clinic" style="color:var(--blue);font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px">Kayla@healthmatters.clinic</a>
   </div>
   <div class="f-right"><a href="mailto:unstoppable@healthmatters.clinic" aria-label="Email the Unstoppable team">Email Us</a></div>
 </footer>
@@ -1534,47 +1518,18 @@ tick();setInterval(tick,60000);
 
 // Popup
 
-// Live registration counter — fetches real count from Google Sheet
-const countEl=document.getElementById('reg-count');
-const feedEl=document.getElementById('act-feed');
-const toastEl=document.getElementById('toast');
-const APPS_SCRIPT='https://script.google.com/macros/s/AKfycby-KmIXY2Qu8zooU4f-hjbdpb59WKonTPJOwcktDV0SjxW5CJPMbtAV1rO0SdJx_0tK8Q/exec';
-let count=0;
-
-// Fetch real RSVP count from Google Sheet on load
-(async function loadCount(){
-  try{
-    const res=await fetch(APPS_SCRIPT+'?action=getRSVPCount&eventIds=event-1772063101013,event-1772064063990,event-1773943614235');
-    if(res.ok){
-      const data=await res.json();
-      if(data.success && data.count>0){count=data.count;countEl.textContent=count;}
-    }
-  }catch(e){/* silent — show 0 until loaded */}
-})();
-
-// Social proof toasts — cycle through realistic names
-const toastData=[
-  ['Marcus T.','MOVE','av-b',''],['Alicia R.','HEAL','av-o','heal'],['Devon W.','TRANSFORM','av-g','tf'],
-  ['Priya S.','MOVE','av-b',''],['Jordan K.','HEAL','av-o','heal'],['Camila V.','TRANSFORM','av-g','tf'],
-  ['Isaiah B.','MOVE','av-b',''],['Nadia O.','HEAL','av-o','heal'],['Tyler M.','TRANSFORM','av-g','tf'],
-  ['Brianna C.','MOVE','av-b',''],['Elena V.','HEAL','av-o','heal'],['Marcus D.','TRANSFORM','av-g','tf'],
-];
-let tIdx=0;
-function showToast(){
-  const[name,event,avCls,evCls]=toastData[tIdx%toastData.length];tIdx++;
-  document.getElementById('t-name').textContent=name;
-  const te=document.getElementById('t-ev');te.textContent=event;te.className='a-ev'+(evCls?' '+evCls:'');
-  toastEl.classList.add('show');
-  const init=name.split(' ').map(w=>w[0]).join('');
-  const item=document.createElement('div');item.className='act-item';
-  item.innerHTML='<div class="av '+avCls+'">'+init+'</div><div><span class="a-name">'+name+'</span> registered for <span class="a-ev'+(evCls?' '+evCls:'')+'">'+event+'</span></div><span class="a-ago">just now</span>';
-  feedEl.prepend(item);
-  const all=feedEl.querySelectorAll('.act-item');if(all.length>4)all[all.length-1].remove();
-  // Don't increment count — it's real data from the sheet
-  setTimeout(()=>toastEl.classList.remove('show'),4500);
+// Share page
+function sharePage(){
+  if(navigator.share){
+    navigator.share({title:'The Unstoppable Experience — Free Events in LA',text:'3 free wellness events in LA this May. Come with me.',url:'https://www.healthmatters.clinic/takeactionla'});
+  } else {
+    navigator.clipboard.writeText('https://www.healthmatters.clinic/takeactionla').then(()=>{
+      const btn=document.querySelector('.sn-btn');
+      if(!btn)return;const orig=btn.textContent;btn.textContent='Link Copied!';
+      setTimeout(()=>{btn.textContent=orig;},2500);
+    });
+  }
 }
-function scheduleToast(){setTimeout(()=>{showToast();scheduleToast();},18000+Math.random()*27000);}
-setTimeout(scheduleToast,9000);
 
 // T-shirt color (placeholder — no interactive color picker in current version)
 
@@ -1652,7 +1607,6 @@ function handleSignup(){
   }).then(()=>{
     btn.textContent='You\'re on the list, '+name+' ✓';
     btn.style.background='#12c06b';btn.style.color='#fff';
-    setTimeout(showToast,1500);
   }).catch(()=>{
     btn.textContent='Something went wrong — try again';
     btn.style.background='#ef4444';btn.disabled=false;
@@ -1740,4 +1694,15 @@ document.querySelectorAll('.faq-sec .faq-q').forEach(btn=>{
   +'</div>';
   document.body.appendChild(el);
   setTimeout(()=>{document.getElementById('_uep').style.transform='translateX(0)';},800);
-  setTimeout(()=>{var p=document.getElementById('_uep');if(p){p.style.transform='translate
+  setTimeout(()=>{var p=document.getElementById('_uep');if(p){p.style.transform='translateX(-50%) translateY(120px)';setTimeout(()=>{if(p.parentElement)p.parentElement.remove();sessionStorage.setItem('ue-shown','1');},600);}},12000);
+}})();
+</script>
+
+<!-- STICKY MOBILE REGISTER BAR -->
+<div class="sticky-reg" aria-label="Register for free — sticky bar">
+  <span class="sticky-reg-txt">3 free events · May 2026</span>
+  <a href="https://www.healthmatters.clinic/resources/eventfinder" class="sticky-reg-btn" target="_blank" rel="noopener">Register Free</a>
+</div>
+
+</body>
+</html>
