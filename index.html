@@ -156,7 +156,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-wmark{position:absolute;left:0;right:0;bottom:0;z-index:2;pointer-events:none;opacity:.07;overflow:hidden}
 .hero-wmark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(80px,14vw,200px);line-height:.84;text-transform:uppercase;white-space:nowrap;color:var(--white);display:block}
 .hero-content{position:relative;z-index:3;width:100%;padding:0 80px 72px;display:flex;flex-direction:column;align-items:flex-start}
-@media(max-width:767px){.hero-content{padding:0 24px 52px}}
+@media(max-width:900px){.hero{align-items:center}.hero-content{padding:100px 48px 48px}}
+@media(max-width:767px){.hero{align-items:center}.hero-content{padding:90px 24px 40px}.hero-wmark{display:none}.hero-title{font-size:clamp(44px,12vw,72px)}.hero-sub{font-size:15px;margin-top:10px}.hero-actions{margin-top:16px;flex-direction:column;align-items:flex-start;gap:10px}}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:8px 16px 8px 8px;margin-bottom:14px;animation:fadeUp .8s ease both}
 .badge-dot{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--orange));flex-shrink:0}
 .badge-text{font-size:14px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.6);text-transform:uppercase}
@@ -483,7 +484,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .container{padding:0 20px}
   nav{padding:16px 20px}
   .nav-r .nav-link{display:none}
-  .hero-content{padding:0 28px 56px}
+  .hero-eyebrow{font-size:14px}
   .intro-grid,.tsec-grid,.donate-cols,.signup-in,.about-grid,.prize-grid{grid-template-columns:1fr;gap:36px}
   .donate-l{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
   .donate-l,.donate-r{padding:36px 28px}
@@ -778,7 +779,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="container">
     <div class="sec-hdr reveal">
       <div><div class="micro">Three Events. One Mission.</div><div class="sec-title">Find Your<br>Experience</div></div>
-      <a href="https://www.healthmatters.clinic/resources/eventfinder" class="sec-link" target="_blank" rel="noopener" aria-label="All Events — opens in a new tab">All Events ↗</a>
+      <a href="https://www.healthmatters.clinic/resources/eventfinder" class="sec-link" target="_blank" rel="noopener" aria-label="All Events — opens in a new tab">All Events →</a>
     </div>
     <div class="ev-stack">
       <a href="https://www.healthmatters.clinic/resources/eventfinder?event=event-1772063101013&rsvp=true" class="ev-card ec-mv reveal" target="_blank" rel="noopener" aria-label="Register for MOVE — Wellness Walk/Run on May 9, 2026. Opens in a new tab.">
