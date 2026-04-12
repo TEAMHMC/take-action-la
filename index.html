@@ -116,6 +116,7 @@ img{display:block}
 /* ── CURSOR ── */
 .cursor{position:fixed;width:10px;height:10px;background:var(--white);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:difference}
 .cursor.big{width:40px;height:40px}
+@media(pointer:coarse){.cursor{display:none}}
 
 /* ── POPUP ── */
 .popup{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(130px);z-index:500;background:var(--white);color:var(--black);border-radius:16px;padding:18px 52px 18px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 24px 64px rgba(0,0,0,.55);max-width:520px;width:calc(100% - 40px);transition:transform .6s cubic-bezier(.34,1.56,.64,1)}
@@ -495,6 +496,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .tbar{padding:12px 20px}
   .shop-header{flex-direction:column;align-items:flex-start;gap:20px}
   .merch-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .events{padding:56px 0}
+  .prize-sec{padding:56px 0}
   .trailer{padding:56px 0}
   .speakers{padding:56px 0}
   .sponsors{padding:64px 0}
@@ -940,15 +943,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <p class="about-body">The Unstoppable Experience is part of the <strong>Take Action for Mental Health Awareness Month</strong> campaign — a partnership with the LA County Department of Mental Health to bring accessible, stigma-free mental wellness programming directly into our communities.</p>
       </div>
       <div class="reveal rd2">
-        <div class="flyer-carousel" id="flyerCarousel" role="region" aria-label="Event flyers carousel — 3 events" aria-live="polite">
-          <div class="fc-slide" data-idx="0"><img src="assets/flyer-move.png" alt="Live Unstoppable Walk Run — May 9 2026 Inglewood CA" loading="lazy"></div>
-          <div class="fc-slide" data-idx="1"><img src="assets/flyer-heal.png" alt="Unstoppable Wellness Meetup — May 20 2026 Inglewood CA" loading="lazy"></div>
-          <div class="fc-slide" data-idx="2"><img src="assets/flyer-transform.png" alt="Unstoppable Experience Virtual — May 27 2026" loading="lazy"></div>
+        <div class="flyer-carousel" id="flyerCarousel" role="region" aria-label="Event flyers carousel — 4 flyers" aria-live="polite">
+          <div class="fc-slide" data-idx="0"><img src="assets/flyer-move.png" alt="MOVE — Live Unstoppable Walk/Run with Dave Helem, May 9 2026, Inglewood CA" loading="lazy"></div>
+          <div class="fc-slide" data-idx="1"><img src="assets/flyer-heal-wray.png" alt="HEAL — Unstoppable Wellness Meetup featuring Dr. S. Ama Wray, May 20 2026, Inglewood CA" loading="lazy"></div>
+          <div class="fc-slide" data-idx="2"><img src="assets/flyer-heal-helem.png" alt="HEAL — Unstoppable Wellness Meetup with Dave Helem, Tahir Moore, Bechir Sylvain, Dr. Kalaki Clarke, May 20 2026, Inglewood CA" loading="lazy"></div>
+          <div class="fc-slide" data-idx="3"><img src="assets/flyer-transform.png" alt="TRANSFORM — Unstoppable Experience Virtual with Dave Helem, May 27 2026" loading="lazy"></div>
         </div>
         <div class="fc-dots" id="fcDots" role="tablist" aria-label="Flyer carousel navigation">
-          <div class="fc-dot on" data-i="0" role="tab" aria-label="Show flyer 1 of 3: MOVE — Walk/Run May 9" aria-selected="true" tabindex="0"></div>
-          <div class="fc-dot" data-i="1" role="tab" aria-label="Show flyer 2 of 3: HEAL — Wellness Meetup May 20" aria-selected="false" tabindex="0"></div>
-          <div class="fc-dot" data-i="2" role="tab" aria-label="Show flyer 3 of 3: TRANSFORM — Virtual May 27" aria-selected="false" tabindex="0"></div>
+          <div class="fc-dot on" data-i="0" role="tab" aria-label="Show flyer 1 of 4: MOVE — Walk/Run May 9" aria-selected="true" tabindex="0"></div>
+          <div class="fc-dot" data-i="1" role="tab" aria-label="Show flyer 2 of 4: HEAL — Dr. S. Ama Wray, May 20" aria-selected="false" tabindex="0"></div>
+          <div class="fc-dot" data-i="2" role="tab" aria-label="Show flyer 3 of 4: HEAL — Dave Helem, May 20" aria-selected="false" tabindex="0"></div>
+          <div class="fc-dot" data-i="3" role="tab" aria-label="Show flyer 4 of 4: TRANSFORM — Virtual May 27" aria-selected="false" tabindex="0"></div>
         </div>
       </div>
     </div>
@@ -1521,14 +1526,22 @@ tick();setInterval(tick,60000);
 
 // Share page
 function sharePage(){
-  if(navigator.share){
-    navigator.share({title:'The Unstoppable Experience — Free Events in LA',text:'3 free wellness events in LA this May. Come with me.',url:'https://www.healthmatters.clinic/takeactionla'});
-  } else {
+  function copyFallback(){
     navigator.clipboard.writeText('https://www.healthmatters.clinic/takeactionla').then(()=>{
       const btn=document.querySelector('.sn-btn');
       if(!btn)return;const orig=btn.textContent;btn.textContent='Link Copied!';
       setTimeout(()=>{btn.textContent=orig;},2500);
+    }).catch(()=>{
+      const btn=document.querySelector('.sn-btn');
+      if(!btn)return;const orig=btn.textContent;btn.textContent='healthmatters.clinic/takeactionla';
+      setTimeout(()=>{btn.textContent=orig;},3000);
     });
+  }
+  if(navigator.share){
+    navigator.share({title:'The Unstoppable Experience — Free Events in LA',text:'3 free wellness events in LA this May. Come with me.',url:'https://www.healthmatters.clinic/takeactionla'})
+      .catch(()=>copyFallback());
+  } else {
+    copyFallback();
   }
 }
 
