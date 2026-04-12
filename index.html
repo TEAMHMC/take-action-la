@@ -158,7 +158,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-wmark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(80px,14vw,200px);line-height:.84;text-transform:uppercase;white-space:nowrap;color:var(--white);display:block}
 .hero-content{position:relative;z-index:3;width:100%;padding:0 80px 72px;display:flex;flex-direction:column;align-items:flex-start}
 @media(max-width:900px){.hero{align-items:center}.hero-content{padding:100px 48px 48px}}
-@media(max-width:767px){.hero{align-items:center}.hero-content{padding:90px 24px 40px}.hero-wmark{display:none}.hero-title{font-size:clamp(44px,12vw,72px)}.hero-sub{font-size:15px;margin-top:10px}.hero-actions{margin-top:16px;flex-direction:column;align-items:flex-start;gap:10px}}
+@media(max-width:767px){.hero{align-items:center;height:640px;min-height:640px}.hero-content{padding:90px 24px 40px}.hero-wmark{display:none}.hero-title{font-size:clamp(44px,12vw,72px)}.hero-sub{font-size:15px;margin-top:10px}.hero-actions{margin-top:16px;flex-direction:column;align-items:flex-start;gap:10px}}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:8px 16px 8px 8px;margin-bottom:14px;animation:fadeUp .8s ease both}
 .badge-dot{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--orange));flex-shrink:0}
 .badge-text{font-size:14px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.6);text-transform:uppercase}
@@ -476,6 +476,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .container{padding:0 20px}
   nav{padding:16px 20px}
   .nav-r .nav-link{display:none}
+  .nav-cta{display:none}
   .hero-eyebrow{font-size:14px}
   .intro-grid,.tsec-grid,.donate-cols,.signup-in,.about-grid,.prize-grid{grid-template-columns:1fr;gap:36px}
   .donate-l{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
