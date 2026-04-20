@@ -396,8 +396,12 @@
 }
 </script>
 
+<link rel="dns-prefetch" href="//www.youtube.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600;700;800;900&family=Questrial&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600;700;800;900&family=Questrial&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600;700;800;900&family=Questrial&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{margin:0;padding:0;overflow-x:hidden}
@@ -1178,15 +1182,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="trailer-eyebrow">Watch the Trailer</div>
       <div class="trailer-title">Registration <span>Now Open</span></div>
     </div>
-    <div class="trailer-inner reveal rd1">
-      <iframe
-        src="https://www.youtube.com/embed/Yjt5G2YvD9g?autoplay=1&mute=1&loop=1&playlist=Yjt5G2YvD9g&controls=1&playsinline=1"
-        title="Unstoppable Season 2026 — Take Action LA Trailer"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        style="width:100%;height:100%;position:absolute;top:0;left:0;border:0">
-      </iframe>
+    <div class="trailer-inner reveal rd1" id="yt-lite-wrap" style="cursor:pointer" onclick="(function(w){var f=document.createElement('iframe');f.src='https://www.youtube.com/embed/Yjt5G2YvD9g?autoplay=1&mute=1&loop=1&playlist=Yjt5G2YvD9g&controls=1&playsinline=1';f.title='Unstoppable Season 2026 — Take Action LA Trailer';f.setAttribute('frameborder','0');f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');f.setAttribute('allowfullscreen','');f.style.cssText='width:100%;height:100%;position:absolute;top:0;left:0;border:0';w.innerHTML='';w.appendChild(f);w.style.cursor='default';})(this)" aria-label="Play Unstoppable Season 2026 trailer on YouTube">
+      <img src="https://img.youtube.com/vi/Yjt5G2YvD9g/maxresdefault.jpg" alt="Unstoppable Season 2026 — Take Action LA Trailer thumbnail. Click to play." loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none">
+        <div style="width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,.45)">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#080808" style="margin-left:4px"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+      </div>
     </div>
   </div>
 </section>
