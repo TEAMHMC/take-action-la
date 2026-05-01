@@ -334,8 +334,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-wmark{position:absolute;left:0;right:0;bottom:0;z-index:2;pointer-events:none;opacity:.07;overflow:hidden}
 .hero-wmark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(80px,14vw,200px);line-height:.84;text-transform:uppercase;white-space:nowrap;color:var(--white);display:block}
 .hero-content{position:relative;z-index:3;width:100%;padding:0 80px 72px;display:flex;flex-direction:column;align-items:flex-start}
-@media(max-width:900px){.hero{align-items:center}.hero-content{padding:100px 48px 48px}}
-@media(max-width:767px){.hero{align-items:center;height:640px;min-height:640px}.hero-content{padding:90px 24px 40px}.hero-wmark{display:none}.hero-title{font-size:clamp(44px,12vw,72px)}.hero-sub{font-size:15px;margin-top:10px}.hero-actions{margin-top:16px;flex-direction:column;align-items:flex-start;gap:10px}}
+@media(max-width:900px){.hero{align-items:flex-end}.hero-content{padding:0 48px 56px}}
+@media(max-width:767px){.hero{align-items:flex-end;height:640px;min-height:640px}.hero-content{padding:0 24px 48px}.hero-wmark{display:none}.hero-title{font-size:clamp(44px,12vw,72px)}.hero-sub{font-size:15px;margin-top:10px}.hero-actions{margin-top:16px;flex-direction:column;align-items:flex-start;gap:10px}}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:8px 16px 8px 8px;margin-bottom:14px;animation:fadeUp .8s ease both}
 .badge-dot{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--orange));flex-shrink:0}
 .badge-text{font-size:14px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.6);text-transform:uppercase}
@@ -816,7 +816,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 /* ── EXTRA-SMALL SCREENS (<375px) ── */
 @media(max-width:375px){
-  .hero-content{padding:0 16px 32px}
+  .hero-content{padding:0 16px 40px}
   .hero-title{font-size:clamp(48px,14vw,64px)}
   .btn-primary{padding:14px 24px;font-size:13px}
   .ev-card{padding:16px}
@@ -1107,7 +1107,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="prize-right reveal rd2">
         <div class="prize-img-wrap">
           <img src="assets/macbook.png" alt="MacBook Neo — prize giveaway at Unstoppable Experience" class="prize-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="prize-img-fallback"><div class="prize-fallback-icon">💻</div><div class="prize-fallback-txt">MacBook Neo</div></div>
+          <div class="prize-img-fallback"><div class="prize-fallback-txt">MacBook Neo</div></div>
           <div class="prize-img-fade"></div>
           <div class="prize-badge">1 Winner · May 30</div>
         </div>
