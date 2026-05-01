@@ -910,32 +910,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .tee-photo:hover img{transform:scale(1.03)}
 .tee-photo-tag{position:absolute;bottom:0;left:0;right:0;padding:20px 20px 18px;background:linear-gradient(to top,rgba(8,8,8,.85),transparent);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 
-/* ── SPEAKERS ── */
-.speakers{display:none}
-.spk-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.spk-body{font-size:18px;line-height:1.75;color:rgba(255,255,255,.6);margin-bottom:20px}
-.spk-body strong{color:var(--white);font-weight:600}
-.spk-apply-box{background:rgba(26,47,232,.08);border:1px solid rgba(26,47,232,.2);border-radius:20px;padding:28px 32px}
-.spk-apply-label{font-family:var(--heading-font);font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(100,130,255,.7);margin-bottom:12px}
-.spk-apply-title{font-family:var(--heading-font);font-weight:900;font-size:28px;text-transform:uppercase;margin-bottom:12px}
-.spk-apply-body{font-family:var(--body-font);font-size:16px;line-height:1.65;color:rgba(255,255,255,.4);margin-bottom:20px}
-.spk-fields{display:flex;flex-direction:column;gap:10px}
-.spk-input{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);border-radius:100px;padding:14px 20px;font-family:var(--body-font);font-size:16px;color:var(--white);outline:none;width:100%;transition:border-color .2s}
-.spk-input:focus{border-color:rgba(100,130,255,.5);box-shadow:0 0 0 3px rgba(100,130,255,.2)}
-.spk-input::placeholder{color:rgba(255,255,255,.28)}
-.spk-submit{background:var(--orange);color:var(--white);border:1.5px solid var(--white);border-radius:100px;padding:15px 24px;font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;width:100%;margin-top:4px;transition:opacity .2s,transform .2s}
-.spk-submit::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--white);margin-right:10px;vertical-align:middle}
-.spk-submit:hover{opacity:.9;transform:translateY(-1px)}
-.spk-or{text-align:center;font-size:12px;color:rgba(255,255,255,.25);margin:10px 0}
-.spk-email-link{display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;font-family:var(--body-font);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);padding:14px 24px;border:1.5px solid rgba(255,255,255,.3);border-radius:100px;transition:border-color .2s,background .2s}
-.spk-email-link::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--white)}
-.spk-email-link:hover{border-color:var(--white);background:rgba(255,255,255,.05)}
-.spk-slots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
-.spk-slot{background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.1);border-radius:12px;padding:20px;text-align:center}
-.spk-slot-dot{width:12px;height:12px;border-radius:50%;margin:0 auto 10px;border:1px solid currentColor}
-.spk-slot-txt{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2)}
-.spk-slot-sub{font-size:14px;color:rgba(255,255,255,.15);margin-top:4px}
-.spk-announced{font-size:14px;font-weight:600;letter-spacing:.12em;color:rgba(255,255,255,.2);text-transform:uppercase;text-align:center;margin-top:16px}
+/* ── LINEUP ── */
+.speakers{padding:100px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.lineup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.lineup-col{display:flex;flex-direction:column;gap:14px}
+.lineup-tag{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:7px 16px;border-radius:100px;color:#fff;display:inline-block;align-self:flex-start}
+.lineup-flyer{border-radius:14px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+.lineup-flyer img{width:100%;display:block}
+@media(max-width:768px){.lineup-grid{grid-template-columns:1fr;gap:40px}}
 
 /* ── SPONSORS ── */
 .sponsors{padding:96px 0}
@@ -1319,64 +1301,30 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   </div>
 </section>
 
-<!-- SPEAKERS -->
-<section class="speakers" id="speakers" role="region" aria-label="Speakers and voices">
+<!-- LINEUP -->
+<section class="speakers" id="speakers" role="region" aria-label="Event lineup">
   <div class="container">
-    <div class="spk-grid">
-      <div class="reveal">
-        <div class="micro">Speakers & Voices</div>
-        <h2 class="sec-title" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,5vw,56px);line-height:.9;text-transform:uppercase;margin-bottom:20px">Want to<br>Speak?</h2>
-        <p class="spk-body">We're looking for <strong>community voices, healers, practitioners, and leaders</strong> who want to share their story, expertise, or vision for mental wellness in LA.</p>
-        <p class="spk-body">Whether you're a licensed therapist, a lived experience advocate, a wellness coach, or a community organizer — there's a stage for you here.</p>
-        <div class="spk-slots">
-          <div class="spk-slot">
-            <div class="spk-slot-dot" style="color:rgba(100,130,255,.5)"></div>
-            <div class="spk-slot-txt" style="color:rgba(100,130,255,.6)">MOVE</div>
-            <div class="spk-slot-sub">Keynote · May 9</div>
-          </div>
-          <div class="spk-slot">
-            <div class="spk-slot-dot" style="color:rgba(255,110,40,.5)"></div>
-            <div class="spk-slot-txt" style="color:rgba(255,110,40,.6)">HEAL</div>
-            <div class="spk-slot-sub">Panel · May 20</div>
-          </div>
-          <div class="spk-slot">
-            <div class="spk-slot-dot" style="color:rgba(18,192,107,.5)"></div>
-            <div class="spk-slot-txt" style="color:rgba(18,192,107,.6)">TRANSFORM</div>
-            <div class="spk-slot-sub">Virtual · May 27</div>
-          </div>
-          <div class="spk-slot">
-            <div class="spk-slot-dot" style="color:rgba(255,255,255,.15)"></div>
-            <div class="spk-slot-txt">More TBA</div>
-            <div class="spk-slot-sub">Announced Soon</div>
-          </div>
+    <div class="reveal">
+      <div class="micro">The Lineup</div>
+      <h2 class="sec-title" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,5vw,56px);line-height:.9;text-transform:uppercase;margin-bottom:8px">Meet the<br>Speakers</h2>
+    </div>
+    <div class="lineup-grid">
+      <div class="lineup-col reveal">
+        <div class="lineup-tag" style="background:#233dff">01 / MOVE · May 9</div>
+        <div class="lineup-flyer">
+          <img src="https://cdn.prod.website-files.com/67359e6040140078962e8a54/69f41f2a45f0fff255de1585_Live%20Unstoppable%205.9.26%20-%20Lineup.png" alt="MOVE — Live Unstoppable Walk/Run lineup featuring Issa Rae and Spencer Paysinger, May 9 2026" loading="lazy">
         </div>
       </div>
-      <div class="reveal rd2">
-        <div class="spk-apply-box">
-          <div class="spk-apply-label">Speaker Application</div>
-          <div class="spk-apply-title">Apply to Speak</div>
-          <div class="spk-apply-body">Tell us who you are, what you'd share, and which event fits best. We'll be in touch within 5 business days.</div>
-          <div class="spk-fields">
-            <label for="spk-name" class="sr-only">Full name</label>
-            <input id="spk-name" class="spk-input" placeholder="Full name" type="text" autocomplete="name">
-            <label for="spk-email" class="sr-only">Email address</label>
-            <input id="spk-email" class="spk-input" placeholder="Email address" type="email" autocomplete="email">
-            <label for="spk-topic" class="sr-only">Topic or talk title</label>
-            <input id="spk-topic" class="spk-input" placeholder="Topic / talk title" type="text">
-            <label for="spk-event" class="sr-only">Which event</label>
-            <select id="spk-event" class="spk-input">
-              <option value="">Which event?</option>
-              <option>MOVE — May 9 (Walk/Run)</option>
-              <option>HEAL — May 20 (Wellness Meetup)</option>
-              <option>TRANSFORM — May 27 (Virtual)</option>
-              <option>Open to any</option>
-            </select>
-            <label for="spk-bio" class="sr-only">About you and your talk</label>
-            <textarea id="spk-bio" class="spk-input" placeholder="Tell us about you and your talk (2–3 sentences)" rows="3" style="border-radius:8px;resize:vertical"></textarea>
-            <button class="spk-submit" onclick="handleSpeaker(this)">Submit Application</button>
-          </div>
-          <div class="spk-or">— or —</div>
-          <a href="mailto:unstoppable@healthmatters.clinic?subject=Speaker Inquiry — Unstoppable Experience" class="spk-email-link" aria-label="Email us a speaker inquiry">Email Us</a>
+      <div class="lineup-col reveal rd2">
+        <div class="lineup-tag" style="background:#FF6E28">02 / HEAL · May 20</div>
+        <div class="lineup-flyer">
+          <img src="https://cdn.prod.website-files.com/67359e6040140078962e8a54/69f41f2afb5cb5986253b781_Unstoppable%20Meetup%205.20.26%20-%20DR.%20BOUNDS.png" alt="HEAL — Unstoppable Wellness Meetup lineup featuring Dawn Bounds PhD, Tahir Moore, and Bechir Sylvain, May 20 2026" loading="lazy">
+        </div>
+      </div>
+      <div class="lineup-col reveal rd3">
+        <div class="lineup-tag" style="background:#233dff">03 / TRANSFORM · May 27</div>
+        <div class="lineup-flyer">
+          <img src="https://cdn.prod.website-files.com/67359e6040140078962e8a54/69f41f2b7a06cb3d3794748d_Unstoppable%20X%205.27.26%20-%20Lineup.png" alt="TRANSFORM — Unstoppable Experience lineup featuring Etienne Maurice, Candis Quinney, and Dawn Bounds PhD, May 27 2026" loading="lazy">
         </div>
       </div>
     </div>
@@ -1652,7 +1600,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         </div>
         <div class="faq-item">
           <button class="faq-q"><span class="faq-q-text">What is MOVE?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
-          <div class="faq-a">MOVE is part of our Live Unstoppable Walk/Run series — a free outdoor community event that combines movement with mental health awareness. Whether you walk, jog, or run, you belong here.</div>
+          <div class="faq-a">MOVE is the Live Unstoppable Walk/Run — a free outdoor community event that combines movement with mental health awareness. Whether you walk, jog, or run, you belong here. Hosted by Dave Helem, featuring <strong>Issa Rae</strong> and <strong>Spencer Paysinger</strong>.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span class="faq-q-text">Who will be featured at MOVE?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+          <div class="faq-a"><strong>Issa Rae</strong> — actress, writer, and producer known for Insecure and her deep ties to the Inglewood community.<br><br><strong>Spencer Paysinger</strong> — former NFL linebacker, Inglewood native, and mental health advocate whose story inspired the Netflix series All American.<br><br>Both will be joined by host <strong>Dave Helem</strong> for a morning of movement, conversation, and community energy.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q"><span class="faq-q-text">When and where is MOVE?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
@@ -1684,7 +1636,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         </div>
         <div class="faq-item">
           <button class="faq-q"><span class="faq-q-text">What is HEAL?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
-          <div class="faq-a">HEAL is the Unstoppable Wellness Meetup — an intimate community evening built around movement, real conversation, self-care stations, and connection. Think live music, a featured wellness conversation, an Ask the Expert session, and hands-on experiences all in one space.</div>
+          <div class="faq-a">HEAL is the Unstoppable Wellness Meetup — an intimate community evening built around movement, real conversation, self-care stations, and connection. Think live DJ, a featured wellness conversation, an Ask the Expert session, and hands-on experiences all in one space. Featuring <strong>Tahir Moore</strong>, <strong>Bechir Sylvain</strong>, and <strong>Dawn Bounds, PhD, PMHNP-BC, FAAN</strong>, hosted by Dave Helem.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q"><span class="faq-q-text">When and where is HEAL?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
@@ -1716,7 +1668,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         </div>
         <div class="faq-item">
           <button class="faq-q"><span class="faq-q-text">What is TRANSFORM?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
-          <div class="faq-a">TRANSFORM is The Unstoppable Experience — a live, interactive virtual session designed to help you reflect, learn, and grow. Packed with real talk, tools, and interactive moments, it's built for everyone — whether you're just getting started or ready to level up.</div>
+          <div class="faq-a">TRANSFORM is The Unstoppable Experience — a free live virtual session designed to help you reflect, learn, and grow. Packed with real talk, tools, and interactive moments, it's built for everyone — whether you're just getting started or ready to level up. Featuring <strong>Etienne Maurice</strong>, <strong>Candis Quinney</strong>, and <strong>Dawn Bounds, PhD, PMHNP-BC, FAAN</strong>, hosted by Dave Helem.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q"><span class="faq-q-text">When is TRANSFORM and how do I join?</span><svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
