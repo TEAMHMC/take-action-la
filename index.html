@@ -818,6 +818,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .tier-row{grid-template-columns:1fr}
 }
 
+/* ── PARTNERS MARQUEE ── */
+.partners-sec{padding:64px 0;border-top:1px solid rgba(255,255,255,.06);overflow:hidden}
+.partners-eyebrow{font-family:var(--body-font);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);text-align:center;margin-bottom:28px}
+.marquee-track{display:flex;width:max-content;animation:marquee 28s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-set{display:flex;align-items:center;gap:64px;padding-right:64px}
+.partner-logo{height:52px;width:auto;object-fit:contain;filter:invert(1) brightness(0.55);opacity:.7;transition:opacity .25s,filter .25s;flex-shrink:0}
+.partner-logo:hover{opacity:1;filter:invert(1) brightness(0.9)}
+.partner-logo.color{filter:none;opacity:.65}
+.partner-logo.color:hover{opacity:1}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 /* ── TRAILER ── */
 .trailer{padding:80px 0;border-bottom:1px solid rgba(255,255,255,.06)}
 .trailer-inner{position:relative;border-radius:20px;overflow:hidden;background:#000;aspect-ratio:1/1;max-width:600px;margin:0 auto;box-shadow:0 32px 80px rgba(0,0,0,.6)}
@@ -891,8 +902,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="nav-r">
     <a href="#trailer" class="nav-link">Watch</a>
     <a href="#events" class="nav-link">Events</a>
-    <a href="#shop" class="nav-link">Shop</a>
-    <a href="#sponsors" class="nav-link">Partners</a>
+    <a href="#partners" class="nav-link">Partners</a>
     <a href="#donate" class="nav-link">Donate</a>
     <a href="#about" class="nav-link">About</a>
     <a href="#faq" class="nav-link">FAQ</a>
@@ -1259,6 +1269,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 </section>
 
 <!-- SPONSORS -->
+<section class="partners-sec" id="partners" role="region" aria-label="Community partners">
+  <div class="partners-eyebrow">In Partnership With</div>
+  <div class="marquee-track" aria-hidden="true">
+    <div class="marquee-set">
+      <img src="assets/partner-take-action.png" alt="LA County Department of Mental Health — Take Action" class="partner-logo">
+      <img src="assets/partner-mental-mango.jpg" alt="Mental Mango" class="partner-logo">
+      <img src="assets/partner-embodiology.png" alt="Embodiology" class="partner-logo">
+      <img src="assets/partner-cyfer.png" alt="Cyfer Lab" class="partner-logo">
+      <img src="assets/partner-mhsa.png" alt="Mental Health Services Act — Proposition 63" class="partner-logo color">
+    </div>
+    <div class="marquee-set" aria-hidden="true">
+      <img src="assets/partner-take-action.png" alt="" class="partner-logo">
+      <img src="assets/partner-mental-mango.jpg" alt="" class="partner-logo">
+      <img src="assets/partner-embodiology.png" alt="" class="partner-logo">
+      <img src="assets/partner-cyfer.png" alt="" class="partner-logo">
+      <img src="assets/partner-mhsa.png" alt="" class="partner-logo color">
+    </div>
+  </div>
+</section>
+
 <section class="sponsors" id="sponsors" role="region" aria-label="Community partners and sponsors">
   <div class="container">
     <div class="sp-intro-grid reveal">
