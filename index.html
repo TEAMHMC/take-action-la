@@ -334,7 +334,6 @@ img{display:block}
   .sticky-reg{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(8,8,8,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 20px 16px;border-top:1px solid rgba(255,255,255,.08);align-items:center;gap:12px}
   .sticky-reg-txt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);flex:1;line-height:1.3}
   .sticky-reg-btn{background:var(--orange);color:var(--white);font-family:var(--body-font);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:12px 22px;border-radius:100px;white-space:nowrap;border:1.5px solid var(--white);display:inline-flex;align-items:center;gap:6px;flex-shrink:0}
-  .sticky-reg-btn::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--white)}
 }
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(18,192,107,.4)}50%{box-shadow:0 0 0 5px rgba(18,192,107,0)}}
 
@@ -346,7 +345,6 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .nav-link{font-family:var(--body-font);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.45);transition:color .2s;min-height:44px;display:inline-flex;align-items:center;padding:0 4px}
 .nav-link:hover{color:var(--white)}
 .nav-cta{background:var(--orange);color:var(--white);font-family:var(--body-font);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:11px 24px;border-radius:100px;border:1.5px solid var(--white);transition:background .2s,color .2s,border-color .2s;min-height:44px;display:inline-flex;align-items:center}
-.nav-cta::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--white);margin-right:8px;vertical-align:middle}
 .nav-cta:hover{background:#e85e1c}
 
 /* ── HERO ── */
@@ -368,7 +366,6 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-sub{margin-top:16px;font-family:var(--body-font);font-size:clamp(18px,1.6vw,22px);line-height:1.6;color:rgba(255,255,255,.85);max-width:560px;animation:fadeUp .8s ease .3s both}
 .hero-actions{margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;animation:fadeUp .8s ease .4s both}
 .btn-primary{background:var(--orange);color:var(--white);font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:16px 36px;border-radius:100px;display:inline-block;transition:background .2s,transform .2s;border:1.5px solid var(--white)}
-.btn-primary::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--white);margin-right:10px;vertical-align:middle}
 .btn-primary:hover{background:#e85e1c;transform:translateY(-1px)}
 .btn-ghost{color:rgba(255,255,255,.55);font-family:var(--body-font);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:color .2s}
 .btn-ghost:hover{color:var(--white)}
@@ -641,10 +638,9 @@ section{position:relative}
 .fcta-title .tb{color:var(--blue)}.fcta-title .to{color:var(--orange)}
 .fcta-acts{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
 .btn-big{font-family:var(--body-font);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:17px 44px;border-radius:100px;transition:transform .2s,opacity .2s;display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--white)}
-.btn-big::before{content:'';width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .btn-big:hover{transform:translateY(-2px);opacity:.88}
-.bb-bl{background:var(--blue);color:var(--white);border-color:var(--white)}.bb-bl::before{background:var(--white)}
-.bb-or{background:var(--orange);color:var(--white);border-color:var(--white)}.bb-or::before{background:var(--white)}
+.bb-bl{background:var(--blue);color:var(--white);border-color:var(--white)}
+.bb-or{background:var(--orange);color:var(--white);border-color:var(--white)}
 .bb-out{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.4)}.bb-out::before{background:var(--white)}
 .bb-out:hover{border-color:rgba(255,255,255,.7)}
 .bb-wh{background:var(--white);color:var(--black);border-color:var(--black)}.bb-wh::before{background:var(--black)}
@@ -1322,7 +1318,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           </div>
         </div>
         <a href="mailto:partner@healthmatters.clinic?subject=Unstoppable Experience Partnership Inquiry" class="btn-primary" style="display:block;text-align:center;padding:15px;background:var(--orange)" aria-label="Email us to become a Community Partner for the Unstoppable Experience">Become a Community Partner</a>
-        <div class="spk-or">,  or , </div>
+        <div class="spk-or">or</div>
         <a href="mailto:sponsor@healthmatters.clinic" class="spk-email-link" aria-label="Email partnership inquiry to sponsor@healthmatters.clinic">sponsor@healthmatters.clinic</a>
         <div style="text-align:center;font-size:12px;color:rgba(255,255,255,.3);margin-top:8px;letter-spacing:.05em">We respond within 2 business days</div>
       </div>
