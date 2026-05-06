@@ -316,6 +316,8 @@
 }
 </script>
 
+<link rel="preload" href="assets/hero-actual.png" as="image" fetchpriority="high">
+<link rel="preload" href="assets/hero-mobile.png" as="image" media="(max-width:767px)" fetchpriority="high">
 <link rel="dns-prefetch" href="//www.youtube.com">
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -370,9 +372,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 
 /* ── HERO ── */
 .hero{position:relative;height:100vh;height:100svh;min-height:700px;display:flex;align-items:flex-end;overflow:hidden}
-.hero-photo{position:absolute;inset:0;z-index:0}
-.hero-photo picture{display:block;width:100%;height:100%}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-photo{position:absolute;inset:0;z-index:0;background:url('assets/hero-actual.png') center top / cover no-repeat}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,.78) 32%,rgba(0,0,0,.50) 62%,rgba(0,0,0,.30) 100%)}
 .hero-content{position:relative;z-index:3;width:100%;padding:0 80px 80px;display:flex;flex-direction:column;align-items:flex-start}
 .hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.25em;color:var(--orange);text-transform:uppercase;margin-bottom:8px;animation:fadeUp .8s ease .1s both;text-shadow:0 2px 12px rgba(0,0,0,.7)}
@@ -380,7 +380,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-title .tb{color:var(--blue)}
 .hero-sub{margin-top:16px;font-family:var(--body-font);font-size:clamp(18px,1.6vw,22px);line-height:1.6;color:rgba(255,255,255,.9);max-width:560px;animation:fadeUp .8s ease .3s both;text-shadow:0 1px 12px rgba(0,0,0,.6)}
 @media(max-width:900px){.hero{align-items:flex-end}.hero-content{padding:0 48px 56px}}
-@media(max-width:767px){.hero{align-items:center;height:100vh;height:100svh;min-height:560px}.hero-overlay{background:rgba(0,0,0,.28)}.hero-content{padding:24px 24px 28px;margin:0 20px;width:calc(100% - 40px);background:rgba(0,0,0,.55);border-radius:16px}.hero-eyebrow{font-size:11px;letter-spacing:.22em;margin-bottom:10px;line-height:1.4}.hero-title{font-size:clamp(40px,12vw,66px);line-height:.88}.hero-sub{font-size:15px;margin-top:12px;max-width:100%}.hero-actions{margin-top:18px;flex-direction:column;align-items:stretch;gap:10px;width:100%}.hero-actions .btn,.hero-actions a{width:100%;text-align:center}}
+@media(max-width:767px){.hero{align-items:center;height:640px;min-height:640px}.hero-photo{background-image:url('assets/hero-mobile.png')}.hero-content{padding:90px 24px 40px;background:none;border-radius:0;margin:0;width:100%}.hero-eyebrow{font-size:11px;letter-spacing:.22em;margin-bottom:10px;line-height:1.4}.hero-title{font-size:clamp(44px,12vw,72px);line-height:.88}.hero-sub{font-size:15px;margin-top:10px;max-width:100%}.hero-actions{margin-top:16px;flex-direction:column;align-items:flex-start;gap:10px}}
 @media(max-width:380px){.hero-title{font-size:40px}.hero-eyebrow{font-size:10px}}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:8px 16px 8px 8px;margin-bottom:14px;animation:fadeUp .8s ease both}
 .badge-dot{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--orange));flex-shrink:0}
@@ -933,11 +933,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <main id="main-content" tabindex="-1">
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-photo">
-    <picture>
-      <source srcset="assets/hero-mobile.png" media="(max-width: 767px)">
-      <img src="assets/hero-actual.png" alt="Unstoppable Season lineup, Health Matters Clinic Take Action LA 2026" fetchpriority="high" loading="eager">
-    </picture>
+  <div class="hero-photo" role="img" aria-label="Unstoppable Season 2026 lineup — Health Matters Clinic x Take Action LA">
     <div class="hero-overlay"></div>
   </div>
 
