@@ -377,7 +377,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-wmark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(80px,14vw,200px);line-height:.84;text-transform:uppercase;white-space:nowrap;color:var(--white);display:block}
 .hero-content{position:relative;z-index:3;width:100%;padding:0 80px 72px;display:flex;flex-direction:column;align-items:flex-start}
 @media(max-width:900px){.hero{align-items:flex-end}.hero-content{padding:0 48px 56px}}
-@media(max-width:767px){.hero{align-items:flex-end;height:100svh;min-height:600px}.hero-content{padding:0 24px 48px}.hero-wmark{display:none}.hero-title{font-size:clamp(44px,12vw,72px)}.hero-sub{font-size:17px;margin-top:12px}.hero-actions{margin-top:16px;flex-direction:column;align-items:flex-start;gap:10px}.hero-overlay{background:linear-gradient(to top,rgba(0,0,0,.97) 0%,rgba(0,0,0,.85) 35%,rgba(0,0,0,.62) 65%,rgba(0,0,0,.45) 100%)}}
+@media(max-width:767px){.hero{align-items:flex-end;height:100svh;min-height:600px}.hero-content{padding:0 24px 48px}.hero-wmark{display:none}.hero-title{font-size:clamp(44px,12vw,72px)}.hero-sub{font-size:17px;margin-top:12px}.hero-actions{margin-top:16px;flex-direction:column;align-items:flex-start;gap:10px}.hero-overlay{background:linear-gradient(to top,rgba(0,0,0,.97) 0%,rgba(0,0,0,.85) 35%,rgba(0,0,0,.62) 65%,rgba(0,0,0,.45) 100%)}.hero-photo img{object-position:center 35%}}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:8px 16px 8px 8px;margin-bottom:14px;animation:fadeUp .8s ease both}
 .badge-dot{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--orange));flex-shrink:0}
 .badge-text{font-size:14px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.6);text-transform:uppercase}
@@ -934,7 +934,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <!-- HERO -->
 <section class="hero">
   <div class="hero-photo">
-    <img src="assets/hero.png" alt="Unstoppable Season lineup, Health Matters Clinic Take Action LA 2026" fetchpriority="high" loading="eager">
+    <picture>
+      <source srcset="assets/hero-mobile.png" media="(max-width: 767px)">
+      <img src="assets/hero.png" alt="Unstoppable Season lineup, Health Matters Clinic Take Action LA 2026" fetchpriority="high" loading="eager">
+    </picture>
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-wmark" id="hwm">
