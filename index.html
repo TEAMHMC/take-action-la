@@ -1906,6 +1906,13 @@ document.querySelectorAll('.faq-sec .faq-q').forEach(btn=>{
     if(!isOpen)item.classList.add('open');
   });
 });
+
+// Auto-resize when embedded in Webflow iframe
+if(window.self!==window.top){
+  function _sendH(){window.parent.postMessage({type:'efHeight',height:document.documentElement.scrollHeight},'*');}
+  _sendH();
+  new ResizeObserver(_sendH).observe(document.documentElement);
+}
 </script>
 
 <!--
