@@ -1792,6 +1792,7 @@ function handleDonate(){window.open('https://www.healthmatters.clinic/donate','_
 // Speaker form, sends to portal AND opens email draft as backup
 function handleSpeaker(btn){
   const form=btn.closest('.spk-apply-box');
+  if(!form)return;
   const name=(form.querySelector('#spk-name')||{}).value||'';
   const email=(form.querySelector('#spk-email')||{}).value||'';
   const topic=(form.querySelector('#spk-topic')||{}).value||'';
@@ -1899,11 +1900,12 @@ function handleSignup(){
 
 // FAQ accordion
 document.querySelectorAll('.faq-sec .faq-q').forEach(btn=>{
+  btn.setAttribute('aria-expanded','false');
   btn.addEventListener('click',()=>{
     const item=btn.closest('.faq-item');
     const isOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-sec .faq-item.open').forEach(i=>i.classList.remove('open'));
-    if(!isOpen)item.classList.add('open');
+    document.querySelectorAll('.faq-sec .faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+    if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
   });
 });
 
@@ -1935,7 +1937,7 @@ if(window.self!==window.top){
   +'<button onclick="event.stopPropagation();document.getElementById(\'_uep\').parentElement.remove();sessionStorage.setItem(\'ue-shown\',\'1\');" style="position:absolute;top:10px;right:12px;background:none;border:none;cursor:pointer;font-size:16px;color:rgba(0,0,0,.3);">✕</button>'
   +'</div>';
   document.body.appendChild(el);
-  setTimeout(()=>{document.getElementById('_uep').style.transform='translateX(0)';},800);
+  setTimeout(()=>{document.getElementById('_uep').style.transform='translateX(-50%) translateY(0)';},800);
   setTimeout(()=>{var p=document.getElementById('_uep');if(p){p.style.transform='translateX(-50%) translateY(120px)';setTimeout(()=>{if(p.parentElement)p.parentElement.remove();sessionStorage.setItem('ue-shown','1');},600);}},12000);
 }})();
 </script>
